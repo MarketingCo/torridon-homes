@@ -159,8 +159,8 @@ const Header = () => {
                 className="pt-12 border-t border-torridon-gold/10 flex flex-col md:flex-row gap-12"
               >
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Enquiries</span>
-                  <a href="mailto:hello@torridonhomes.co.uk" className="text-lg font-serif text-torridon-green italic">hello@torridonhomes.co.uk</a>
+                  <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Partner Relations</span>
+                  <Link href="/partners" className="text-lg font-serif text-torridon-green italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Location</span>
