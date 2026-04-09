@@ -78,6 +78,111 @@ export const LandJourney = () => {
   );
 };
 
+export const Director = () => {
+  return (
+    <section className="py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="relative group order-2 lg:order-1">
+            <div className="absolute -inset-6 border border-torridon-gold/10 rounded-sm translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700" />
+            <div className="relative z-10 aspect-[4/5] overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
+                alt="Director of Torridon Homes" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+              />
+            </div>
+            <div className="absolute -bottom-8 -right-8 bg-torridon-green p-10 text-white hidden md:block max-w-xs shadow-2xl">
+              <span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-2 block">The Visionary</span>
+              <p className="font-serif text-lg italic leading-relaxed">
+                "We don't just build houses; we curate the backdrop for Scottish life."
+              </p>
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <Reveal>
+              <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">Leadership</span>
+              <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 leading-tight">A Letter from <br /><span className="italic">The Director.</span></h2>
+              <div className="space-y-6 text-torridon-green/70 font-sans leading-relaxed text-lg">
+                <p>
+                  Torridon Homes was founded on a simple, uncompromising principle: that small-scale developments deserve large-scale architectural ambition. 
+                </p>
+                <p>
+                  Having spent decades navigating the unique landscape of the Scottish Central Belt, I recognized a gap for a developer who prioritizes quality over volume. By focusing on fewer than 12 dwellings per project, we ensure that every brick, every joint, and every finishing touch meets my personal standard of excellence.
+                </p>
+                <p>
+                  Whether you are a landowner looking for a respectful legacy or an investor seeking precision-engineered returns, I invite you to join us in redefining boutique living in Scotland.
+                </p>
+              </div>
+              <div className="mt-12 pt-8 border-t border-torridon-gold/20 flex items-center gap-6">
+                <div>
+                  <div className="text-xl font-serif text-torridon-green">Iain Martin</div>
+                  <div className="text-xs uppercase tracking-widest text-torridon-gold font-bold">Managing Director</div>
+                </div>
+                <div className="h-10 w-[1px] bg-torridon-gold/30" />
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Signature_of_John_Hancock.svg" 
+                  alt="Signature" 
+                  className="h-12 opacity-40 grayscale contrast-125"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const RegionalExpertise = () => {
+  return (
+    <section className="py-32 bg-torridon-green relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 transform translate-x-20" />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <Reveal>
+              <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">Our Advantage</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">Central Belt <br /><span className="italic">Specialists.</span></h2>
+              <p className="text-white/60 text-lg font-sans mb-10 leading-relaxed">
+                Our deep understanding of local planning frameworks, environmental considerations, and community dynamics across Central Scotland gives us an unmatched edge.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  { region: "Edinburgh & The Lothians", detail: "Navigating high-value urban infill and conservation areas." },
+                  { region: "Stirling & Forth Valley", detail: "Expertise in semi-rural boutique developments." },
+                  { region: "The Coastal Belt", detail: "Sustainable, weather-resilient coastal architecture." }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 hover:border-torridon-gold/30 transition-colors">
+                    <div className="text-torridon-gold mt-1"><MapPin size={18} /></div>
+                    <div>
+                      <h4 className="text-white font-serif text-lg">{item.region}</h4>
+                      <p className="text-white/40 text-sm font-sans">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <Reveal><div className="h-64 bg-[url('https://images.unsplash.com/photo-1548141313-79d264f3317c?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60" /></Reveal>
+              <Reveal><div className="h-48 bg-[url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60" /></Reveal>
+            </div>
+            <div className="space-y-4 pt-12">
+              <Reveal><div className="h-48 bg-[url('https://images.unsplash.com/photo-1552526483-3765f0285223?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60" /></Reveal>
+              <Reveal><div className="h-64 bg-[url('https://images.unsplash.com/photo-1510620389141-ce393d258661?q=80&w=1932&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60" /></Reveal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers } from 'lucide-react';
 
 const Reveal = ({ children }: { children: React.ReactNode }) => (
