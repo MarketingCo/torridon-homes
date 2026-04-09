@@ -185,8 +185,69 @@ export const Philosophy = () => {
     </section>
   );
 };
+export const StrategicLocations = () => {
+  return (
+    <section className="py-24 bg-torridon-green text-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
+          <Reveal>
+            <h2 className="text-3xl md:text-5xl font-serif">Strategic <span className="italic">Locations.</span></h2>
+          </Reveal>
+          <Reveal>
+            <p className="text-white/50 max-w-sm font-sans text-sm">Targeting prime sites across the most sought-after pockets of the Central Belt.</p>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {['Edinburgh', 'Stirling', 'Linlithgow', 'East Lothian', 'Dunbar', 'Falkirk', 'Livingston', 'Perthshire Border'].map((loc, i) => (
+            <Reveal key={i}>
+              <div className="group cursor-none">
+                <div className="text-torridon-gold/20 text-xs font-sans mb-2">0{i+1}</div>
+                <div className="text-xl md:text-2xl font-serif border-b border-white/10 pb-4 group-hover:border-torridon-gold transition-colors duration-500">
+                  {loc}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const PriorityInvestor = () => {
+  return (
+    <section className="py-32 bg-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-torridon-gold/30 to-transparent" />
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <Reveal>
+          <div className="inline-block p-3 rounded-full border border-torridon-gold/20 mb-8">
+            <Users className="text-torridon-gold" size={24} />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8">Priority Investor <span className="italic">Circle.</span></h2>
+          <p className="text-torridon-green/60 text-lg font-sans mb-12 max-w-2xl mx-auto">
+            Gain early access to financial projections, land appraisal data, and exclusive partnership opportunities before they reach the wider market.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <input 
+              type="email" 
+              placeholder="Your Professional Email" 
+              className="w-full sm:w-80 p-5 bg-torridon-cream border-none outline-none font-sans text-sm focus:ring-1 ring-torridon-gold/50"
+            />
+            <button className="w-full sm:w-auto px-10 py-5 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold hover:text-torridon-green transition-all shadow-xl shadow-torridon-green/10">
+              Request Invitation
+            </button>
+          </div>
+          <p className="mt-8 text-[10px] uppercase tracking-widest text-torridon-green/30 font-sans">Strictly Confidential • Boutique Opportunities Only</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
 
 export const Developments = () => {
+...
+
   return (
     <section id="developments" className="py-24 md:py-32 bg-torridon-cream">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
