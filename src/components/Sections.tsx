@@ -1,6 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers } from 'lucide-react';
+
+const Reveal = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
+    {children}
+  </motion.div>
+);
+
 export const Specification = () => {
   const specs = [
     { title: "Architectural Integrity", desc: "Designed by award-winning Scottish practices to blend heritage with modernism.", icon: <Trees size={20} /> },
@@ -523,8 +537,15 @@ export const JointVentures = () => {
 };
 
 export const Philosophy = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+
   return (
-    <section className="py-24 md:py-40 bg-white overflow-hidden">
+    <section ref={container} className="py-24 md:py-40 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center text-center mb-20">
           <Reveal>
@@ -537,17 +558,19 @@ export const Philosophy = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-          <Reveal>
-            <div className="relative group">
+          <div className="relative group">
+            <Reveal>
               <div className="absolute -inset-4 border border-torridon-gold/20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
-              <img 
-                src="https://images.unsplash.com/photo-1600585154526-990dcea4db0d?q=80&w=2070&auto=format&fit=crop" 
-                alt="Luxury Interior Detail" 
-                className="relative z-10 w-full aspect-[4/5] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 shadow-2xl"
-              />
-            </div>
-          </Reveal>
-
+              <div className="relative z-10 w-full aspect-[4/5] overflow-hidden shadow-2xl">
+                <motion.img 
+                  style={{ y }}
+                  src="https://images.unsplash.com/photo-1600585154526-990dcea4db0d?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Luxury Interior Detail" 
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-125"
+                />
+              </div>
+            </Reveal>
+          </div>
           <div className="space-y-12">
             {[
               { 

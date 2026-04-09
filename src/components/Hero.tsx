@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import Magnetic from './Magnetic';
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut", delay: 3 }} // Delay for preloader
         >
           <span className="text-torridon-gold uppercase tracking-[0.4em] text-xs md:text-sm font-sans mb-6 block">
             Boutique Scottish Developer
@@ -30,38 +31,46 @@ const Hero = () => {
             Specializing in high-end developments of under 12 dwellings in Scotland's Central Belt.
           </p>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <motion.a 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#land"
-              className="w-full md:w-auto px-10 py-5 bg-torridon-gold text-torridon-green font-sans uppercase tracking-widest text-xs font-bold hover:bg-white transition-colors duration-300"
-            >
-              Land Acquisition
-            </motion.a>
-            <motion.a 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#jv"
-              className="w-full md:w-auto px-10 py-5 border border-white text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-torridon-green transition-all duration-300"
-            >
-              Partner With Us
-            </motion.a>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+            <Magnetic>
+              <motion.a 
+                href="#land"
+                className="group relative inline-flex items-center justify-center px-10 py-5 bg-torridon-gold text-torridon-green font-sans uppercase tracking-widest text-xs font-bold transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10">Land Acquisition</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.76, 0, 0.24, 1]" />
+              </motion.a>
+            </Magnetic>
+
+            <Magnetic>
+              <motion.a 
+                href="#jv"
+                className="group relative inline-flex items-center justify-center px-10 py-5 border border-white text-white font-sans uppercase tracking-widest text-xs font-bold transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10 group-hover:text-torridon-green">Partner With Us</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.76, 0, 0.24, 1]" />
+              </motion.a>
+            </Magnetic>
           </div>
         </motion.div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white/40 cursor-pointer hidden md:block"
         onClick={() => document.getElementById('land')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <div className="flex flex-col items-center">
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center"
+        >
           <span className="uppercase tracking-widest text-[9px] mb-2">Scroll</span>
           <ChevronDown size={20} />
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
