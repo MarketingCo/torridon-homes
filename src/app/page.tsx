@@ -48,6 +48,7 @@ export default function Home() {
       <LandJourney />
       <Director />
       <JointVentures />
+      <VaultPreview />
       <PriorityInvestor />
       <Insights />
       <Developments />

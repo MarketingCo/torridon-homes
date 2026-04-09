@@ -779,3 +779,45 @@ export const AtmosphericSeparator = () => {
     </section>
   );
 };
+
+/* 
+  24. INVESTOR VAULT PREVIEW
+*/
+export const VaultPreview = () => {
+  return (
+    <section className="py-40 bg-torridon-green relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-full h-[1px] bg-torridon-gold" />
+        <div className="absolute top-3/4 left-0 w-full h-[1px] bg-torridon-gold" />
+      </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <Reveal>
+            <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block tracking-widest">Exclusive Access</span>
+            <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 italic">The Private <br />Investor Vault.</h2>
+            <p className="text-white/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic italic">Gain access to our comprehensive development pipeline and project-specific modelling.</p>
+            <div className="flex gap-8 items-center">
+              <div className="flex flex-col"><span className="text-white text-3xl font-serif">£42M+</span><span className="text-torridon-gold text-[10px] uppercase tracking-widest font-bold">Active GDV</span></div>
+              <div className="w-[1px] h-12 bg-white/10" />
+              <div className="flex flex-col"><span className="text-white text-3xl font-serif">18.4%</span><span className="text-torridon-gold text-[10px] uppercase tracking-widest font-bold">Avg. Project Yield</span></div>
+            </div>
+          </Reveal>
+          <Reveal className="relative group cursor-none">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-sm shadow-2xl overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-4 bg-torridon-gold text-torridon-green text-[8px] font-bold uppercase tracking-widest tracking-widest">Secure Environment</div>
+              <div className="space-y-8 blur-[6px] opacity-40 select-none pointer-events-none">
+                <div className="h-4 w-1/3 bg-white/20 rounded-full" /><div className="grid grid-cols-3 gap-4"><div className="h-20 bg-white/10" /><div className="h-20 bg-white/10" /><div className="h-20 bg-white/10" /></div><div className="h-32 bg-white/10" />
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
+                <div className="w-16 h-16 rounded-full bg-torridon-gold flex items-center justify-center mb-6 shadow-2xl shadow-torridon-gold/20"><Shield className="text-torridon-green" size={28} /></div>
+                <h4 className="text-white font-serif text-2xl mb-4 italic italic">Unlock Financial Data</h4>
+                <p className="text-white/60 text-[10px] font-sans mb-10 max-w-xs mx-auto uppercase tracking-widest leading-loose font-bold tracking-widest">Requires authorized partner credentials or verified NDAs.</p>
+                <button className="px-10 py-5 bg-white text-torridon-green uppercase tracking-widest text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl shadow-2xl shadow-torridon-green/20">Request Access</button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+};
