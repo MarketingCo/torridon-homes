@@ -534,6 +534,7 @@ export const Developments = () => {
   const projects = [
     { 
       id: 1,
+      slug: 'overton-edinburgh',
       location: 'Overton, Edinburgh', 
       name: 'The Capital View', 
       img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop', 
@@ -543,6 +544,7 @@ export const Developments = () => {
     },
     { 
       id: 2,
+      slug: 'spott-dunbar',
       location: 'Spott, Dunbar', 
       name: 'Coastal Collection', 
       img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop', 
@@ -552,6 +554,7 @@ export const Developments = () => {
     },
     { 
       id: 3,
+      slug: 'stirling-district',
       location: 'Stirling District', 
       name: 'Ochil Collection', 
       img: 'https://images.unsplash.com/photo-1600607687940-4e2003e25d27?q=80&w=2070&auto=format&fit=crop', 
@@ -561,6 +564,7 @@ export const Developments = () => {
     },
     { 
       id: 4,
+      slug: 'linlithgow-mews',
       location: 'West Lothian', 
       name: 'Linlithgow Mews', 
       img: 'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop', 
@@ -582,18 +586,30 @@ export const Developments = () => {
           {projects.map((item, i) => (
             <div 
               key={i} 
-              onClick={() => setSelectedProject(item)}
-              className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl rounded-sm cursor-pointer"
+              className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl rounded-sm"
             >
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-80" style={{ backgroundImage: `url('${item.img}')` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-torridon-green/80 via-transparent to-transparent opacity-60" />
               
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
                 <span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-sans mb-3 block">{item.location}</span>
-                <h3 className="text-3xl md:text-5xl font-serif mb-4 italic">{item.name}</h3>
-                <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                  <span>Explore Development</span>
-                  <div className="w-12 h-[1px] bg-torridon-gold" />
+                <h3 className="text-3xl md:text-5xl font-serif mb-6 italic">{item.name}</h3>
+                
+                <div className="flex items-center gap-8">
+                  <button 
+                    onClick={() => setSelectedProject(item)}
+                    className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold hover:text-white transition-all duration-500"
+                  >
+                    <span>Quick View</span>
+                    <div className="w-12 h-[1px] bg-torridon-gold" />
+                  </button>
+                  <Link 
+                    href={`/developments/${item.slug}`}
+                    className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white hover:text-torridon-gold transition-all duration-500"
+                  >
+                    <span>Full Narrative</span>
+                    <ChevronRight size={14} />
+                  </Link>
                 </div>
               </div>
               
