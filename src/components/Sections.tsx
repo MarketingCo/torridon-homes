@@ -911,3 +911,53 @@ export const VaultPreview = () => {
     </section>
   );
 };
+
+/* 
+  27. LAND MANDATE (WHAT WE SEEK)
+*/
+export const LandMandate = () => {
+  const requirements = [
+    { title: "Scale", detail: "Sites with potential for 1 to 12 high-specification dwellings." },
+    { title: "Type", detail: "Urban infill, large garden plots, brownfield, or redundant commercial units." },
+    { title: "Geography", detail: "Strict focus on the Scottish Central Belt and surrounding desirable pockets." },
+    { title: "Condition", detail: "With or without planning permission. We have the expertise to navigate both." }
+  ];
+
+  return (
+    <section className="py-32 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 1000 1000" className="w-full h-full text-torridon-green">
+          <path d="M0,500 Q250,400 500,500 T1000,500" fill="none" stroke="currentColor" strokeWidth="1" />
+          <path d="M0,600 Q250,500 500,600 T1000,600" fill="none" stroke="currentColor" strokeWidth="1" />
+          <path d="M0,700 Q250,600 500,700 T1000,700" fill="none" stroke="currentColor" strokeWidth="1" />
+        </svg>
+      </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <Reveal>
+              <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block tracking-widest">Acquisition Focus</span>
+              <h2 className="text-5xl md:text-7xl font-serif text-torridon-green mb-10 italic">The Land <br />Mandate.</h2>
+              <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic italic">We move rapidly on sites that meet our boutique criteria. Immediate decisions and flexible deal structures.</p>
+              <div className="flex gap-10">
+                <div className="group"><div className="text-2xl font-serif text-torridon-green italic mb-1 italic">Immediate</div><div className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold font-bold">Decision Turnaround</div></div>
+                <div className="w-[1px] h-12 bg-torridon-gold/20" />
+                <div className="group"><div className="text-2xl font-serif text-torridon-green italic mb-1 italic">Uncapped</div><div className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold font-bold">Funding Availability</div></div>
+              </div>
+            </Reveal>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {requirements.map((req, i) => (
+              <Reveal key={i}>
+                <div className="p-8 border border-torridon-gold/10 hover:border-torridon-gold transition-all duration-500 bg-torridon-cream/20 group">
+                  <div className="text-torridon-gold text-[10px] font-bold uppercase tracking-widest mb-4 font-bold tracking-widest">0{i+1} // {req.title}</div>
+                  <p className="text-torridon-green text-sm leading-relaxed font-sans group-hover:text-torridon-green/80 transition-colors">{req.detail}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
