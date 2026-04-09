@@ -126,6 +126,66 @@ export const JointVentures = () => {
   );
 };
 
+export const Philosophy = () => {
+  return (
+    <section className="py-24 md:py-40 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col items-center text-center mb-20">
+          <Reveal>
+            <span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Our Philosophy</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 max-w-3xl mx-auto leading-tight">
+              Building with <span className="italic">Purpose</span> and <span className="italic">Precision.</span>
+            </h2>
+            <div className="w-20 h-[1px] bg-torridon-gold mx-auto" />
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+          <Reveal>
+            <div className="relative group">
+              <div className="absolute -inset-4 border border-torridon-gold/20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
+              <img 
+                src="https://images.unsplash.com/photo-1600585154526-990dcea4db0d?q=80&w=2070&auto=format&fit=crop" 
+                alt="Luxury Interior Detail" 
+                className="relative z-10 w-full aspect-[4/5] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 shadow-2xl"
+              />
+            </div>
+          </Reveal>
+
+          <div className="space-y-12">
+            {[
+              { 
+                title: "Exclusivity by Design", 
+                desc: "By limiting our developments to under 12 dwellings, we maintain a level of craftsmanship and personal oversight that large-scale developers simply cannot match." 
+              },
+              { 
+                title: "The Torridon Standard", 
+                desc: "Every home is a testament to Scottish architectural heritage, reimagined for modern luxury living with high-specification finishes and sustainable technology." 
+              },
+              { 
+                title: "Rooted in Location", 
+                desc: "We don't just build houses; we curate living experiences that respect and enhance the unique character of the Central Belt's most desirable locations." 
+              }
+            ].map((item, i) => (
+              <Reveal key={i}>
+                <div className="group">
+                  <h4 className="text-2xl font-serif text-torridon-green mb-4 flex items-center gap-4">
+                    <span className="text-torridon-gold/30 font-sans text-sm italic">0{i+1}</span>
+                    {item.title}
+                  </h4>
+                  <p className="text-torridon-green/60 font-sans leading-relaxed pl-8 border-l border-torridon-gold/10 group-hover:border-torridon-gold transition-colors duration-500">
+                    {item.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const Developments = () => {
   return (
     <section id="developments" className="py-24 md:py-32 bg-torridon-cream">
@@ -150,36 +210,52 @@ export const Developments = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {[
             { 
+              location: 'Overton, Edinburgh', 
+              name: 'The Capital View', 
+              units: '9 Luxury Apartments',
+              img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+              tag: 'Coming Soon'
+            },
+            { 
+              location: 'Spott, Dunbar', 
+              name: 'The Coastal Collection', 
+              units: '6 Eco-Conscious Homes',
+              img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+              tag: 'Coming Soon'
+            },
+            { 
               location: 'Stirling District', 
               name: 'The Ochil Collection', 
               units: '8 Luxury Detached Villas',
-              img: 'https://images.unsplash.com/photo-1600607687940-4e2003e25d27?q=80&w=2070&auto=format&fit=crop'
+              img: 'https://images.unsplash.com/photo-1600607687940-4e2003e25d27?q=80&w=2070&auto=format&fit=crop',
+              tag: 'In Planning'
             },
             { 
               location: 'West Lothian', 
               name: 'Linlithgow Mews', 
               units: '4 High-End Townhouses',
-              img: 'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop'
+              img: 'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop',
+              tag: 'Coming Soon'
             }
           ].map((item, i) => (
             <Reveal key={i}>
-              <div className="group relative overflow-hidden bg-torridon-green">
-                <div className={`h-[400px] md:h-[500px] w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80`} style={{ backgroundImage: `url('${item.img}')` }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-torridon-green to-transparent opacity-60" />
-                <div className="absolute bottom-0 left-0 p-10 w-full text-white">
-                  <span className="text-torridon-gold text-xs uppercase tracking-widest font-sans mb-2 block">{item.location}</span>
-                  <h3 className="text-2xl md:text-3xl font-serif mb-2">{item.name}</h3>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Home size={14} />
-                    <span className="text-sm font-sans tracking-wide">{item.units}</span>
+              <div className="group relative overflow-hidden bg-torridon-green aspect-[16/10]">
+                <div className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90`} style={{ backgroundImage: `url('${item.img}')` }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-torridon-green via-torridon-green/20 to-transparent opacity-80" />
+                <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-sans mb-3 block">{item.location}</span>
+                  <h3 className="text-3xl md:text-4xl font-serif mb-3 leading-tight">{item.name}</h3>
+                  <div className="flex items-center gap-3 text-white/60 mb-8">
+                    <Home size={16} />
+                    <span className="text-sm font-sans tracking-wide uppercase text-[10px]">{item.units}</span>
                   </div>
-                  <div className="mt-6 flex items-center gap-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span>Register Interest</span>
-                    <div className="w-8 h-[1px] bg-torridon-gold" />
+                  <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    <span>Register Early Access</span>
+                    <div className="w-12 h-[1px] bg-torridon-gold origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-200" />
                   </div>
                 </div>
-                <div className="absolute top-8 right-8 bg-torridon-gold text-torridon-green px-4 py-2 text-[10px] uppercase font-bold tracking-widest">
-                  Coming Soon
+                <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-[10px] uppercase font-bold tracking-[0.2em]">
+                  {item.tag}
                 </div>
               </div>
             </Reveal>
