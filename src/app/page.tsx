@@ -1,6 +1,24 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { LandAcquisition, JointVentures, Developments, Philosophy, StrategicLocations, PriorityInvestor, Specification, LandJourney, Director, RegionalExpertise, Sustainability, Insights, ImmersiveGallery, Collaborations, FAQs } from "@/components/Sections";
+import { 
+  LandAcquisition, 
+  JointVentures, 
+  Developments, 
+  Philosophy, 
+  StrategicLocations, 
+  PriorityInvestor, 
+  Specification, 
+  LandJourney, 
+  Director, 
+  RegionalExpertise, 
+  Sustainability, 
+  Insights, 
+  ImmersiveGallery, 
+  Collaborations, 
+  FAQs,
+  InteractiveMap,
+  Newsletter
+} from "@/components/Sections";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -15,6 +33,7 @@ export default function Home() {
       <Sustainability />
       <Collaborations />
       <RegionalExpertise />
+      <InteractiveMap />
       <StrategicLocations />
       <LandAcquisition />
       <LandJourney />
@@ -24,6 +43,7 @@ export default function Home() {
       <Insights />
       <Developments />
       <FAQs />
+      <Newsletter />
       <Contact />
       <Footer />
     </main>
