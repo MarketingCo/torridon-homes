@@ -1,108 +1,143 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { Mail, Phone, MapPin, Send, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Magnetic from './Magnetic';
 
 const Contact = () => {
+  const [step, setStep] = useState(1);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
-    <section id="contact" className="py-24 md:py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <section id="contact" className="py-32 bg-white relative overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-torridon-cream/30 -skew-x-12 translate-x-32 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
-            <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">
-              Get In Touch
-            </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 leading-tight">
-              Let's Discuss Your <br />
-              <span className="italic">Next Project.</span>
-            </h2>
-            <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed">
-              Whether you are a landowner, an investor, or a future homeowner, we would love to hear from you. Our team is ready to discuss new opportunities.
+            <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">Concierge</span>
+            <h2 className="text-5xl md:text-7xl font-serif text-torridon-green mb-8 leading-tight italic">The Enquiry <br />Engine.</h2>
+            <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed max-w-md">
+              Whether you are proposing a land deal, a joint venture, or a future home purchase, our executive team handles every enquiry with absolute discretion and precision.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-full border border-torridon-gold/30 flex items-center justify-center text-torridon-gold">
-                  <Mail size={20} />
+            <div className="space-y-10">
+              <div className="group cursor-none flex items-center gap-6">
+                <div className="w-14 h-14 rounded-full border border-torridon-gold/20 flex items-center justify-center text-torridon-gold group-hover:bg-torridon-green group-hover:text-white transition-all duration-500">
+                  <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-torridon-green text-lg mb-1">Email Us</h4>
-                  <p className="text-torridon-green/60 text-sm">hello@torridonhomes.co.uk</p>
+                  <h4 className="font-serif text-torridon-green text-xl italic">Executive Email</h4>
+                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">hello@torridonhomes.co.uk</p>
                 </div>
               </div>
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-full border border-torridon-gold/30 flex items-center justify-center text-torridon-gold">
-                  <Phone size={20} />
+              
+              <div className="group cursor-none flex items-center gap-6">
+                <div className="w-14 h-14 rounded-full border border-torridon-gold/20 flex items-center justify-center text-torridon-gold group-hover:bg-torridon-green group-hover:text-white transition-all duration-500">
+                  <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-torridon-green text-lg mb-1">Call Us</h4>
-                  <p className="text-torridon-green/60 text-sm">0131 555 0123</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-full border border-torridon-gold/30 flex items-center justify-center text-torridon-gold">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <h4 className="font-serif text-torridon-green text-lg mb-1">Headquarters</h4>
-                  <p className="text-torridon-green/60 text-sm">Central Belt, Scotland</p>
+                  <h4 className="font-serif text-torridon-green text-xl italic">Direct Line</h4>
+                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">0131 555 0123</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-torridon-cream p-8 md:p-12 shadow-2xl relative"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-torridon-gold/5 pointer-events-none" />
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-torridon-green/40 ml-1">Full Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="John Smith"
-                    className="w-full bg-white border-b border-torridon-green/10 p-4 focus:border-torridon-gold outline-none transition-colors font-sans text-sm"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-torridon-green/40 ml-1">Email Address</label>
-                  <input 
-                    type="email" 
-                    placeholder="john@example.com"
-                    className="w-full bg-white border-b border-torridon-green/10 p-4 focus:border-torridon-gold outline-none transition-colors font-sans text-sm"
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-torridon-green/40 ml-1">Subject</label>
-                <select className="w-full bg-white border-b border-torridon-green/10 p-4 focus:border-torridon-gold outline-none transition-colors font-sans text-sm appearance-none">
-                  <option>Land Acquisition Inquiry</option>
-                  <option>Joint Venture / Investment</option>
-                  <option>Future Home Sales</option>
-                  <option>General Inquiry</option>
-                </select>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-torridon-green/40 ml-1">Your Message</label>
-                <textarea 
-                  rows={4} 
-                  placeholder="How can we help you?"
-                  className="w-full bg-white border-b border-torridon-green/10 p-4 focus:border-torridon-gold outline-none transition-colors font-sans text-sm resize-none"
-                />
-              </div>
-              
-              <button className="w-full py-5 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold hover:text-torridon-green transition-all duration-300 flex items-center justify-center gap-3">
-                Send Message <Send size={14} />
-              </button>
-            </form>
-          </motion.div>
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              {!isSubmitted ? (
+                <motion.div 
+                  key="form"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="bg-torridon-cream p-10 md:p-16 shadow-[0_40px_100px_-20px_rgba(26,46,38,0.1)] rounded-sm relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-torridon-gold/5 pointer-events-none" />
+                  
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="space-y-2">
+                      <label className="text-[9px] uppercase tracking-[0.3em] font-bold text-torridon-green/40 ml-1">Nature of Enquiry</label>
+                      <div className="grid grid-cols-2 gap-4">
+                        {['Land Deal', 'Joint Venture', 'Home Sales', 'General'].map((type) => (
+                          <button 
+                            key={type}
+                            type="button"
+                            className="py-4 px-6 border border-torridon-green/10 text-xs uppercase tracking-widest font-bold text-torridon-green hover:border-torridon-gold hover:bg-white transition-all"
+                          >
+                            {type}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-6 pt-4 border-t border-torridon-green/5">
+                      <input 
+                        type="text" 
+                        placeholder="Full Name"
+                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
+                        required
+                      />
+                      <input 
+                        type="email" 
+                        placeholder="Professional Email"
+                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
+                        required
+                      />
+                      <textarea 
+                        rows={3} 
+                        placeholder="Brief Project Overview"
+                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 resize-none"
+                      />
+                    </div>
+                    
+                    <Magnetic>
+                      <button 
+                        type="submit"
+                        className="w-full py-6 bg-torridon-green text-white font-sans uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
+                      >
+                        Initialize Dialogue <ArrowRight size={14} />
+                      </button>
+                    </Magnetic>
+                  </form>
+                </motion.div>
+              ) : (
+                <motion.div 
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-torridon-green p-16 md:p-24 text-center text-white rounded-sm shadow-2xl"
+                >
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", damping: 12, stiffness: 200, delay: 0.2 }}
+                    className="w-20 h-20 bg-torridon-gold rounded-full flex items-center justify-center mx-auto mb-10"
+                  >
+                    <CheckCircle2 size={40} className="text-torridon-green" />
+                  </motion.div>
+                  <h3 className="text-3xl font-serif italic mb-6">Dialogue Initialized.</h3>
+                  <p className="text-white/60 font-sans text-sm leading-relaxed max-w-xs mx-auto mb-10">
+                    Your enquiry has been routed to our executive team. Expect a response within 24 hours.
+                  </p>
+                  <button 
+                    onClick={() => setIsSubmitted(false)}
+                    className="text-[10px] uppercase tracking-[0.4em] font-bold text-torridon-gold hover:text-white transition-colors"
+                  >
+                    Send Another
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
