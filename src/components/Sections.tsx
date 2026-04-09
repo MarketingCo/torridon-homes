@@ -294,6 +294,109 @@ export const Insights = () => {
   );
 };
 
+export const ImmersiveGallery = () => {
+  const images = [
+    { url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop", size: "col-span-2 row-span-2", title: "Light & Space" },
+    { url: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "Material Detail" },
+    { url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-2", title: "Modern Heritage" },
+    { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "The Scottish Edge" }
+  ];
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Reveal>
+          <div className="mb-16">
+            <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">Aesthetic</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green leading-tight">The Art of <span className="italic">Boutique Living.</span></h2>
+          </div>
+        </Reveal>
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px] md:h-[800px]">
+          {images.map((img, i) => (
+            <Reveal key={i} className={img.size}>
+              <div className="group relative w-full h-full overflow-hidden">
+                <img 
+                  src={img.url} 
+                  alt={img.title} 
+                  className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-torridon-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  <span className="text-[10px] uppercase tracking-widest font-bold border-b border-white/40 pb-1">{img.title}</span>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Collaborations = () => {
+  return (
+    <section className="py-24 bg-torridon-cream border-y border-torridon-gold/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Reveal>
+          <div className="text-center mb-16">
+            <span className="text-torridon-gold uppercase tracking-[0.3em] text-[9px] font-bold mb-4 block">The Network</span>
+            <h3 className="text-2xl font-serif text-torridon-green">Working with Scotland’s <span className="italic">Finest.</span></h3>
+          </div>
+        </Reveal>
+        
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
+          {['Architects', 'Planners', 'Artisans', 'Engineers', 'Landscapers'].map((partner, i) => (
+            <Reveal key={i}>
+              <span className="text-xl md:text-2xl font-serif text-torridon-green tracking-tighter hover:text-torridon-gold transition-colors duration-300">
+                [ {partner} ]
+              </span>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const FAQs = () => {
+  const faqs = [
+    { q: "What is your typical development timeframe?", a: "From land acquisition to completion, our boutique projects typically span 18-24 months, ensuring rigorous attention to detail at every phase." },
+    { q: "How do you evaluate land opportunities?", a: "We conduct a comprehensive feasibility study including local market demand, planning constraints, and environmental impact to ensure a fair and profitable appraisal." },
+    { q: "What investment structures do you offer?", a: "We offer bespoke Joint Venture opportunities and fixed-return funding models, tailored to the specific requirements of our professional partners." },
+    { q: "Why focus exclusively on under 12 dwellings?", a: "This scale allows us to maintain 'The Torridon Standard'—a level of architectural integrity and finish that is lost in larger, mass-market developments." }
+  ];
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        <Reveal>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-serif text-torridon-green mb-6 italic">Common Enquiries.</h2>
+            <div className="w-12 h-[1px] bg-torridon-gold mx-auto" />
+          </div>
+        </Reveal>
+        
+        <div className="space-y-12">
+          {faqs.map((faq, i) => (
+            <Reveal key={i}>
+              <div className="group">
+                <h4 className="text-xl font-serif text-torridon-green mb-4 flex items-start gap-6">
+                  <span className="text-torridon-gold font-sans text-xs pt-1">0{i+1}</span>
+                  {faq.q}
+                </h4>
+                <p className="text-sm text-torridon-green/60 font-sans leading-relaxed pl-12 border-l border-torridon-gold/5 group-hover:border-torridon-gold transition-colors duration-500">
+                  {faq.a}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers } from 'lucide-react';
 
 const Reveal = ({ children }: { children: React.ReactNode }) => (
