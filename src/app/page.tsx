@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import SideNav from "@/components/SideNav";
 import { 
   LandAcquisition, 
   JointVentures, 
@@ -18,15 +19,18 @@ import {
   FAQs,
   InteractiveMap,
   Newsletter,
-  CraftsmanDetail
+  CraftsmanDetail,
+  SubtleStats,
+  IndustryTrust
 } from "@/components/Sections";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative selection:bg-torridon-gold selection:text-white">
       <Header />
+      <SideNav />
       <Hero />
       <Philosophy />
       <ImmersiveGallery />
@@ -37,6 +41,7 @@ export default function Home() {
       <RegionalExpertise />
       <InteractiveMap />
       <StrategicLocations />
+      <SubtleStats />
       <LandAcquisition />
       <LandJourney />
       <Director />
@@ -45,6 +50,7 @@ export default function Home() {
       <Insights />
       <Developments />
       <FAQs />
+      <IndustryTrust />
       <Newsletter />
       <Contact />
       <Footer />

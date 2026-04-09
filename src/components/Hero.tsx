@@ -6,10 +6,15 @@ import Magnetic from './Magnetic';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-torridon-green">
+    <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-torridon-green">
       {/* Background Image Placeholder / Overlay */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div 
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.4 }}
+          transition={{ duration: 4, ease: "easeOut", delay: 2.5 }}
+          className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" 
+        />
       </div>
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-torridon-green/60 via-transparent to-torridon-green/80" />
 
