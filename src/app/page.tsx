@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SideNav from "@/components/SideNav";
+import LivingBlueprint from "@/components/LivingBlueprint";
 import { 
   LandAcquisition, 
   JointVentures, 
@@ -21,7 +22,12 @@ import {
   Newsletter,
   CraftsmanDetail,
   SubtleStats,
-  IndustryTrust
+  IndustryTrust,
+  AtmosphericSeparator,
+  Trajectory,
+  VaultPreview,
+  LandMandate,
+  ProjectRoadmap
 } from "@/components/Sections";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -33,6 +39,7 @@ export default function Home() {
       <SideNav />
       <Hero />
       <Philosophy />
+      <LivingBlueprint />
       <ImmersiveGallery />
       <CraftsmanDetail />
       <AtmosphericSeparator />
