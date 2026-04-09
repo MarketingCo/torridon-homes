@@ -433,25 +433,120 @@ export const ImmersiveGallery = () => {
 };
 
 /* 
-  12. DEVELOPMENTS (HORIZONTAL SCROLL) 
+  12. DEVELOPMENTS (HORIZONTAL SCROLL + SPOTLIGHT MODAL) 
 */
 export const Developments = () => {
   const targetRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
-  const projects = [ { location: 'Overton, Edinburgh', name: 'The Capital View', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop', tag: 'Coming Soon' }, { location: 'Spott, Dunbar', name: 'Coastal Collection', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop', tag: 'Coming Soon' }, { location: 'Stirling District', name: 'Ochil Collection', img: 'https://images.unsplash.com/photo-1600607687940-4e2003e25d27?q=80&w=2070&auto=format&fit=crop', tag: 'In Planning' }, { location: 'West Lothian', name: 'Linlithgow Mews', img: 'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop', tag: 'Upcoming' } ];
+
+  const projects = [
+    { 
+      id: 1,
+      location: 'Overton, Edinburgh', 
+      name: 'The Capital View', 
+      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop', 
+      tag: 'Coming Soon',
+      overview: 'Overlooking the Edinburgh skyline, this development focuses on oversized glazing and expansive terraces.',
+      specs: ['Penthouse Level Available', 'Underground Secure Parking', 'Private Landscaped Gardens']
+    },
+    { 
+      id: 2,
+      location: 'Spott, Dunbar', 
+      name: 'Coastal Collection', 
+      img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop', 
+      tag: 'Coming Soon',
+      overview: 'Six detached villas designed with passive heating principles, overlooking the North Sea.',
+      specs: ['A-Rated Efficiency', 'Native Stone Cladding', 'EV Charging Standard']
+    },
+    { 
+      id: 3,
+      location: 'Stirling District', 
+      name: 'Ochil Collection', 
+      img: 'https://images.unsplash.com/photo-1600607687940-4e2003e25d27?q=80&w=2070&auto=format&fit=crop', 
+      tag: 'In Planning',
+      overview: 'Exclusive gated community in the shadow of the Ochil Hills.',
+      specs: ['Gated Entrance', 'Bespoke Designer Kitchens', 'Rural Scenic Views']
+    },
+    { 
+      id: 4,
+      location: 'West Lothian', 
+      name: 'Linlithgow Mews', 
+      img: 'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop', 
+      tag: 'Upcoming',
+      overview: 'Urban refinement meets historic Linlithgow. Four contemporary townhouses around a private courtyard.',
+      specs: ['Central Historic Location', 'Timber-Frame Precision', 'Discrete Mews Setting']
+    }
+  ];
+
   return (
     <section id="developments" ref={targetRef} className="relative h-[300vh] bg-torridon-green">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="absolute top-20 left-6 md:left-12 z-20"><span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Portfolio</span><h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">Future <br />Developments.</h2></div>
+        <div className="absolute top-20 left-6 md:left-12 z-20">
+          <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Portfolio</span>
+          <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">Future <br />Developments.</h2>
+        </div>
+        
         <motion.div style={{ x }} className="flex gap-12 pl-[30vw] md:pl-[40vw]">
           {projects.map((item, i) => (
-            <div key={i} className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl rounded-sm">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-80" style={{ backgroundImage: `url('${item.img}')` }} /><div className="absolute inset-0 bg-gradient-to-t from-torridon-green/80 via-transparent to-transparent opacity-60" /><div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white"><span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-sans mb-3 block">{item.location}</span><h3 className="text-3xl md:text-5xl font-serif mb-4 italic">{item.name}</h3><div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold opacity-0 group-hover:opacity-100 transition-all duration-500"><span>Explore Development</span><div className="w-12 h-[1px] bg-torridon-gold" /></div></div><div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-[10px] uppercase font-bold tracking-[0.2em]">{item.tag}</div>
+            <div 
+              key={i} 
+              onClick={() => setSelectedProject(item)}
+              className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl rounded-sm cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-80" style={{ backgroundImage: `url('${item.img}')` }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-torridon-green/80 via-transparent to-transparent opacity-60" />
+              
+              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
+                <span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-sans mb-3 block">{item.location}</span>
+                <h3 className="text-3xl md:text-5xl font-serif mb-4 italic">{item.name}</h3>
+                <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  <span>Explore Development</span>
+                  <div className="w-12 h-[1px] bg-torridon-gold" />
+                </div>
+              </div>
+              
+              <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-[10px] uppercase font-bold tracking-[0.2em]">
+                {item.tag}
+              </div>
             </div>
           ))}
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] bg-torridon-green/95 backdrop-blur-xl p-6 md:p-20 flex items-center justify-center"
+          >
+            <button onClick={() => setSelectedProject(null)} className="absolute top-10 right-10 text-white hover:text-torridon-gold transition-colors"><X size={40} /></button>
+            <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
+              <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="relative aspect-square overflow-hidden rounded-sm shadow-2xl">
+                <img src={selectedProject.img} className="w-full h-full object-cover" alt="Project" />
+              </motion.div>
+              <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="flex flex-col justify-center">
+                <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">{selectedProject.location}</span>
+                <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 italic">{selectedProject.name}</h2>
+                <p className="text-white/60 text-lg font-sans mb-12 leading-relaxed italic">{selectedProject.overview}</p>
+                <div className="space-y-6 mb-12">
+                  <h4 className="text-white text-xs uppercase tracking-widest font-bold pb-4 border-b border-white/10">Project Highlights</h4>
+                  <ul className="space-y-4">
+                    {selectedProject.specs.map((s: any, i: number) => (
+                      <li key={i} className="flex items-center gap-4 text-white/80 text-sm italic"><div className="w-1 h-1 bg-torridon-gold rounded-full" />{s}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-6">
+                  <button className="px-10 py-5 bg-torridon-gold text-torridon-green uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-all">Request Full Brochure</button>
+                  <button className="px-10 py-5 border border-white/20 text-white uppercase tracking-widest text-[10px] font-bold hover:bg-white hover:text-torridon-green transition-all">Investment Data</button>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
