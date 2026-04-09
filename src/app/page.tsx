@@ -17,7 +17,8 @@ import {
   Collaborations, 
   FAQs,
   InteractiveMap,
-  Newsletter
+  Newsletter,
+  CraftsmanDetail
 } from "@/components/Sections";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Philosophy />
       <ImmersiveGallery />
+      <CraftsmanDetail />
       <Specification />
       <Sustainability />
       <Collaborations />

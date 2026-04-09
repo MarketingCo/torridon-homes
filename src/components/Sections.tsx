@@ -515,9 +515,16 @@ export const ImmersiveGallery = () => {
 };
 
 /* 
-  12. DEVELOPMENTS (PORTFOLIO) 
+  12. DEVELOPMENTS (HORIZONTAL SCROLL UPGRADE) 
 */
 export const Developments = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+
   const projects = [
     { location: 'Overton, Edinburgh', name: 'The Capital View', units: '9 Luxury Apartments', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop', tag: 'Coming Soon' },
     { location: 'Spott, Dunbar', name: 'Coastal Collection', units: '6 Eco-Homes', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop', tag: 'Coming Soon' },
@@ -526,33 +533,65 @@ export const Developments = () => {
   ];
 
   return (
-    <section id="developments" className="py-32 bg-torridon-cream">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-right md:text-left">
-        <Reveal>
-          <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block font-bold">Portfolio</span>
-          <h2 className="text-4xl md:text-6xl font-serif text-torridon-green leading-tight italic">Future Developments.</h2>
-        </Reveal>
-        <Reveal><p className="text-torridon-green/60 text-lg font-sans max-w-xs leading-relaxed italic">Planning and development phase for exclusive sites across Central Scotland.</p></Reveal>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-        {projects.map((item, i) => (
-          <Reveal key={i}>
-            <div className="group relative overflow-hidden bg-torridon-green aspect-[16/10] rounded-sm shadow-2xl">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90" style={{ backgroundImage: `url('${item.img}')` }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-torridon-green via-torridon-green/20 to-transparent opacity-80" />
-              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+    <section ref={targetRef} className="relative h-[300vh] bg-torridon-green">
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className="absolute top-20 left-6 md:left-12 z-20">
+          <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block">Portfolio</span>
+          <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">Future <br />Developments.</h2>
+        </div>
+        
+        <motion.div style={{ x }} className="flex gap-12 pl-[30vw] md:pl-[40vw]">
+          {projects.map((item, i) => (
+            <div key={i} className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-80" style={{ backgroundImage: `url('${item.img}')` }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-torridon-green/80 via-transparent to-transparent opacity-60" />
+              
+              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
                 <span className="text-torridon-gold text-[10px] uppercase tracking-[0.3em] font-sans mb-3 block">{item.location}</span>
-                <h3 className="text-3xl md:text-4xl font-serif mb-3 italic">{item.name}</h3>
-                <div className="flex items-center gap-3 text-white/60 mb-8"><Home size={16} /><span className="text-[10px] uppercase tracking-widest">{item.units}</span></div>
+                <h3 className="text-3xl md:text-5xl font-serif mb-4 italic">{item.name}</h3>
                 <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <span>Register Interest</span>
-                  <div className="w-12 h-[1px] bg-torridon-gold origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  <span>Explore Development</span>
+                  <div className="w-12 h-[1px] bg-torridon-gold" />
                 </div>
               </div>
-              <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-[10px] uppercase font-bold tracking-[0.2em]">{item.tag}</div>
+              
+              <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-[10px] uppercase font-bold tracking-[0.2em]">
+                {item.tag}
+              </div>
             </div>
-          </Reveal>
-        ))}
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+/* 
+  19. CRAFTSMAN DETAIL (MACRO TEXTURE)
+*/
+export const CraftsmanDetail = () => {
+  const textures = [
+    { title: "Honest Stone", desc: "Sourced from Scottish quarries to ground our homes in the landscape.", img: "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?q=80&w=2068&auto=format&fit=crop" },
+    { title: "Oak & Grain", desc: "Hand-finished timber elements that age with grace and character.", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=2070&auto=format&fit=crop" },
+    { title: "Brushed Metal", desc: "Discrete luxury accents in brass and bronze for a timeless finish.", img: "https://images.unsplash.com/photo-1558442086-841974765140?q=80&w=2013&auto=format&fit=crop" }
+  ];
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {textures.map((t, i) => (
+            <Reveal key={i}>
+              <div className="group">
+                <div className="aspect-square overflow-hidden mb-8 rounded-full border border-torridon-gold/10 p-2 group-hover:border-torridon-gold transition-colors duration-700">
+                  <img src={t.img} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" alt={t.title} />
+                </div>
+                <h4 className="text-2xl font-serif text-torridon-green text-center mb-4 italic">{t.title}</h4>
+                <p className="text-center text-sm text-torridon-green/60 font-sans leading-relaxed max-w-xs mx-auto">{t.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
