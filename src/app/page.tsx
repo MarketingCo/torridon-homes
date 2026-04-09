@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SideNav from "@/components/SideNav";
+import BrandHUD from "@/components/BrandHUD";
 import LivingBlueprint from "@/components/LivingBlueprint";
 import { 
   LandAcquisition, 
@@ -37,6 +38,7 @@ export default function Home() {
     <main className="min-h-screen relative selection:bg-torridon-gold selection:text-white">
       <Header />
       <SideNav />
+      <BrandHUD />
       <Hero />
       <Philosophy />
       <LivingBlueprint />

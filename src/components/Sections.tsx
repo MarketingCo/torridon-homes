@@ -280,53 +280,96 @@ export const RegionalExpertise = () => {
 };
 
 /* 
-  04. INTERACTIVE MAP 
+  04. STRATEGIC HEATMAP 
 */
 export const InteractiveMap = () => {
   const locations = [
-    { name: "Edinburgh", x: "70%", y: "55%", status: "Active" },
-    { name: "Stirling", x: "40%", y: "35%", status: "Active" },
-    { name: "Dunbar", x: "90%", y: "60%", status: "Upcoming" },
-    { name: "Linlithgow", x: "55%", y: "45%", status: "Planning" }
+    { name: "Edinburgh", x: "70%", y: "55%", status: "Active", heat: "high" },
+    { name: "Stirling", x: "40%", y: "35%", status: "Active", heat: "med" },
+    { name: "Dunbar", x: "90%", y: "60%", status: "Upcoming", heat: "high" },
+    { name: "Linlithgow", x: "55%", y: "45%", status: "Planning", heat: "med" }
   ];
 
   return (
-    <section className="py-32 bg-white overflow-hidden border-b border-torridon-gold/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-32 bg-white overflow-hidden border-b border-torridon-gold/10 relative">
+      {/* Background Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold rounded-full blur-[150px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <Reveal>
-            <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">Strategic Focus</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 leading-tight italic">Dominating the Central Belt.</h2>
-            <p className="text-torridon-green/60 text-lg font-sans mb-10 leading-relaxed">
-              Our operations are geographically focused to ensure rapid response times, local supply chain integration, and deep knowledge of regional nuances.
+            <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">Strategic Footprint</span>
+            <h2 className="text-5xl md:text-7xl font-serif text-torridon-green mb-8 leading-[1.1] italic">The Central Belt <br />Heatmap.</h2>
+            <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic">
+              Our acquisition strategy is focused on high-yield "pockets" where demand for boutique dwellings far outstrips supply.
             </p>
-            <div className="space-y-6">
-              {['Edinburgh & Lothians', 'Greater Stirling', 'Coastal East Lothian'].map((area, i) => (
-                <div key={i} className="flex items-center gap-4 group">
-                  <div className="w-2 h-2 rounded-full bg-torridon-gold group-hover:scale-150 transition-transform duration-500" />
-                  <span className="text-torridon-green font-serif text-xl">{area}</span>
+            <div className="space-y-8">
+              {[
+                { area: 'Lothian Urban Infill', priority: 'High Priority' },
+                { area: 'Stirling Greenbelt Borders', priority: 'Active' },
+                { area: 'East Lothian Coastal Fringe', priority: 'High Priority' }
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col border-l border-torridon-gold/20 pl-6 group">
+                  <span className="text-[8px] uppercase tracking-[0.4em] text-torridon-gold font-bold mb-1">{item.priority}</span>
+                  <span className="text-torridon-green font-serif text-2xl italic group-hover:translate-x-2 transition-transform duration-500">{item.area}</span>
                 </div>
               ))}
             </div>
           </Reveal>
 
-          <div className="relative h-[400px] md:h-[600px] bg-torridon-cream/50 rounded-sm overflow-hidden border border-torridon-gold/10 p-12">
-            <svg viewBox="0 0 800 600" className="w-full h-full opacity-20">
-              <path d="M100,200 Q200,100 400,150 T700,100" fill="none" stroke="#c5a059" strokeWidth="2" />
-              <path d="M150,300 Q300,200 500,250 T750,200" fill="none" stroke="#c5a059" strokeWidth="1" />
+          <div className="relative h-[500px] md:h-[700px] bg-torridon-cream/30 rounded-sm overflow-hidden border border-torridon-gold/10 p-12 group cursor-none">
+            {/* SVG Map Base */}
+            <svg viewBox="0 0 800 600" className="w-full h-full opacity-30">
+              <path d="M100,200 Q200,100 400,150 T700,100" fill="none" stroke="#c5a059" strokeWidth="1" strokeDasharray="4 4" />
+              <path d="M150,300 Q300,200 500,250 T750,200" fill="none" stroke="#c5a059" strokeWidth="0.5" />
+              
+              {/* Heat Zones */}
+              <circle cx="560" cy="330" r="100" fill="url(#heatGrad)" opacity="0.4" className="animate-pulse" />
+              <circle cx="320" cy="210" r="80" fill="url(#heatGrad)" opacity="0.3" />
+              
+              <defs>
+                <radialGradient id="heatGrad">
+                  <stop offset="0%" stopColor="#c5a059" />
+                  <stop offset="100%" stopColor="#c5a059" stopOpacity="0" />
+                </radialGradient>
+              </defs>
             </svg>
+            
+            {/* Interactive Nodes */}
             <div className="absolute inset-0">
               {locations.map((loc, i) => (
-                <motion.div key={i} initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.2, duration: 0.8 }} className="absolute cursor-pointer group" style={{ left: loc.x, top: loc.y }}>
-                  <div className="relative">
-                    <div className="w-4 h-4 bg-torridon-green rounded-full shadow-lg group-hover:scale-150 transition-transform duration-300" />
-                    <div className="absolute top-0 left-0 w-4 h-4 bg-torridon-gold rounded-full animate-ping opacity-75" />
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 bg-torridon-green text-white text-[10px] uppercase tracking-widest px-3 py-2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      {loc.name} — <span className="text-torridon-gold">{loc.status}</span>
+                <motion.div 
+                  key={i}
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.2 + 1, duration: 0.8 }}
+                  className="absolute"
+                  style={{ left: loc.x, top: loc.y }}
+                >
+                  <div className="relative group">
+                    <div className={`w-3 h-3 rounded-full shadow-2xl transition-all duration-500 ${loc.heat === 'high' ? 'bg-torridon-gold scale-125' : 'bg-torridon-green'}`} />
+                    <div className="absolute inset-0 w-3 h-3 bg-torridon-gold rounded-full animate-ping opacity-40" />
+                    
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 bg-torridon-green p-4 shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none min-w-[180px]">
+                      <div className="text-torridon-gold text-[8px] font-bold uppercase tracking-[0.3em] mb-1">{loc.status} Site</div>
+                      <div className="text-white font-serif text-lg italic mb-2">{loc.name}</div>
+                      <div className="w-8 h-[1px] bg-torridon-gold/30" />
                     </div>
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Map UI Legend */}
+            <div className="absolute bottom-8 right-8 text-right">
+              <div className="flex items-center gap-3 justify-end mb-2">
+                <span className="text-[8px] uppercase tracking-widest text-torridon-green/40 font-bold">Priority Zones</span>
+                <div className="w-2 h-2 rounded-full bg-torridon-gold shadow-[0_0_10px_#c5a059]" />
+              </div>
+              <div className="w-24 h-[1px] bg-torridon-gold/20 ml-auto" />
             </div>
           </div>
         </div>
