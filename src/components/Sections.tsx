@@ -95,19 +95,81 @@ export const ProjectRoadmap = () => {
 };
 
 /* 
-  REUSABLE ANIMATION COMPONENT 
+  REUSABLE CINEMATIC HEADING
 */
-const Reveal = ({ children, className }: { children: React.ReactNode, className?: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-    className={className}
-  >
-    {children}
-  </motion.div>
-);
+const CinematicHeading = ({ title, subtitle, align = 'center' }: { title: string, subtitle?: string, align?: 'center' | 'left' | 'right' }) => {
+  const words = title.split(" ");
+  return (
+    <div className={`mb-20 ${align === 'center' ? 'text-center' : align === 'right' ? 'text-right' : 'text-left'}`}>
+      {subtitle && (
+        <motion.span 
+          initial={{ opacity: 0, letterSpacing: '0.2em' }}
+          whileInView={{ opacity: 1, letterSpacing: '0.4em' }}
+          transition={{ duration: 1 }}
+          className="text-torridon-gold uppercase text-[10px] font-bold mb-6 block"
+        >
+          {subtitle}
+        </motion.span>
+      )}
+      <h2 className="text-5xl md:text-7xl font-serif text-torridon-green leading-[1.1] italic">
+        {words.map((word, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
+            className="inline-block mr-[0.2em]"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </h2>
+      <motion.div 
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+        className={`h-[1px] bg-torridon-gold mt-8 w-24 ${align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''}`}
+      />
+    </div>
+  );
+};
+
+/* 
+  28. TACTILE DNA (MATERIAL LIBRARY)
+*/
+export const TactileDNA = () => {
+  const materials = [
+    { name: "Highland Whinstone", origin: "Aberdeenshire", desc: "Hand-cut volcanic rock, chosen for its weather-resilience and deep, earthy tones.", img: "https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?q=80&w=2068&auto=format&fit=crop" },
+    { name: "Reclaimed Slate", origin: "Ballachulish", desc: "Traditional Scottish roofing slate, providing a lifetime of character and protection.", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=2070&auto=format&fit=crop" },
+    { name: "Brushed Brass", origin: "Artisan Finished", desc: "High-specification internal hardware that develops a unique patina over time.", img: "https://images.unsplash.com/photo-1558442086-841974765140?q=80&w=2013&auto=format&fit=crop" }
+  ];
+
+  return (
+    <section className="py-40 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <CinematicHeading title="The Tactile DNA." subtitle="Materiality" />
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {materials.map((m, i) => (
+            <Reveal key={i}>
+              <div className="group cursor-none">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 bg-torridon-green">
+                  <img src={m.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 opacity-80 group-hover:opacity-100" alt={m.name} />
+                  <div className="absolute inset-0 border-[20px] border-white/0 group-hover:border-white/5 transition-all duration-700" />
+                </div>
+                <div className="flex justify-between items-end mb-4">
+                  <h4 className="text-2xl font-serif text-torridon-green italic">{m.name}</h4>
+                  <span className="text-[8px] uppercase tracking-widest text-torridon-gold font-bold">{m.origin}</span>
+                </div>
+                <p className="text-sm text-torridon-green/60 font-sans leading-relaxed italic">{m.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /* 
   01. PHILOSOPHY 

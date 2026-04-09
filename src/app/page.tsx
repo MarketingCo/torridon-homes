@@ -41,6 +41,7 @@ export default function Home() {
       <BrandHUD />
       <Hero />
       <Philosophy />
+      <TactileDNA />
       <LivingBlueprint />
       <ImmersiveGallery />
       <CraftsmanDetail />
