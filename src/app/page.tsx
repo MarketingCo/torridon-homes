@@ -35,7 +35,9 @@ export default function Home() {
       <Philosophy />
       <ImmersiveGallery />
       <CraftsmanDetail />
+      <AtmosphericSeparator />
       <Specification />
+      <Trajectory />
       <Sustainability />
       <Collaborations />
       <RegionalExpertise />

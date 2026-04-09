@@ -676,8 +676,106 @@ import { useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 
 /* 
-  21. INDUSTRY TRUST 
+  22. TRAJECTORY (TIMELINE)
 */
-export const IndustryTrust = () => (
-  <section className="py-24 bg-white border-b border-torridon-gold/10"><div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16"><span className="text-torridon-gold uppercase tracking-[0.3em] text-[9px] font-bold">Accreditation & Network</span></div><div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale contrast-150">{['RIAS', 'NHBC', 'HFS', 'RTPI', 'RICS'].map((logo, i) => <Reveal key={i}><span className="text-2xl md:text-3xl font-serif tracking-tighter text-torridon-green">{logo}</span></Reveal>)}</div></section>
-);
+export const Trajectory = () => {
+  const events = [
+    { year: "2022", title: "The Vision", desc: "Torridon Homes founded with a commitment to architectural integrity over volume." },
+    { year: "2023", title: "Strategic Acquisition", desc: "Securing prime urban infill sites across the Lothians and Forth Valley." },
+    { year: "2024", title: "The Boutique Model", desc: "Formalizing the <12 dwelling specialization to ensure unmatched quality control." },
+    { year: "2025", title: "Current Expansion", desc: "Launching The Capital View and Coastal Collection to the Scottish market." },
+    { year: "2030", title: "The Vision 2030", desc: "Setting the definitive standard for boutique, sustainable living in Scotland." }
+  ];
+
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+    <section id="trajectory" ref={containerRef} className="py-40 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-32">
+          <Reveal>
+            <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">The Legacy</span>
+            <h2 className="text-5xl md:text-7xl font-serif text-torridon-green italic">Trajectory of <br />Excellence.</h2>
+          </Reveal>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Central Line */}
+          <div className="absolute left-0 md:left-1/2 top-0 w-[1px] h-full bg-torridon-gold/10 -translate-x-1/2 hidden md:block" />
+          <motion.div 
+            style={{ scaleY, originY: 0 }}
+            className="absolute left-0 md:left-1/2 top-0 w-[1px] h-full bg-torridon-gold -translate-x-1/2 hidden md:block"
+          />
+
+          <div className="space-y-32">
+            {events.map((e, i) => (
+              <Reveal key={i} className={`relative flex flex-col md:flex-row items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                {/* Desktop Year Marker */}
+                <div className="absolute left-0 md:left-1/2 top-0 -translate-x-1/2 w-4 h-4 bg-white border-2 border-torridon-gold rounded-full z-10 hidden md:block" />
+                
+                <div className="w-full md:w-1/2 px-0 md:px-20 text-left md:text-right">
+                  <div className={`md:text-right ${i % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                    <span className="text-4xl md:text-6xl font-serif text-torridon-gold/20 mb-4 block italic">{e.year}</span>
+                    <h4 className="text-2xl font-serif text-torridon-green mb-4 italic">{e.title}</h4>
+                    <p className="text-sm text-torridon-green/60 font-sans leading-relaxed max-w-sm ml-0 md:ml-auto mr-0 md:mr-auto">
+                      {e.desc}
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2" />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* 
+  23. ATMOSPHERIC SEPARATOR (SCOTTISH MIST)
+*/
+export const AtmosphericSeparator = () => {
+  return (
+    <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-torridon-green">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop" 
+          className="w-full h-full object-cover grayscale opacity-40 scale-110" 
+          alt="Atmospheric Scotland"
+        />
+      </div>
+      
+      {/* Moving Mist Overlay */}
+      <motion.div 
+        animate={{ 
+          x: [-100, 100],
+          opacity: [0.2, 0.4, 0.2]
+        }}
+        transition={{ 
+          duration: 20, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+        className="absolute inset-0 z-10 bg-[url('https://www.transparenttextures.com/patterns/fog.png')] opacity-20 pointer-events-none"
+      />
+
+      <div className="absolute inset-0 flex items-center justify-center z-20">
+        <Reveal>
+          <div className="text-center px-6">
+            <h2 className="text-white text-4xl md:text-6xl font-serif italic mb-8 drop-shadow-2xl">
+              Rooted in the <span className="text-torridon-gold">landscape.</span>
+            </h2>
+            <div className="w-24 h-[1px] bg-torridon-gold mx-auto" />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
