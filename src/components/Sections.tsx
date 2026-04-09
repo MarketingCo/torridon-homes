@@ -183,6 +183,117 @@ export const RegionalExpertise = () => {
   );
 };
 
+export const Sustainability = () => {
+  return (
+    <section className="py-32 bg-torridon-cream relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="text-center mb-20">
+          <Reveal>
+            <span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">The Future of Living</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 italic">The Green Standard.</h2>
+            <p className="text-torridon-green/60 max-w-2xl mx-auto font-sans text-lg">
+              We believe luxury and sustainability are not mutually exclusive. Our "Fabric First" approach ensures every home is as efficient as it is elegant.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { 
+              title: "Passive-Inspired Design", 
+              desc: "Optimizing natural light and thermal mass to reduce energy reliance year-round.",
+              icon: <Trees className="mb-6 text-torridon-gold" size={32} />
+            },
+            { 
+              title: "Renewable Energy", 
+              desc: "Integrated air-source heat pumps and solar arrays as a standard specification.",
+              icon: <TrendingUp className="mb-6 text-torridon-gold" size={32} />
+            },
+            { 
+              title: "Local Sourcing", 
+              desc: "Prioritizing Scottish materials to reduce carbon miles and support local industry.",
+              icon: <MapPin className="mb-6 text-torridon-gold" size={32} />
+            }
+          ].map((item, i) => (
+            <Reveal key={i}>
+              <div className="p-10 bg-white shadow-xl shadow-torridon-green/5 border-t-2 border-transparent hover:border-torridon-gold transition-all duration-500 group">
+                {item.icon}
+                <h4 className="text-xl font-serif text-torridon-green mb-4">{item.title}</h4>
+                <p className="text-sm text-torridon-green/60 leading-relaxed font-sans">{item.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const Insights = () => {
+  const posts = [
+    {
+      date: "Spring 2026",
+      title: "The Rise of Boutique Living in the Central Belt",
+      category: "Market Report",
+      img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=2074&auto=format&fit=crop"
+    },
+    {
+      date: "Winter 2025",
+      title: "Sustainable Architecture: More Than Just a Trend",
+      category: "Innovation",
+      img: "https://images.unsplash.com/photo-1518005020251-58296d8e87d4?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      date: "Autumn 2025",
+      title: "Unlocking Land Value: A Guide for Scottish Landowners",
+      category: "Land Strategy",
+      img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932&auto=format&fit=crop"
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <Reveal>
+            <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">Journal</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green leading-tight">Torridon <span className="italic">Insights.</span></h2>
+          </Reveal>
+          <Reveal>
+            <button className="text-torridon-gold uppercase tracking-[0.2em] text-[10px] font-bold pb-2 border-b border-torridon-gold/30 hover:border-torridon-gold transition-colors">
+              View All Articles
+            </button>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {posts.map((post, i) => (
+            <Reveal key={i}>
+              <div className="group cursor-none">
+                <div className="aspect-[16/11] overflow-hidden mb-6 relative">
+                  <img 
+                    src={post.img} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[9px] uppercase tracking-widest font-bold text-torridon-green">
+                    {post.category}
+                  </div>
+                </div>
+                <div className="text-[10px] uppercase tracking-widest text-torridon-gold font-sans mb-2">{post.date}</div>
+                <h4 className="text-xl font-serif text-torridon-green group-hover:text-torridon-gold transition-colors duration-300 leading-tight">
+                  {post.title}
+                </h4>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers } from 'lucide-react';
 
 const Reveal = ({ children }: { children: React.ReactNode }) => (
