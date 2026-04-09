@@ -43,6 +43,7 @@ export default function Home() {
       <RegionalExpertise />
       <InteractiveMap />
       <StrategicLocations />
+      <ProjectRoadmap />
       <SubtleStats />
       <LandAcquisition />
       <LandJourney />

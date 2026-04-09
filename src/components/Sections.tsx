@@ -1,8 +1,98 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send, X } from 'lucide-react';
+
+/* 
+  25. BLUEPRINT X-RAY COMPONENT
+*/
+export const BlueprintImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
+  return (
+    <div className={`relative group overflow-hidden bg-torridon-green ${className}`}>
+      {/* Base Photo */}
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:opacity-20 group-hover:blur-[2px]" 
+      />
+      
+      {/* Blueprint Grid & Technical Drawing Overlay */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none p-8 md:p-12 flex items-center justify-center">
+        <svg viewBox="0 0 200 200" className="w-full h-full text-torridon-gold opacity-40">
+          <path d="M0,0 L200,0 L200,200 L0,200 Z" fill="none" stroke="currentColor" strokeWidth="0.2" strokeDasharray="2 2" />
+          <path d="M0,50 L200,50 M0,100 L200,100 M0,150 L200,150" fill="none" stroke="currentColor" strokeWidth="0.1" />
+          <path d="M50,0 L50,200 M100,0 L100,200 M150,0 L150,200" fill="none" stroke="currentColor" strokeWidth="0.1" />
+          <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="0.3" strokeDasharray="4 4" />
+          <path d="M40,40 L160,160 M160,40 L40,160" fill="none" stroke="currentColor" strokeWidth="0.2" />
+        </svg>
+        <div className="absolute top-12 left-12 border-l border-torridon-gold pl-4 text-left">
+          <div className="text-torridon-gold text-[8px] font-bold uppercase tracking-[0.4em]">Section Detail // AA-01</div>
+          <div className="text-white/40 text-[6px] uppercase tracking-widest mt-1">Scale 1:50 @ A1</div>
+        </div>
+        <div className="absolute bottom-12 right-12 text-right">
+          <div className="text-torridon-gold text-[8px] font-bold uppercase tracking-[0.4em]">Torridon Standard</div>
+          <div className="text-white/40 text-[6px] uppercase tracking-widest mt-1">Precision Engineered</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* 
+  26. PROJECT ROADMAP (DUNBAR & EDINBURGH FOCUS)
+*/
+export const ProjectRoadmap = () => {
+  const roadmaps = [
+    {
+      site: "Spott, Dunbar",
+      phases: [
+        { title: "Acquisition", date: "Q1 2024", status: "Complete" },
+        { title: "Planning Permission", date: "Q3 2024", status: "Complete" },
+        { title: "Groundworks", date: "Q1 2025", status: "In Progress" },
+        { title: "First Release", date: "Q3 2025", status: "Upcoming" }
+      ]
+    },
+    {
+      site: "Overton, Edinburgh",
+      phases: [
+        { title: "Strategic Site Secure", date: "Q2 2024", status: "Complete" },
+        { title: "Architectural Design", date: "Q4 2024", status: "Complete" },
+        { title: "Pre-Planning", date: "Q1 2025", status: "Active" },
+        { title: "Sales Launch", date: "Q4 2025", status: "Upcoming" }
+      ]
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-torridon-cream border-y border-torridon-gold/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+          {roadmaps.map((road, i) => (
+            <Reveal key={i}>
+              <div className="bg-white p-10 md:p-16 shadow-2xl rounded-sm">
+                <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 block italic">Development Stream</span>
+                <h3 className="text-3xl md:text-4xl font-serif text-torridon-green mb-12 italic">{road.site}</h3>
+                <div className="space-y-10">
+                  {road.phases.map((phase, pi) => (
+                    <div key={pi} className="relative pl-10 border-l border-torridon-gold/20">
+                      <div className={`absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full ${phase.status === 'Complete' ? 'bg-torridon-gold' : 'bg-torridon-green animate-pulse'}`} />
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="text-lg font-serif text-torridon-green italic leading-none">{phase.title}</h4>
+                        <span className="text-[10px] uppercase tracking-widest font-bold text-torridon-gold">{phase.status}</span>
+                      </div>
+                      <p className="text-xs text-torridon-green/40 font-sans tracking-widest uppercase">{phase.date}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /* 
   REUSABLE ANIMATION COMPONENT 
