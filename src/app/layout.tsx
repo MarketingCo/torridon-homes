@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
+import { motion } from "framer-motion";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,10 +30,24 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-torridon-cream relative">
+      <body className="min-h-full flex flex-col bg-torridon-cream relative overflow-x-hidden">
         {/* Global Architectural Grid */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05910_1px,transparent_1px),linear-gradient(to_bottom,#c5a05910_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        </div>
+
+        {/* Atmospheric Light Leak */}
+        <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden opacity-30">
+          <motion.div 
+            animate={{ 
+              x: ['-20%', '20%', '-20%'],
+              y: ['-10%', '10%', '-10%'],
+              scale: [1, 1.1, 1],
+              opacity: [0.3, 0.5, 0.3]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-radial from-torridon-gold/20 via-transparent to-transparent blur-[120px]"
+          />
         </div>
         
         <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" aria-hidden="true" />
