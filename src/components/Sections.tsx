@@ -1,7 +1,84 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Users, Home, TrendingUp, Shield, Trees } from 'lucide-react';
+export const Specification = () => {
+  const specs = [
+    { title: "Architectural Integrity", desc: "Designed by award-winning Scottish practices to blend heritage with modernism.", icon: <Trees size={20} /> },
+    { title: "Sustainable Innovation", desc: "Air-source heat pumps and solar integration as standard in every home.", icon: <TrendingUp size={20} /> },
+    { title: "Bespoke Joinery", desc: "Hand-finished timber elements crafted by local master artisans.", icon: <Layers size={20} /> },
+    { title: "Smart Integration", desc: "Discrete, future-proofed home automation for seamless living.", icon: <Shield size={20} /> }
+  ];
+
+  return (
+    <section className="py-32 bg-torridon-cream border-y border-torridon-gold/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Reveal>
+          <div className="flex flex-col items-center text-center mb-20">
+            <span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">The Standard</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-6">A Curated <span className="italic">Specification.</span></h2>
+            <p className="text-torridon-green/60 max-w-xl font-sans">Excellence is not an option; it is our foundation. We source the finest materials to ensure every Torridon home stands the test of time.</p>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {specs.map((spec, i) => (
+            <Reveal key={i}>
+              <div className="group text-center">
+                <div className="w-16 h-16 mx-auto mb-8 border border-torridon-gold/20 flex items-center justify-center text-torridon-gold group-hover:bg-torridon-green group-hover:text-white transition-all duration-500 transform group-hover:rotate-[360deg]">
+                  {spec.icon}
+                </div>
+                <h4 className="text-xl font-serif text-torridon-green mb-4">{spec.title}</h4>
+                <p className="text-sm text-torridon-green/60 leading-relaxed font-sans">{spec.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const LandJourney = () => {
+  const steps = [
+    { step: "01", title: "Confidential Appraisal", desc: "We conduct a discrete, no-obligation assessment of your land's development potential." },
+    { step: "02", title: "Strategic Planning", desc: "Our expert team navigates the complexities of local planning to maximize site value." },
+    { step: "03", title: "Seamless Acquisition", desc: "Transparent terms and efficient legal processes to ensure a smooth transition of ownership." }
+  ];
+
+  return (
+    <section className="py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
+          <div className="lg:col-span-1">
+            <Reveal>
+              <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block">The Process</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 leading-tight">Your Land’s <br /><span className="italic">Next Chapter.</span></h2>
+              <p className="text-torridon-green/60 font-sans mb-10">We believe in partnerships built on transparency. Our process is designed to protect your interests while unlocking incredible value.</p>
+              <a href="#contact" className="text-torridon-gold uppercase tracking-[0.2em] text-[10px] font-bold flex items-center gap-4 group">
+                Download Landowner Guide 
+                <div className="w-8 h-[1px] bg-torridon-gold group-hover:w-16 transition-all duration-500" />
+              </a>
+            </Reveal>
+          </div>
+          
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-12">
+            {steps.map((item, i) => (
+              <Reveal key={i}>
+                <div className="relative pt-12">
+                  <span className="absolute top-0 left-0 text-6xl font-serif text-torridon-gold/10">{item.step}</span>
+                  <h4 className="text-xl font-serif text-torridon-green mb-4 relative z-10">{item.title}</h4>
+                  <p className="text-sm text-torridon-green/60 leading-relaxed font-sans">{item.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers } from 'lucide-react';
 
 const Reveal = ({ children }: { children: React.ReactNode }) => (
   <motion.div
