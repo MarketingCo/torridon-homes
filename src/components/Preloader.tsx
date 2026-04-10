@@ -22,7 +22,7 @@ const Preloader = () => {
           initial={{ opacity: 1 }}
           exit={{ 
             y: '-100%',
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
+            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.2 }
           }}
           className="fixed inset-0 z-[10000] bg-torridon-green flex items-center justify-center flex-col"
         >
@@ -34,7 +34,7 @@ const Preloader = () => {
                 animate={{ y: 0 }}
                 transition={{ 
                   duration: 0.8, 
-                  ease: [0.33, 1, 0.68, 1], 
+                  ease: [0.33, 1, 0.68, 1] as [number, number, number, number], 
                   delay: i * 0.05 
                 }}
                 className="text-white text-5xl md:text-7xl font-serif tracking-tighter"

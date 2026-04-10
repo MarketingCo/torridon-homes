@@ -27,27 +27,26 @@ const Header = () => {
 
   const menuVariants = {
     initial: { x: '100%' },
-    animate: { 
-      x: 0, 
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+    animate: {
+      x: 0,
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }
     },
-    exit: { 
-      x: '100%', 
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+    exit: {
+      x: '100%',
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }
     }
   };
-
   const linkVariants = {
     initial: { x: 80, opacity: 0 },
     animate: (i: number) => ({
       x: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.5 + (i * 0.1) }
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.5 + (i * 0.1) }
     }),
     exit: (i: number) => ({
       x: 80,
       opacity: 0,
-      transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1], delay: i * 0.05 }
+      transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: i * 0.05 }
     })
   };
 

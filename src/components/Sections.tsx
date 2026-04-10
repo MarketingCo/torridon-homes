@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send, X } from 'lucide-react';
+import Link from 'next/link';
+import { Reveal } from './Reveal';
 
 /* 
   25. BLUEPRINT X-RAY COMPONENT
@@ -117,7 +119,7 @@ const CinematicHeading = ({ title, subtitle, align = 'center' }: { title: string
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] as [number, number, number, number] }}
             className="inline-block mr-[0.2em]"
           >
             {word}
@@ -460,7 +462,7 @@ export const LandAcquisition = () => {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0 w-12 h-12 bg-torridon-green text-torridon-gold flex items-center justify-center"><Home size={24} /></div>
-              <div><h4 className="font-serif text-torridon-green text-lg italic">Boutique Scale</h4><p className="text-xs text-torridon-green/60">Maximum value from <12 dwelling sites.</p></div>
+              <div><h4 className="font-serif text-torridon-green text-lg italic">Boutique Scale</h4><p className="text-xs text-torridon-green/60">Maximum value from &lt;12 dwelling sites.</p></div>
             </div>
           </div>
           <a href="#contact" className="inline-block px-12 py-6 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
@@ -883,13 +885,9 @@ const Counter = ({ value }: { value: number }) => {
   return <span ref={nodeRef}>{count}</span>;
 };
 
-import { useState, useEffect } from 'react';
-import { useInView } from 'framer-motion';
-
-/* 
+/*
   22. TRAJECTORY (TIMELINE)
-*/
-export const Trajectory = () => {
+*/export const Trajectory = () => {
   const events = [
     { year: "2022", title: "The Vision", desc: "Torridon Homes founded with a commitment to architectural integrity over volume." },
     { year: "2023", title: "Strategic Acquisition", desc: "Securing prime urban infill sites across the Lothians and Forth Valley." },

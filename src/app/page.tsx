@@ -23,7 +23,6 @@ import {
   Newsletter,
   CraftsmanDetail,
   SubtleStats,
-  IndustryTrust,
   AtmosphericSeparator,
   Trajectory,
   VaultPreview,
@@ -66,7 +65,6 @@ export default function Home() {
       <Insights />
       <Developments />
       <FAQs />
-      <IndustryTrust />
       <Newsletter />
       <Contact />
       <Footer />

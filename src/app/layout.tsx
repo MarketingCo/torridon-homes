@@ -18,6 +18,19 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Torridon Homes | Boutique Housing Developers Scotland",
   description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings. Seeking land acquisition and joint venture opportunities.",
+  openGraph: {
+    title: "Torridon Homes | Boutique Housing Developers Scotland",
+    description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings.",
+    url: "https://torridon-homes.com",
+    siteName: "Torridon Homes",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Torridon Homes | Boutique Housing Developers Scotland",
+    description: "Boutique housing developer based in the Central Belt of Scotland.",
+  },
 };
 
 export default function RootLayout({
@@ -25,11 +38,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Torridon Homes",
+    "description": "Boutique housing developer based in the Central Belt of Scotland.",
+    "url": "https://torridon-homes.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Edinburgh",
+      "addressRegion": "Scotland",
+      "addressCountry": "GB"
+    }
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-torridon-cream relative overflow-x-hidden">
         {/* Global Architectural Grid */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
