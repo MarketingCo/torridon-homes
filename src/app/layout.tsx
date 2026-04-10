@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
-import { motion } from "framer-motion";
+import AtmosphericBackground from "@/components/AtmosphericBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,18 +37,7 @@ export default function RootLayout({
         </div>
 
         {/* Atmospheric Light Leak */}
-        <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden opacity-30">
-          <motion.div 
-            animate={{ 
-              x: ['-20%', '20%', '-20%'],
-              y: ['-10%', '10%', '-10%'],
-              scale: [1, 1.1, 1],
-              opacity: [0.3, 0.5, 0.3]
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-radial from-torridon-gold/20 via-transparent to-transparent blur-[120px]"
-          />
-        </div>
+        <AtmosphericBackground />
         
         <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" aria-hidden="true" />
         <Preloader />
