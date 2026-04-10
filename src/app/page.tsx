@@ -28,7 +28,8 @@ import {
   Trajectory,
   VaultPreview,
   LandMandate,
-  ProjectRoadmap
+  ProjectRoadmap,
+  TactileDNA
 } from "@/components/Sections";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
