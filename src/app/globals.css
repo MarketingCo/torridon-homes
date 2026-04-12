@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfcf8; /* Warm Cream */
-  --foreground: #1a2e26; /* Deep Forest Green */
-  --accent: #c5a059;    /* Brushed Gold */
+  --background: #f8fafc; /* Slate 50 */
+  --foreground: #1e293b; /* Slate 800 - Deep Slate Blue */
+  --accent: #cbd5e1;    /* Slate 300 - Silver */
+  --slate-gray: #64748b; /* Slate 500 - Slate Gray */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --color-torridon-green: #1a2e26;
-  --color-torridon-cream: #fdfcf8;
-  --color-torridon-gold: #c5a059;
+  --color-torridon-blue: #334155;
+  --color-torridon-gray: #64748b;
+  --color-torridon-silver: #cbd5e1;
+  
+  /* Mapping for legacy names to new theme */
+  --color-torridon-green: #1e293b; /* Slate Blue */
+  --color-torridon-cream: #f8fafc; /* Slate Gray (Light) */
+  --color-torridon-gold: #cbd5e1;  /* Silver */
   
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -31,5 +37,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .premium-gradient {
-  background: linear-gradient(135deg, var(--torridon-green) 0%, #2c4a3d 100%);
+  background: linear-gradient(135deg, var(--torridon-green) 0%, #334155 100%);
 }

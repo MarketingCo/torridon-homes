@@ -133,7 +133,7 @@ const Header = () => {
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05908_1px,transparent_1px),linear-gradient(to_bottom,#c5a05908_1px,transparent_1px)] bg-[size:60px_60px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e108_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e108_1px,transparent_1px)] bg-[size:60px_60px]" />
 
             <div className="relative z-10 space-y-12">
               <span className="text-torridon-gold uppercase tracking-[0.6em] text-[10px] font-bold block mb-12">Navigation</span>

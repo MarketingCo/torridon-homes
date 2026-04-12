@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send, X } from 'lucide-react';
+import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send, X, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { Reveal } from './Reveal';
 
@@ -386,8 +386,8 @@ export const InteractiveMap = () => {
           <div className="relative h-[500px] md:h-[700px] bg-torridon-cream/30 rounded-sm overflow-hidden border border-torridon-gold/10 p-12 group cursor-none">
             {/* SVG Map Base */}
             <svg viewBox="0 0 800 600" className="w-full h-full opacity-30">
-              <path d="M100,200 Q200,100 400,150 T700,100" fill="none" stroke="#c5a059" strokeWidth="1" strokeDasharray="4 4" />
-              <path d="M150,300 Q300,200 500,250 T750,200" fill="none" stroke="#c5a059" strokeWidth="0.5" />
+              <path d="M100,200 Q200,100 400,150 T700,100" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="4 4" />
+              <path d="M150,300 Q300,200 500,250 T750,200" fill="none" stroke="#cbd5e1" strokeWidth="0.5" />
               
               {/* Heat Zones */}
               <circle cx="560" cy="330" r="100" fill="url(#heatGrad)" opacity="0.4" className="animate-pulse" />
@@ -395,8 +395,8 @@ export const InteractiveMap = () => {
               
               <defs>
                 <radialGradient id="heatGrad">
-                  <stop offset="0%" stopColor="#c5a059" />
-                  <stop offset="100%" stopColor="#c5a059" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#cbd5e1" />
+                  <stop offset="100%" stopColor="#cbd5e1" stopOpacity="0" />
                 </radialGradient>
               </defs>
             </svg>
@@ -431,7 +431,7 @@ export const InteractiveMap = () => {
             <div className="absolute bottom-8 right-8 text-right">
               <div className="flex items-center gap-3 justify-end mb-2">
                 <span className="text-[8px] uppercase tracking-widest text-torridon-green/40 font-bold">Priority Zones</span>
-                <div className="w-2 h-2 rounded-full bg-torridon-gold shadow-[0_0_10px_#c5a059]" />
+                <div className="w-2 h-2 rounded-full bg-torridon-gold shadow-[0_0_10px_#cbd5e1]" />
               </div>
               <div className="w-24 h-[1px] bg-torridon-gold/20 ml-auto" />
             </div>
@@ -789,9 +789,67 @@ export const FAQs = () => {
 /* 
   15. NEWSLETTER 
 */
-export const Newsletter = () => (
-  <section className="py-32 bg-white text-center relative overflow-hidden"><div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" /><Reveal><span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Stay Connected</span><h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 italic">The Torridon Journal.</h2><p className="text-torridon-green/60 font-sans mb-12 max-w-lg mx-auto text-sm px-6">Receive curated property insights and exclusive partnership opportunities.</p><div className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto"><input type="email" placeholder="Email Address" className="px-8 py-6 bg-torridon-cream border-none text-torridon-green outline-none focus:ring-1 ring-torridon-gold/30 font-sans text-sm w-full sm:flex-1" /><button className="px-12 py-6 bg-torridon-green text-white uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all shadow-2xl">Subscribe</button></div></Reveal></section>
-);
+export const Newsletter = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    setStatus('success');
+    setEmail('');
+  };
+
+  return (
+    <section className="py-32 bg-white text-center relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" />
+      <Reveal>
+        <span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block">Stay Connected</span>
+        <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 italic">The Torridon Journal.</h2>
+        <p className="text-torridon-green/60 font-sans mb-12 max-w-lg mx-auto text-sm px-6">
+          {status === 'success' 
+            ? "Thank you for subscribing. You'll receive our next edition shortly."
+            : "Receive curated property insights and exclusive partnership opportunities."
+          }
+        </p>
+        
+        {status !== 'success' && (
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto">
+            <input 
+              type="email" 
+              placeholder="Email Address" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={status === 'loading'}
+              className="px-8 py-6 bg-torridon-cream border-none text-torridon-green outline-none focus:ring-1 ring-torridon-gold/30 font-sans text-sm w-full sm:flex-1 disabled:opacity-50" 
+            />
+            <button 
+              type="submit"
+              disabled={status === 'loading'}
+              className="px-12 py-6 bg-torridon-green text-white uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all shadow-2xl disabled:opacity-50"
+            >
+              {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+            </button>
+          </form>
+        )}
+        
+        {status === 'success' && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }} 
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 text-torridon-green font-bold uppercase tracking-widest text-xs"
+          >
+            <CheckCircle2 size={16} className="text-torridon-gold" />
+            Subscription Confirmed
+          </motion.div>
+        )}
+      </Reveal>
+    </section>
+  );
+};
 
 /* 
   16. SUSTAINABILITY 

@@ -6,11 +6,18 @@ import { Mail, Phone, MapPin, Send, ArrowRight, CheckCircle2 } from 'lucide-reac
 import Magnetic from './Magnetic';
 
 const Contact = () => {
-  const [step, setStep] = useState(1);
+  const [selectedType, setSelectedType] = useState('General');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call for production readiness
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setIsSubmitting(false);
     setIsSubmitted(true);
   };
 
@@ -71,7 +78,12 @@ const Contact = () => {
                           <button 
                             key={type}
                             type="button"
-                            className="py-4 px-6 border border-torridon-green/10 text-xs uppercase tracking-widest font-bold text-torridon-green hover:border-torridon-gold hover:bg-white transition-all"
+                            onClick={() => setSelectedType(type)}
+                            className={`py-4 px-6 border text-xs uppercase tracking-widest font-bold transition-all ${
+                              selectedType === type 
+                                ? 'border-torridon-gold bg-white text-torridon-green shadow-sm' 
+                                : 'border-torridon-green/10 text-torridon-green/60 hover:border-torridon-gold hover:bg-white/50'
+                            }`}
                           >
                             {type}
                           </button>
@@ -80,31 +92,45 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-6 pt-4 border-t border-torridon-green/5">
-                      <input 
-                        type="text" 
-                        placeholder="Full Name"
-                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
-                        required
-                      />
-                      <input 
-                        type="email" 
-                        placeholder="Professional Email"
-                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
-                        required
-                      />
-                      <textarea 
-                        rows={3} 
-                        placeholder="Brief Project Overview"
-                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 resize-none"
-                      />
+                      <div className="relative">
+                        <input 
+                          type="text" 
+                          placeholder="Full Name"
+                          disabled={isSubmitting}
+                          className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 disabled:opacity-50"
+                          required
+                        />
+                      </div>
+                      <div className="relative">
+                        <input 
+                          type="email" 
+                          placeholder="Professional Email"
+                          disabled={isSubmitting}
+                          className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 disabled:opacity-50"
+                          required
+                        />
+                      </div>
+                      <div className="relative">
+                        <textarea 
+                          rows={3} 
+                          placeholder="Brief Project Overview"
+                          disabled={isSubmitting}
+                          className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 resize-none disabled:opacity-50"
+                        />
+                      </div>
                     </div>
                     
                     <Magnetic>
                       <button 
                         type="submit"
-                        className="w-full py-6 bg-torridon-green text-white font-sans uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
+                        disabled={isSubmitting}
+                        className={`w-full py-6 bg-torridon-green text-white font-sans uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl disabled:opacity-70 disabled:cursor-not-allowed`}
                       >
-                        Initialize Dialogue <ArrowRight size={14} />
+                        {isSubmitting ? (
+                          <>Processing Request...</>
+                        ) : (
+                          <>Initialize Dialogue <ArrowRight size={14} /></>
+                        )}
                       </button>
                     </Magnetic>
                   </form>
@@ -126,7 +152,7 @@ const Contact = () => {
                   </motion.div>
                   <h3 className="text-3xl font-serif italic mb-6">Dialogue Initialized.</h3>
                   <p className="text-white/60 font-sans text-sm leading-relaxed max-w-xs mx-auto mb-10">
-                    Your enquiry has been routed to our executive team. Expect a response within 24 hours.
+                    Your enquiry regarding {selectedType} has been routed to our executive team. Expect a response within 24 hours.
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}

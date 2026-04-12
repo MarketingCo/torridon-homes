@@ -16,11 +16,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Torridon Homes | Boutique Housing Developers Scotland",
-  description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings. Seeking land acquisition and joint venture opportunities.",
+  title: "Torridon Homes | Luxury Boutique Property Developers Scotland",
+  description: "Torridon Homes is a premier boutique housing developer in Scotland's Central Belt, specializing in exclusive high-end residential developments and strategic land acquisition.",
+  keywords: ["Luxury Homes Scotland", "Boutique Housing Developers", "Land Acquisition Scotland", "Property Joint Ventures", "New Build Homes Central Belt", "High-end Residential Developments"],
+  alternates: {
+    canonical: "https://torridon-homes.com",
+  },
   openGraph: {
-    title: "Torridon Homes | Boutique Housing Developers Scotland",
-    description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings.",
+    title: "Torridon Homes | Luxury Boutique Property Developers Scotland",
+    description: "Exclusive high-end residential developments in Scotland's Central Belt. Premier boutique housing developer and land acquisition specialist.",
     url: "https://torridon-homes.com",
     siteName: "Torridon Homes",
     locale: "en_GB",
@@ -28,8 +32,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Torridon Homes | Boutique Housing Developers Scotland",
-    description: "Boutique housing developer based in the Central Belt of Scotland.",
+    title: "Torridon Homes | Luxury Boutique Property Developers Scotland",
+    description: "Exclusive high-end residential developments in Scotland's Central Belt.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -66,7 +81,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-torridon-cream relative overflow-x-hidden">
         {/* Global Architectural Grid */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05910_1px,transparent_1px),linear-gradient(to_bottom,#c5a05910_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e110_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e110_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         </div>
 
         {/* Atmospheric Light Leak */}
