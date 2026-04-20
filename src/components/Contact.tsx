@@ -42,8 +42,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-torridon-green text-xl italic">Executive Email</h4>
-                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">hello@torridonhomes.co.uk</p>
-                </div>
+                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">info@torridonhomes.co.uk</p>                </div>
               </div>
               
               <div className="group cursor-none flex items-center gap-6">

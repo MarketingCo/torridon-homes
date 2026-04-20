@@ -29,8 +29,7 @@ const Footer = () => {
           <address className="not-italic text-sm text-white/60 leading-relaxed font-sans">
             Central Belt,<br />
             Scotland<br /><br />
-            <a href="mailto:hello@torridonhomes.co.uk" className="text-white hover:text-torridon-gold transition-colors block mt-2">hello@torridonhomes.co.uk</a>
-          </address>
+            <a href="mailto:info@torridonhomes.co.uk" className="text-white hover:text-torridon-gold transition-colors block mt-2">info@torridonhomes.co.uk</a>          </address>
         </div>
       </div>
 

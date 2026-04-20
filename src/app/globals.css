@@ -1,27 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* Slate 50 */
-  --foreground: #1e293b; /* Slate 800 - Deep Slate Blue */
-  --accent: #cbd5e1;    /* Slate 300 - Silver */
-  --slate-gray: #64748b; /* Slate 500 - Slate Gray */
+  --background: #FDFCF8; /* Warm Off-white */
+  --foreground: #2C332D; /* Deep Forest Green */
+  --accent: #C5A059;    /* Warm Brass */
+  --sage-green: #5F6F52; /* Sage */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --color-torridon-blue: #334155;
-  --color-torridon-gray: #64748b;
-  --color-torridon-silver: #cbd5e1;
+  --color-torridon-sage: #5F6F52;
+  --color-torridon-brass: #C5A059;
+  --color-torridon-cream: #FDFCF8;
   
-  /* Mapping for legacy names to new theme */
-  --color-torridon-green: #1e293b; /* Slate Blue */
-  --color-torridon-cream: #f8fafc; /* Slate Gray (Light) */
-  --color-torridon-gold: #cbd5e1;  /* Silver */
-  
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --font-serif: var(--font-lora), serif;
+  --font-sans: var(--font-manrope), sans-serif;
 }
 
 body {
@@ -37,5 +32,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .premium-gradient {
-  background: linear-gradient(135deg, var(--torridon-green) 0%, #334155 100%);
+  background: linear-gradient(135deg, var(--color-torridon-sage) 0%, #2C332D 100%);
 }
