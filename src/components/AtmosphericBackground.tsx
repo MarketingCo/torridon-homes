@@ -12,7 +12,7 @@ export default function AtmosphericBackground() {
           opacity: [0.3, 0.5, 0.3]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-radial from-torridon-gold/20 via-transparent to-transparent blur-[120px]"
+        className="absolute -top-1/2 -left-1/2 w-full h-full [background:radial-gradient(circle,rgba(201,168,76,0.15),transparent_70%)] blur-[120px]"
       />
     </div>
   );

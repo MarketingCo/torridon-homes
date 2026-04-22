@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfcf8; /* Warm Cream */
-  --foreground: #1a2e26; /* Deep Forest Green */
-  --accent: #c5a059;    /* Brushed Gold */
+  --background: #fdfcf8;
+  --foreground: #1B3A2D;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-torridon-green: #1a2e26;
+  --color-torridon-navy: #0B192C;
   --color-torridon-cream: #fdfcf8;
-  --color-torridon-gold: #c5a059;
-  
+  --color-torridon-gold: #C9A84C;
+  --color-torridon-green: #1B3A2D;
+
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,8 +31,4 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-}
-
-.premium-gradient {
-  background: linear-gradient(135deg, var(--torridon-green) 0%, #2c4a3d 100%);
 }

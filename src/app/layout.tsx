@@ -8,29 +8,78 @@ import AtmosphericBackground from "@/components/AtmosphericBackground";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Torridon Homes | Boutique Housing Developers Scotland",
-  description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings. Seeking land acquisition and joint venture opportunities.",
+  title: {
+    default: "Torridon Homes | Boutique Property Developers, Scotland",
+    template: "%s | Torridon Homes",
+  },
+  description:
+    "Torridon Homes is a boutique property developer operating across the Central Belt of Scotland. Specialising in high-specification developments of fewer than 12 dwellings. Currently seeking land acquisition and joint venture partnerships.",
+  metadataBase: new URL("https://torridonhomes.co.uk"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Torridon Homes | Boutique Housing Developers Scotland",
-    description: "Boutique housing developer based in the Central Belt of Scotland. Specializing in high-end developments of under 12 dwellings.",
-    url: "https://torridon-homes.com",
+    title: "Torridon Homes | Boutique Property Developers, Scotland",
+    description:
+      "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
+    url: "https://torridonhomes.co.uk",
     siteName: "Torridon Homes",
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "Torridon Homes — Boutique Property Developer, Scotland",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Torridon Homes | Boutique Housing Developers Scotland",
-    description: "Boutique housing developer based in the Central Belt of Scotland.",
+    title: "Torridon Homes | Boutique Property Developers, Scotland",
+    description:
+      "Boutique property developer across the Central Belt of Scotland.",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://torridonhomes.co.uk",
+  "name": "Torridon Homes",
+  "description":
+    "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
+  "url": "https://torridonhomes.co.uk",
+  "telephone": "+441315550123",
+  "email": "hello@torridonhomes.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Edinburgh",
+    "addressRegion": "Scotland",
+    "addressCountry": "GB",
+    "postalCode": "EH1",
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Central Belt, Scotland",
+  },
+  "priceRange": "££££",
+  "sameAs": [],
 };
 
 export default function RootLayout({
@@ -38,23 +87,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Torridon Homes",
-    "description": "Boutique housing developer based in the Central Belt of Scotland.",
-    "url": "https://torridon-homes.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Edinburgh",
-      "addressRegion": "Scotland",
-      "addressCountry": "GB"
-    }
-  };
-
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
@@ -71,8 +106,7 @@ export default function RootLayout({
 
         {/* Atmospheric Light Leak */}
         <AtmosphericBackground />
-        
-        <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" aria-hidden="true" />
+
         <Preloader />
         <CustomCursor />
         <div className="relative z-10">{children}</div>

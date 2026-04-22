@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
 import Magnetic from './Magnetic';
 
 const Hero = () => {

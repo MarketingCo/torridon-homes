@@ -71,34 +71,24 @@ export default function Home() {
       <AtmosphericSeparator />
 
       {/* PHASE 5: THE STRATEGIC MANDATE (B2B FOCUS) */}
-      <div className="bg-torridon-green text-white py-32">
-        <div className="max-w-7xl mx-auto px-6">
-          <LandMandate />
-          <div className="grid md:grid-cols-2 gap-20 mt-20">
-             <LandAcquisition />
-             <JointVentures />
-          </div>
-          <LandJourney />
-          <ProjectRoadmap />
-        </div>
-      </div>
+      <LandMandate />
+      <LandAcquisition />
+      <JointVentures />
+      <LandJourney />
+      <ProjectRoadmap />
 
       <AtmosphericSeparator />
 
       {/* PHASE 6: THE AUTHORITY & DIALOGUE */}
-      <div className="bg-torridon-cream pt-20">
-        <Director />
-        <SubtleStats />
-        <Trajectory />
-        <div className="grid md:grid-cols-2 gap-px bg-torridon-gold/10">
-           <div className="bg-torridon-cream p-12 md:p-24"><VaultPreview /></div>
-           <div className="bg-torridon-cream p-12 md:p-24"><PriorityInvestor /></div>
-        </div>
-        <Insights />
-        <Collaborations />
-        <FAQs />
-        <Newsletter />
-      </div>
+      <Director />
+      <SubtleStats />
+      <Trajectory />
+      <VaultPreview />
+      <PriorityInvestor />
+      <Insights />
+      <Collaborations />
+      <FAQs />
+      <Newsletter />
 
       <Contact />
       <Footer />

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, Mail, Phone, Send, X } from 'lucide-react';
+import { MapPin, Users, Home, TrendingUp, Shield, Trees, Layers, ChevronRight, X } from 'lucide-react';
 import Link from 'next/link';
 import { Reveal } from './Reveal';
 
@@ -551,7 +551,6 @@ export const Director = () => {
 export const JointVentures = () => {
   return (
     <section id="jv" className="py-32 bg-torridon-green text-torridon-cream relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] grayscale bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
         <Reveal>
           <span className="text-torridon-gold uppercase tracking-widest text-xs font-sans mb-4 block tracking-widest font-bold">Partnership</span>
@@ -836,7 +835,6 @@ export const SubtleStats = () => {
 
   return (
     <section className="py-32 bg-torridon-green text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-16">
           {stats.map((s, i) => (
@@ -961,19 +959,6 @@ export const AtmosphericSeparator = () => {
         />
       </div>
       
-      {/* Moving Mist Overlay */}
-      <motion.div 
-        animate={{ 
-          x: [-100, 100],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{ 
-          duration: 20, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="absolute inset-0 z-10 bg-[url('https://www.transparenttextures.com/patterns/fog.png')] opacity-20 pointer-events-none"
-      />
 
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <Reveal>

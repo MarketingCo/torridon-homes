@@ -2,11 +2,10 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Magnetic from './Magnetic';
 
 const Contact = () => {
-  const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {

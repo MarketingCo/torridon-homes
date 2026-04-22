@@ -131,8 +131,6 @@ const Header = () => {
             exit="exit"
             className="fixed inset-0 z-[900] bg-torridon-cream flex flex-col justify-center px-12 md:px-24"
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05908_1px,transparent_1px),linear-gradient(to_bottom,#c5a05908_1px,transparent_1px)] bg-[size:60px_60px]" />
 
             <div className="relative z-10 space-y-12">
