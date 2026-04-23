@@ -48,7 +48,7 @@ const PartnerPortal = () => {
                 <div className="flex items-center gap-4 mb-12">
                   <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-green font-bold">IM</div>
                   <div>
-                    <div className="text-white font-serif italic text-sm">Iain Martin</div>
+                    <div className="text-white font-serif italic text-sm">Ryan Moore</div>
                     <div className="text-[8px] uppercase tracking-widest text-white/40">Super Admin</div>
                   </div>
                 </div>
