@@ -1,87 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
-import Preloader from "@/components/Preloader";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import AtmosphericBackground from "@/components/AtmosphericBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import NetworkPartners from "@/components/NetworkPartners";
 
-const inter = Inter({
-  variable: "--font-inter",
+const playfair = Playfair_Display({
+  variable: "--font-heading",
   subsets: ["latin"],
-  display: "swap",
+  style: "italic",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Torridon Homes | Boutique Property Developers, Scotland",
-    template: "%s | Torridon Homes",
-  },
-  description:
-    "Torridon Homes is a boutique property developer operating across the Central Belt of Scotland. Specialising in high-specification developments of fewer than 12 dwellings. Currently seeking land acquisition and joint venture partnerships.",
-  metadataBase: new URL("https://torridonhomes.co.uk"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Torridon Homes | Boutique Property Developers, Scotland",
-    description:
-      "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
-    url: "https://torridonhomes.co.uk",
-    siteName: "Torridon Homes",
-    locale: "en_GB",
-    type: "website",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-        width: 1200,
-        height: 630,
-        alt: "Torridon Homes — Boutique Property Developer, Scotland",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Torridon Homes | Boutique Property Developers, Scotland",
-    description:
-      "Boutique property developer across the Central Belt of Scotland.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://torridonhomes.co.uk",
-  "name": "Torridon Homes",
-  "description":
-    "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
-  "url": "https://torridonhomes.co.uk",
-  "telephone": "+441315550123",
-  "email": "hello@torridonhomes.co.uk",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Edinburgh",
-    "addressRegion": "Scotland",
-    "addressCountry": "GB",
-    "postalCode": "EH1",
-  },
-  "areaServed": {
-    "@type": "State",
-    "name": "Central Belt, Scotland",
-  },
-  "priceRange": "££££",
-  "sameAs": [],
+  title: "Torridon Homes | Elite Residential Developments & Site Management",
+  description: "Specialist residential developers creating high-value homes across Scotland. Delivering architectural vision and master site management.",
 };
 
 export default function RootLayout({
@@ -90,32 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en-GB"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
-    >
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="min-h-full flex flex-col bg-torridon-cream relative overflow-x-hidden">
-        {/* Global Architectural Grid */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05910_1px,transparent_1px),linear-gradient(to_bottom,#c5a05910_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        </div>
-
-        {/* Atmospheric Light Leak */}
-        <AtmosphericBackground />
-
-        <Preloader />
-        <CustomCursor />
-        <div className="relative z-10">
-          <SmoothScrollProvider>
-            {children}
-          </SmoothScrollProvider>
-        </div>
+    <html lang="en" className="h-full">
+      <body className={`${playfair.variable} ${inter.variable} font-body antialiased flex flex-col min-h-screen bg-white`}>
+        <SmoothScrollProvider>
+          <AtmosphericBackground />
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <NetworkPartners />
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
