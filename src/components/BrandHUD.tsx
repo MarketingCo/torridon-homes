@@ -30,10 +30,6 @@ const BrandHUD = () => {
         </div>
 
         <div className="w-full h-[1px] bg-torridon-gold/10" />
-
-        <div className="text-[8px] uppercase tracking-widest text-torridon-green/40 font-bold">
-          © 2026 Torridon Homes Ltd.
-        </div>
       </motion.div>
     </div>
   );

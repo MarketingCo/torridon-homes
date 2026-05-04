@@ -48,15 +48,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <p>© {new Date().getFullYear()} Torridon Homes Ltd. All rights reserved.</p>
           <span className="hidden md:block w-px h-3 bg-white/20" />
-          <p>
-            Website by{' '}
+          <p>{' '}
             <a
-              href="https://marketing-company.co.uk"
               className="text-torridon-gold/70 hover:text-torridon-gold transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Marketing Company
             </a>
           </p>
         </div>

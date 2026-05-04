@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://torridonhomes.co.uk/sitemap.xml',
+    sitemap: 'https://torridon-homes.vercel.app/sitemap.xml',
   }
 }

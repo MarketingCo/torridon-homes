@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "high specification homes Scotland",
     "joint venture property Scotland",
   ],
-  metadataBase: new URL("https://torridonhomes.co.uk"),
+  metadataBase: new URL("https://torridon-homes.vercel.app"),
   alternates: {
     canonical: "/",
   },
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
-    url: "https://torridonhomes.co.uk",
+    url: "https://torridon-homes.vercel.app",
     siteName: "Torridon Homes",
     locale: "en_GB",
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        url: "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
         width: 1200,
         height: 630,
         alt: "Torridon Homes — Boutique Property Developer, Scotland",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description:
       "Boutique property developer across the Central Belt of Scotland.",
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     ],
   },
   robots: {
@@ -80,11 +80,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://torridonhomes.co.uk",
+  "@id": "https://torridon-homes.vercel.app",
   "name": "Torridon Homes",
   "description":
     "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
-  "url": "https://torridonhomes.co.uk",
+  "url": "https://torridon-homes.vercel.app",
   "telephone": "+441315550123",
   "email": "hello@torridonhomes.co.uk",
   "address": {
@@ -106,8 +106,8 @@ const jsonLd = {
   },
   "priceRange": "££££",
   "sameAs": [
-    "https://www.linkedin.com/company/torridon-homes",
-    "https://www.instagram.com/torridonhomes",
+    "https://torridon-homes.vercel.app/company/torridon-homes",
+    "https://torridon-homes.vercel.app/torridonhomes",
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
