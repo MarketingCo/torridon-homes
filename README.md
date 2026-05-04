@@ -16,3 +16,6 @@ Deployed at: https://www.torridon-homes.co.uk
 - Next.js
 - Tailwind CSS
 - Vercel
+
+## Notes
+- Shared address with PowerSource and Crescent Builders (Unit 37 Imex, Loanhead)
