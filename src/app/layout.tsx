@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
-    url: "https://torridon-homes.vercel.app",
+    url: "https://www.torridon-homes.co.uk",
     siteName: "Torridon Homes",
     locale: "en_GB",
     type: "website",
     images: [
       {
-        url: "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        url: "https://www.torridon-homes.co.uk/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
         width: 1200,
         height: 630,
         alt: "Torridon Homes — Boutique Property Developer, Scotland",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description:
       "Boutique property developer across the Central Belt of Scotland.",
     images: [
-      "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "https://www.torridon-homes.co.uk/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     ],
   },
   robots: {
@@ -80,35 +80,32 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://torridon-homes.vercel.app",
+  "@id": "https://www.torridon-homes.co.uk",
   "name": "Torridon Homes",
   "description":
     "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
-  "url": "https://torridon-homes.vercel.app",
-  "telephone": "+441315550123",
-  "email": "hello@torridonhomes.co.uk",
+  "url": "https://www.torridon-homes.co.uk",
+  "telephone": "",
+  "email": "info@torridon-homes.co.uk",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "15 Charlotte Square",
-    "addressLocality": "Edinburgh",
+    "streetAddress": "Unit 37 Imex Centre, Dryden Road",
+    "addressLocality": "Loanhead",
     "addressRegion": "Scotland",
     "addressCountry": "GB",
-    "postalCode": "EH2 4DG",
+    "postalCode": "EH20 9LZ",
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 55.9533,
-    "longitude": -3.1883,
+    "latitude": 55.877,
+    "longitude": -3.149,
   },
   "areaServed": {
     "@type": "State",
     "name": "Central Belt, Scotland",
   },
   "priceRange": "££££",
-  "sameAs": [
-    "https://torridon-homes.vercel.app/company/torridon-homes",
-    "https://torridon-homes.vercel.app/torridonhomes",
-  ],
+  "sameAs": [],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",

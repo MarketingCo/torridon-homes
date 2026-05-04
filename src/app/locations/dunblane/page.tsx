@@ -2,6 +2,12 @@
 import { MapPin, ArrowLeft, ShieldCheck, Trophy, Crown } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Property Developer in Dunblane | Torridon Homes",
+  description: "Torridon Homes is a boutique property developer in Dunblane, Scotland. Specialising in high-specification developments of fewer than 12 dwellings.",
+};
 
 export default function Location() {
   const schema = {
@@ -9,9 +15,9 @@ export default function Location() {
     "@type": "LocalBusiness",
     "name": "Torridon Homes - Dunblane",
     "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    "@id": "https://torridonhomes.co.uk/locations/dunblane",
-    "url": "https://torridonhomes.co.uk/locations/dunblane",
-    "telephone": "0131 000 0000",
+    "@id": "https://www.torridon-homes.co.uk/locations/dunblane",
+    "url": "https://www.torridon-homes.co.uk/locations/dunblane",
+    "telephone": "",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Central Belt Operations",
