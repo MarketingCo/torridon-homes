@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "high specification homes Scotland",
     "joint venture property Scotland",
   ],
-  metadataBase: new URL("https://torridon-homes.vercel.app"),
+  metadataBase: new URL('https://www.torridon-homes.co.uk'),
   alternates: {
     canonical: "/",
   },
