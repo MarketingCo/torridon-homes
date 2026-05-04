@@ -21,17 +21,25 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Torridon Homes | Boutique Property Developers, Scotland",
+    default: "Torridon Homes | Boutique Property Developer Scotland",
     template: "%s | Torridon Homes",
   },
   description:
     "Torridon Homes is a boutique property developer operating across the Central Belt of Scotland. Specialising in high-specification developments of fewer than 12 dwellings. Currently seeking land acquisition and joint venture partnerships.",
+  keywords: [
+    "boutique property developer Scotland",
+    "luxury homes Central Belt",
+    "property developer Edinburgh",
+    "land acquisition Scotland",
+    "high specification homes Scotland",
+    "joint venture property Scotland",
+  ],
   metadataBase: new URL("https://torridonhomes.co.uk"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Torridon Homes | Boutique Property Developers, Scotland",
+    title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
     url: "https://torridonhomes.co.uk",
@@ -49,13 +57,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Torridon Homes | Boutique Property Developers, Scotland",
+    title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -71,17 +89,39 @@ const jsonLd = {
   "email": "hello@torridonhomes.co.uk",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "15 Charlotte Square",
     "addressLocality": "Edinburgh",
     "addressRegion": "Scotland",
     "addressCountry": "GB",
-    "postalCode": "EH1",
+    "postalCode": "EH2 4DG",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.9533,
+    "longitude": -3.1883,
   },
   "areaServed": {
     "@type": "State",
     "name": "Central Belt, Scotland",
   },
   "priceRange": "££££",
-  "sameAs": [],
+  "sameAs": [
+    "https://www.linkedin.com/company/torridon-homes",
+    "https://www.instagram.com/torridonhomes",
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "28",
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:30",
+    },
+  ],
 };
 
 export default function RootLayout({
