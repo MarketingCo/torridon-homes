@@ -108,11 +108,6 @@ const jsonLd = {
       },
       "priceRange": "££££",
       "sameAs": [],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "28",
-      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
