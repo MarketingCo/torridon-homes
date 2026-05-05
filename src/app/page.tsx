@@ -6,28 +6,20 @@ import LivingBlueprint from "@/components/LivingBlueprint";
 import { 
   LandAcquisition, 
   JointVentures, 
-  Developments, 
   Philosophy, 
   StrategicLocations, 
-  PriorityInvestor, 
   Specification, 
   LandJourney, 
-  Director, 
   RegionalExpertise, 
   InteractiveMap,
   Sustainability, 
-  Insights, 
   ImmersiveGallery, 
   Collaborations, 
   FAQs,
   Newsletter,
   CraftsmanDetail,
-  SubtleStats,
   AtmosphericSeparator,
-  Trajectory,
-  VaultPreview,
   LandMandate,
-  ProjectRoadmap,
   TactileDNA
 } from "@/components/Sections";
 import Contact from "@/components/Contact";
@@ -63,7 +55,6 @@ export default function Home() {
       <AtmosphericSeparator />
 
       {/* PHASE 4: THE ESTATE PORTFOLIO (ASSET FOCUS) */}
-      <Developments />
       <StrategicLocations />
       <InteractiveMap />
       <RegionalExpertise />
@@ -75,17 +66,10 @@ export default function Home() {
       <LandAcquisition />
       <JointVentures />
       <LandJourney />
-      <ProjectRoadmap />
 
       <AtmosphericSeparator />
 
       {/* PHASE 6: THE AUTHORITY & DIALOGUE */}
-      <Director />
-      <SubtleStats />
-      <Trajectory />
-      <VaultPreview />
-      <PriorityInvestor />
-      <Insights />
       <Collaborations />
       <FAQs />
       <Newsletter />

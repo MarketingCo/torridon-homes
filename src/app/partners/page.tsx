@@ -46,10 +46,10 @@ const PartnerPortal = () => {
             >
               <div className="p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-sm">
                 <div className="flex items-center gap-4 mb-12">
-                  <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-green font-bold">IM</div>
+                  <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-green font-bold">TH</div>
                   <div>
-                    <div className="text-white font-serif italic text-sm">John Dunn</div>
-                    <div className="text-[8px] uppercase tracking-widest text-white/40">Super Admin</div>
+                    <div className="text-white font-serif italic text-sm">Partner Account</div>
+                    <div className="text-[8px] uppercase tracking-widest text-white/40">Secure Access</div>
                   </div>
                 </div>
                 
