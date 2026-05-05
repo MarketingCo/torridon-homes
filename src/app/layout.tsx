@@ -5,7 +5,6 @@ import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
 import AtmosphericBackground from "@/components/AtmosphericBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import NetworkPartners from "@/components/NetworkPartners";
 
 const inter = Inter({
   variable: "--font-inter",
