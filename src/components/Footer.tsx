@@ -50,22 +50,16 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-white/30 font-sans">
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-          <p>© {new Date().getFullYear()} Torridon Homes Ltd. All rights reserved.</p>
-          <span className="hidden md:block w-px h-3 bg-white/20" />
-          <p>{' '}
-            <a
-              className="text-torridon-gold/70 hover:text-torridon-gold transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            </a>
-          </p>
-        </div>
+        <p>© {new Date().getFullYear()} Torridon Homes Ltd. All rights reserved.</p>
         <div className="flex space-x-8">
           <Link href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-white transition-colors duration-300">Terms of Service</Link>
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-6 pt-6 border-t border-white/10 text-center">
+        <p className="text-sm text-white/40">
+          Website developed by <a href="https://marketing-company.co.uk" target="_blank" rel="noopener noreferrer" className="text-torridon-gold/70 hover:text-torridon-gold transition-colors duration-300 underline underline-offset-2">Marketing Company</a>
+        </p>
       </div>
     </footer>
   );
