@@ -81,19 +81,19 @@ const Contact = () => {
                     <div className="space-y-6 pt-4 border-t border-torridon-green/5">
                       <input 
                         type="text" 
-                        placeholder="Full Name"
+                        aria-label="Full Name" placeholder="Full Name"
                         className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
                         required
                       />
                       <input 
                         type="email" 
-                        placeholder="Professional Email"
+                        aria-label="Professional Email" placeholder="Professional Email"
                         className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20"
                         required
                       />
                       <textarea 
                         rows={3} 
-                        placeholder="Brief Project Overview"
+                        aria-label="Brief Project Overview" placeholder="Brief Project Overview"
                         className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 resize-none"
                       />
                     </div>

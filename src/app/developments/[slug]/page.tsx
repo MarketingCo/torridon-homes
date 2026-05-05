@@ -13,7 +13,7 @@ const projects = {
     location: 'Overton, Edinburgh',
     units: '9 Luxury Apartments',
     status: 'Upcoming',
-    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop',
     overview: 'A milestone in urban boutique living. Situated on an elevated site in Overton, this development offers unparalleled views across the Edinburgh skyline to the Firth of Forth.',
     specs: ['Penthouse Level with Wrap-around Terraces', 'Intelligent Home Automation', 'Secure Underground Parking & EV Charging'],
     investment: 'Projected GDV £12.5M | Target Yield 18%'
@@ -23,7 +23,7 @@ const projects = {
     location: 'Spott, Dunbar',
     units: '6 Eco-Conscious Homes',
     status: 'Coming Soon',
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1769411395480-f86aea53a2d1?q=80&w=2070&auto=format&fit=crop',
     overview: 'Sustainable luxury on the East Lothian coast. Six detached villas designed with passive solar principles and reclaimed Scottish stone.',
     specs: ['A-Rated Energy Performance', 'Triple Glazing & Air Source Heat Pumps', 'Private Coastal View Gardens'],
     investment: 'Projected GDV £8.2M | Fully Funded'
@@ -49,7 +49,7 @@ export default function ProjectPage() {
           transition={{ duration: 2, ease: "easeOut" }}
           className="absolute inset-0 z-0"
         >
-          <img src={project.img} className="w-full h-full object-cover opacity-60 grayscale-[30%]" alt={project.name} />
+          <img src={project.img} className="w-full h-full object-cover opacity-60 grayscale-[30%]" alt={project.name} loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-torridon-green via-transparent to-transparent" />
         </motion.div>
 
@@ -117,7 +117,7 @@ export default function ProjectPage() {
             </div>
             
             <div className="aspect-[4/5] bg-torridon-green overflow-hidden rounded-sm">
-              <img src={project.img} className="w-full h-full object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-1000" alt="Detail" />
+              <img src={project.img} className="w-full h-full object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-1000" alt="Architectural detail of a Torridon Homes development" loading="lazy" />
             </div>
           </div>
         </div>

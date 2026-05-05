@@ -102,7 +102,7 @@ export default function ContactForm() {
                     name="location"
                     required
                     className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
-                    placeholder="e.g. Perthshire, East Lothian, etc."
+                    aria-label="e.g. Perthshire, East Lothian, etc." placeholder="e.g. Perthshire, East Lothian, etc."
                   />
                 </div>
                 <div>
@@ -112,7 +112,7 @@ export default function ContactForm() {
                     type="text"
                     name="budget"
                     className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
-                    placeholder="e.g. £500k - £1.5M..."
+                    aria-label="e.g. £500k - £1.5M..." placeholder="e.g. £500k - £1.5M..."
                   />
                 </div>
               </div>

@@ -27,7 +27,7 @@ const Hero = () => {
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.6 }}
           transition={{ duration: 4, ease: "easeOut", delay: 2.5 }}
-          className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" 
+          className="w-full h-full bg-[url('https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" 
         />
       </motion.div>
 
@@ -80,12 +80,13 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.button 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 4.5 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 text-white/40 cursor-pointer hidden md:block"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 text-white/40 cursor-pointer hidden md:block bg-transparent border-none"
         onClick={() => document.getElementById('philosophy')?.scrollIntoView({ behavior: 'smooth' })}
+        aria-label="Scroll to philosophy section"
       >
         <motion.div 
           animate={{ y: [0, 10, 0] }}
@@ -95,7 +96,7 @@ const Hero = () => {
           <span className="uppercase tracking-[0.4em] text-[8px] mb-4 font-bold">Explore Vision</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-torridon-gold to-transparent" />
         </motion.div>
-      </motion.div>
+      </motion.button>
     </section>
   );
 };

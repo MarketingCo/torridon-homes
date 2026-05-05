@@ -60,7 +60,7 @@ const PartnerPortal = () => {
                     { icon: FileText, label: 'Legal Vault' },
                     { icon: UserCheck, label: 'Investor Relations' },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 text-white/40 hover:text-torridon-gold transition-colors cursor-pointer group">
+                    <div key={i} className="flex items-center gap-4 text-white/40 hover:text-torridon-gold transition-colors cursor-pointer group" role="button" tabIndex={0}>
                       <item.icon size={18} />
                       <span className="text-[10px] uppercase tracking-widest font-bold">{item.label}</span>
                     </div>
@@ -90,13 +90,13 @@ const PartnerPortal = () => {
                   <form className="space-y-6 mb-12">
                     <input 
                       type="text" 
-                      placeholder="Partner ID / Email"
+                      aria-label="Partner ID / Email" placeholder="Partner ID / Email"
                       className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-sans text-sm"
                     />
                     <div className="relative">
                       <input 
                         type="password" 
-                        placeholder="Secure Key"
+                        aria-label="Secure Key" placeholder="Secure Key"
                         className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-sans text-sm"
                       />
                       <Lock className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" size={18} />

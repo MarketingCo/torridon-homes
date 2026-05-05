@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "high specification homes Scotland",
     "joint venture property Scotland",
   ],
-  metadataBase: new URL('https://torridon-homes.vercel.app'),
+  metadataBase: new URL('https://torridon-homes.co.uk'),
   alternates: {
     canonical: "/",
   },
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
-    url: "https://torridon-homes.vercel.app",
+    url: "https://torridon-homes.co.uk",
     siteName: "Torridon Homes",
     locale: "en_GB",
     type: "website",
     images: [
       {
-        url: "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
         width: 1200,
         height: 630,
         alt: "Torridon Homes — Boutique Property Developer, Scotland",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description:
       "Boutique property developer across the Central Belt of Scotland.",
     images: [
-      "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
     ],
   },
   robots: {
@@ -81,11 +81,11 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://torridon-homes.vercel.app/#business",
+      "@id": "https://torridon-homes.co.uk/#business",
       "name": "Torridon Homes",
       "description":
         "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
-      "url": "https://torridon-homes.vercel.app",
+      "url": "https://torridon-homes.co.uk",
       "telephone": "+441315550123",
       "email": "hello@torridon-homes.co.uk",
       "address": {
@@ -123,9 +123,9 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": "https://torridon-homes.vercel.app/#service",
+      "@id": "https://torridon-homes.co.uk/#service",
       "name": "Boutique Property Development",
-      "provider": { "@id": "https://torridon-homes.vercel.app/#business" },
+      "provider": { "@id": "https://torridon-homes.co.uk/#business" },
       "areaServed": { "@type": "State", "name": "Central Belt, Scotland" },
       "serviceType": "Residential Property Development",
       "hasOfferCatalog": {
