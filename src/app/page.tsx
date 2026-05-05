@@ -14,12 +14,12 @@ import {
   LandJourney, 
   Director, 
   RegionalExpertise, 
+  InteractiveMap,
   Sustainability, 
   Insights, 
   ImmersiveGallery, 
   Collaborations, 
   FAQs,
-  InteractiveMap,
   Newsletter,
   CraftsmanDetail,
   SubtleStats,
@@ -35,7 +35,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative selection:bg-torridon-gold selection:text-white bg-torridon-cream">
+    <main className="min-h-screen relative selection:bg-torridon-gold selection:text-white bg-white">
       <Header />
       <SideNav />
       <BrandHUD />
