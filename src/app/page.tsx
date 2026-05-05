@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 import SideNav from "@/components/SideNav";
 import BrandHUD from "@/components/BrandHUD";
 import LivingBlueprint from "@/components/LivingBlueprint";
@@ -33,7 +32,6 @@ export default function Home() {
       <BrandHUD />
       
       {/* PHASE 1: THE GENESIS & VISION */}
-      <Hero />
       <Philosophy />
       
       <AtmosphericSeparator />
