@@ -44,14 +44,15 @@ const Hero = () => {
           </span>
           
           <div className="relative mb-12">
-            <h1 className="text-white text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.9] tracking-tighter mix-blend-difference">
-              TORRIDON <br />
-              <span className="italic text-torridon-gold drop-shadow-2xl">HOMES</span>
+            <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif leading-[0.9] tracking-tighter mix-blend-difference">
+              Boutique Property <br />
+              Developer <span className="italic text-torridon-gold drop-shadow-2xl">Scotland</span> <br />
+              <span className="text-3xl md:text-5xl lg:text-6xl">Luxury Homes Central Belt</span>
             </h1>
           </div>
 
           <p className="text-white/90 text-lg md:text-2xl font-sans max-w-2xl mx-auto mb-16 leading-relaxed italic font-light drop-shadow-lg">
-            "Redefining the boutique standard across the Scottish Central Belt."
+            &quot;Redefining the boutique standard across the Scottish Central Belt.&quot;
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">

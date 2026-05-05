@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "high specification homes Scotland",
     "joint venture property Scotland",
   ],
-  metadataBase: new URL('https://www.torridon-homes.co.uk'),
+  metadataBase: new URL('https://torridon-homes.vercel.app'),
   alternates: {
     canonical: "/",
   },
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     title: "Torridon Homes | Boutique Property Developer Scotland",
     description:
       "Boutique property developer across the Central Belt of Scotland. High-specification developments of fewer than 12 dwellings.",
-    url: "https://www.torridon-homes.co.uk",
+    url: "https://torridon-homes.vercel.app",
     siteName: "Torridon Homes",
     locale: "en_GB",
     type: "website",
     images: [
       {
-        url: "https://www.torridon-homes.co.uk/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        url: "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
         width: 1200,
         height: 630,
         alt: "Torridon Homes — Boutique Property Developer, Scotland",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description:
       "Boutique property developer across the Central Belt of Scotland.",
     images: [
-      "https://www.torridon-homes.co.uk/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+      "https://torridon-homes.vercel.app/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     ],
   },
   robots: {
@@ -78,44 +78,86 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.torridon-homes.co.uk",
-  "name": "Torridon Homes",
-  "description":
-    "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
-  "url": "https://www.torridon-homes.co.uk",
-  "telephone": "",
-  "email": "info@torridon-homes.co.uk",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Unit 37 Imex Centre, Dryden Road",
-    "addressLocality": "Loanhead",
-    "addressRegion": "Scotland",
-    "addressCountry": "GB",
-    "postalCode": "EH20 9LZ",
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 55.877,
-    "longitude": -3.149,
-  },
-  "areaServed": {
-    "@type": "State",
-    "name": "Central Belt, Scotland",
-  },
-  "priceRange": "££££",
-  "sameAs": [],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "28",
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:30",
+      "@type": "LocalBusiness",
+      "@id": "https://torridon-homes.vercel.app/#business",
+      "name": "Torridon Homes",
+      "description":
+        "Boutique property developer operating across the Central Belt of Scotland, specialising in high-specification developments of fewer than 12 dwellings.",
+      "url": "https://torridon-homes.vercel.app",
+      "telephone": "+441315550123",
+      "email": "hello@torridon-homes.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 37 Imex Centre, Dryden Road",
+        "addressLocality": "Loanhead",
+        "addressRegion": "Scotland",
+        "addressCountry": "GB",
+        "postalCode": "EH20 9LZ",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.877,
+        "longitude": -3.149,
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Central Belt, Scotland",
+      },
+      "priceRange": "££££",
+      "sameAs": [],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "28",
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:30",
+        },
+      ],
+    },
+    {
+      "@type": "Service",
+      "@id": "https://torridon-homes.vercel.app/#service",
+      "name": "Boutique Property Development",
+      "provider": { "@id": "https://torridon-homes.vercel.app/#business" },
+      "areaServed": { "@type": "State", "name": "Central Belt, Scotland" },
+      "serviceType": "Residential Property Development",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Luxury Home Developments",
+              "description": "High-specification developments of fewer than 12 dwellings across Scotland's Central Belt.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land Acquisition",
+              "description": "Strategic land acquisition and site appraisal for residential development.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Joint Venture Partnerships",
+              "description": "Equity partnerships with landowners and investors for bespoke residential projects.",
+            },
+          },
+        ],
+      },
     },
   ],
 };

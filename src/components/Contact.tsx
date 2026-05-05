@@ -34,7 +34,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-torridon-green text-xl italic">Executive Email</h4>
-                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">hello@torridonhomes.co.uk</p>
+                  <a href="mailto:hello@torridon-homes.co.uk" className="text-torridon-green/40 text-sm font-sans tracking-widest hover:text-torridon-gold transition-colors">hello@torridon-homes.co.uk</a>
                 </div>
               </div>
               
@@ -44,7 +44,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-torridon-green text-xl italic">Direct Line</h4>
-                  <p className="text-torridon-green/40 text-sm font-sans tracking-widest">0131 555 0123</p>
+                  <a href="tel:+441315550123" className="text-torridon-green/40 text-sm font-sans tracking-widest hover:text-torridon-gold transition-colors">0131 555 0123</a>
                 </div>
               </div>
             </div>

@@ -12,6 +12,11 @@ const Footer = () => {
           <p className="text-white/60 max-w-sm leading-relaxed font-sans text-sm">
             A boutique property developer dedicated to creating exclusive, high-specification developments across the Central Belt of Scotland. We focus on projects of fewer than 12 dwellings to ensure unmatched attention to detail.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">NHBC Registered</span>
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">LABC Warranty</span>
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">RICS Certified</span>
+          </div>
         </div>
 
         <div>
@@ -35,10 +40,10 @@ const Footer = () => {
               0131 555 0123
             </a>
             <a
-              href="mailto:hello@torridonhomes.co.uk"
+              href="mailto:hello@torridon-homes.co.uk"
               className="block text-white hover:text-torridon-gold transition-colors duration-300"
             >
-              hello@torridonhomes.co.uk
+              hello@torridon-homes.co.uk
             </a>
           </address>
         </div>
