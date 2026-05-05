@@ -5,6 +5,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
 import AtmosphericBackground from "@/components/AtmosphericBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -194,6 +195,7 @@ export default function RootLayout({
             {children}
           </SmoothScrollProvider>
         </div>
+        <CookieBanner />
       </body>
     </html>
   );
