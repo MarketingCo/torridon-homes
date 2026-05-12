@@ -21,6 +21,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'Portfolio', href: '#developments' },
+    { name: 'Journal', href: '/blog' },
     { name: 'Land', href: '#land' },
     { name: 'Partnership', href: '#jv' },
   ];

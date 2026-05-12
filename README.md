@@ -1,21 +1,27 @@
 # Torridon Homes
 
-## Brand Information
-- **Business Name:** Torridon Homes
-- **Phone:** 
-- **Email:** info@torridon-homes.co.uk
-- **Address:** Unit 37 Imex Centre, Dryden Road, Loanhead, Scotland, EH20 9LZ
-- **Domain:** https://www.torridon-homes.co.uk
-- **Services:** House builders, joint venture land developers
-- **USP:** Boutique house builder with high thermal efficiency
+**Domain:** https://torridonhomes.co.uk  
+**Status:** Ready for deployment  
+**Deployed:** Pending Vercel auth
 
 ## Deployment
-Deployed at: https://www.torridon-homes.co.uk
 
-## Tech Stack
-- Next.js
-- Tailwind CSS
-- Vercel
+```bash
+vercel login
+vercel --prod
+```
+
+Or use Rocky:
+
+```bash
+rocky deploy torridon-homes
+```
+
+## SEO
+
+- robots.txt: ✅ Generated
+- sitemap.xml: ✅ Generated
 
 ## Notes
-- Shared address with PowerSource and Crescent Builders (Unit 37 Imex, Loanhead)
+
+Managed by Rocky as Iain automation system.
