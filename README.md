@@ -1,82 +1,27 @@
-<!-- HERO BANNER: 1280x640, flat, brand colour, product wordmark only. No screenshots. -->
-<p align="center">
-  <img src="./.github/assets/hero.svg" alt="torridon-homes" width="720">
-</p>
+# Torridon Homes
 
-<h1 align="center">torridon-homes</h1>
+**Domain:** https://torridonhomes.co.uk  
+**Status:** Ready for deployment  
+**Deployed:** Pending Vercel auth
 
-<p align="center">
-  <strong>Display residential properties to accelerate property sales.</strong>
-</p>
-
-<p align="center">
-  <a href="[TBD]"><img src="[TBD]" alt="Build"></a>
-  <a href="[TBD]"><img src="[TBD]" alt="Version"></a>
-  <a href="[TBD]"><img src="[TBD]" alt="Licence"></a>
-  <a href="[TBD]"><img src="[TBD]" alt="Downloads"></a>
-</p>
-
-<p align="center">
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#documentation">Documentation</a> ·
-  <a href="#examples">Examples</a> ·
-  <a href="#licence">Licence</a>
-</p>
-
----
-
-## Overview
-
-This project is a Next.js application. It provides a foundational web structure. It is for developers building React applications.
-
-## Quick Start
+## Deployment
 
 ```bash
-npm run dev
+vercel login
+vercel --prod
 ```
 
-A local development server runs on port 3000.
-
-## Features
-
-| Capability | Outcome |
-|---|---|
-| Next.js App Router | Route requests to specific React components. |
-
-## Installation
+Or use Rocky:
 
 ```bash
-npm install
+rocky deploy torridon-homes
 ```
 
-Requires Node.js [TBD]. Nothing else.
+## SEO
 
-## Usage
+- robots.txt: ✅ Generated
+- sitemap.xml: ✅ Generated
 
-```bash
-npm run build
-npm start
-```
+## Notes
 
-See [Documentation](#documentation) for the full API.
-
-## Documentation
-
-- [Getting Started]([TBD])
-- [API Reference]([TBD])
-- [Guides]([TBD])
-- [Changelog]([TBD])
-
-## Examples
-
-| Example | Description |
-|---|---|
-| [`examples/basic`]([TBD]) | [TBD] |
-
-## Contributing
-
-Read [CONTRIBUTING.md]([TBD]) before opening a pull request.
-
-## Licence
-
-[TBD]. See [LICENCE]([TBD]).
+Managed by Rocky as Iain automation system.

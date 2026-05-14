@@ -21,6 +21,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'Portfolio', href: '#developments' },
+    { name: 'Journal', href: '/blog' },
     { name: 'Land', href: '#land' },
     { name: 'Partnership', href: '#jv' },
   ];
@@ -54,14 +55,14 @@ const Header = () => {
     <>
       <header 
         className={`fixed w-full z-[1000] transition-all duration-500 ${
-          scrolled ? 'bg-torridon-cream/80 backdrop-blur-xl py-4 shadow-2xl shadow-torridon-green/5' : 'bg-transparent py-8'
+          scrolled ? 'bg-white/80 backdrop-blur-xl py-4 shadow-2xl shadow-black/5' : 'bg-transparent py-8'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link href="/" className="group relative z-[1100]">
             <div className="flex flex-col">
               <span className={`text-2xl md:text-3xl font-serif tracking-tighter transition-colors duration-500 ${
-                scrolled || isOpen ? 'text-torridon-green' : 'text-white'
+                scrolled || isOpen ? 'text-[#1a1a1a]' : 'text-white'
               }`}>
                 TORRIDON
               </span>
@@ -80,7 +81,7 @@ const Header = () => {
                 <Link 
                   href={link.href}
                   className={`text-[10px] uppercase tracking-[0.3em] font-bold hover:text-torridon-gold transition-colors duration-500 ${
-                    scrolled ? 'text-torridon-green' : 'text-white'
+                    scrolled ? 'text-[#1a1a1a]' : 'text-white'
                   }`}
                 >
                   {link.name}
@@ -92,8 +93,8 @@ const Header = () => {
                 href="#contact"
                 className={`px-8 py-3 border text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-500 ${
                   scrolled 
-                    ? 'border-torridon-green text-torridon-green hover:bg-torridon-green hover:text-white' 
-                    : 'border-white/30 text-white hover:bg-white hover:text-torridon-green backdrop-blur-sm'
+                    ? 'border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white' 
+                    : 'border-white/30 text-white hover:bg-white hover:text-[#1a1a1a] backdrop-blur-sm'
                 }`}
               >
                 Enquire
@@ -109,11 +110,11 @@ const Header = () => {
             <AnimatePresence mode="wait">
               {isOpen ? (
                 <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                  <X size={32} className="text-torridon-green" />
+                  <X size={32} className="text-[#1a1a1a]" />
                 </motion.div>
               ) : (
                 <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-                  <Menu size={32} className={scrolled ? 'text-torridon-green' : 'text-white'} />
+                  <Menu size={32} className={scrolled ? 'text-[#1a1a1a]' : 'text-white'} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -129,7 +130,7 @@ const Header = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed inset-0 z-[900] bg-torridon-cream flex flex-col justify-center px-12 md:px-24"
+            className="fixed inset-0 z-[900] bg-white flex flex-col justify-center px-12 md:px-24"
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05908_1px,transparent_1px),linear-gradient(to_bottom,#c5a05908_1px,transparent_1px)] bg-[size:60px_60px]" />
 
@@ -140,7 +141,7 @@ const Header = () => {
                   <motion.div key={link.name} custom={i} variants={linkVariants}>
                     <Link 
                       href={link.href}
-                      className="text-5xl md:text-7xl font-serif text-torridon-green italic hover:text-torridon-gold transition-colors duration-500 block"
+                      className="text-5xl md:text-7xl font-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors duration-500 block"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}.
@@ -157,11 +158,11 @@ const Header = () => {
               >
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Partner Relations</span>
-                  <Link href="/partners" className="text-lg font-serif text-torridon-green italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
+                  <Link href="/partners" className="text-lg font-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Location</span>
-                  <span className="text-lg font-serif text-torridon-green italic">Central Belt, Scotland</span>
+                  <span className="text-lg font-serif text-[#1a1a1a] italic">Central Belt, Scotland</span>
                 </div>
               </motion.div>
             </div>

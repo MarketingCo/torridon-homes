@@ -2,16 +2,22 @@
 import { MapPin, ArrowLeft, ShieldCheck, Trophy, Crown } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Property Developer in Bothwell | Torridon Homes",
+  description: "Torridon Homes is a boutique property developer in Bothwell, Scotland. Specialising in high-specification developments of fewer than 12 dwellings.",
+};
 
 export default function Location() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Torridon Homes - Bothwell",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    "@id": "https://torridonhomes.co.uk/locations/bothwell",
-    "url": "https://torridonhomes.co.uk/locations/bothwell",
-    "telephone": "0131 000 0000",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+    "@id": "https://torridon-homes.co.uk/locations/bothwell",
+    "url": "https://torridon-homes.co.uk/locations/bothwell",
+    "telephone": "",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Central Belt Operations",
@@ -36,12 +42,10 @@ export default function Location() {
       
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden mb-24 border-b border-torridon-gold/20">
-        <Image 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+        <Image src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2070&auto=format&fit=crop"
           alt="Luxury Development in Bothwell"
           fill
-          className="object-cover opacity-40"
-        />
+          className="object-cover opacity-40" sizes="100vw" unoptimized />
         <div className="absolute inset-0 bg-gradient-to-t from-torridon-navy via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
           <Link href="/" className="inline-flex items-center gap-2 text-torridon-gold hover:text-white mb-12 transition-colors text-xs uppercase tracking-[0.3em]">
