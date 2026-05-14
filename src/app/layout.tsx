@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AtmosphericBackground from "@/components/AtmosphericBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import NetworkPartners from "@/components/NetworkPartners";
+import Preloader from "@/components/Preloader";
 
 const playfair = Playfair_Display({
   variable: "--font-heading",
@@ -31,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${playfair.variable} ${inter.variable} font-body antialiased flex flex-col min-h-screen bg-white`}>
+        <Preloader />
         <SmoothScrollProvider>
           <AtmosphericBackground />
           <Header />
           <main className="flex-grow">{children}</main>
-          <NetworkPartners />
           <Footer />
         </SmoothScrollProvider>
       </body>
