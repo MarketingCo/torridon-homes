@@ -188,9 +188,9 @@ export const Philosophy = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-20">
         <Reveal>
           <span className="text-torridon-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-6 block tracking-widest">Our Philosophy</span>
-          <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 max-w-3xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 max-w-3xl mx-auto leading-tight">
             Building with <span className="italic text-torridon-gold">Purpose</span> <br /> and <span className="italic text-torridon-gold">Precision.</span>
-          </h2>
+          </h1>
           <div className="w-20 h-[1px] bg-torridon-gold mx-auto" />
         </Reveal>
       </div>
