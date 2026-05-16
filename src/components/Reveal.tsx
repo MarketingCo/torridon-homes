@@ -10,10 +10,10 @@ interface RevealProps {
 export const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+      transition={{ duration: 2, delay, ease: "easeOut" }}
       className={className}
     >
       {children}
