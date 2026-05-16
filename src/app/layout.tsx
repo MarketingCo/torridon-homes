@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cinzel, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,10 +7,10 @@ import AtmosphericBackground from "@/components/AtmosphericBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import Preloader from "@/components/Preloader";
 
-const playfair = Playfair_Display({
+const cinzel = Cinzel({
   variable: "--font-heading",
   subsets: ["latin"],
-  style: "italic",
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
@@ -72,7 +72,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className={`${playfair.variable} ${inter.variable} font-body antialiased flex flex-col min-h-screen bg-white`}>
+      <body className={`${cinzel.variable} ${inter.variable} font-body antialiased flex flex-col min-h-screen bg-white`}>
         <Preloader />
         <SmoothScrollProvider>
           <AtmosphericBackground />
