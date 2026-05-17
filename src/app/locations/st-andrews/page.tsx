@@ -48,10 +48,10 @@ export default function Location() {
           className="object-cover opacity-40" sizes="100vw" unoptimized />
         <div className="absolute inset-0 bg-gradient-to-t from-torridon-navy via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <Link href="/" className="inline-flex items-center gap-2 text-torridon-gold hover:text-white mb-12 transition-colors text-xs uppercase tracking-[0.3em]">
+          <Link href="/" className="inline-flex items-center gap-2 text-torridon-gold hover:text-white mb-12 transition-colors text-sm font-medium tracking-wide">
             <ArrowLeft size={14} /> Back to Portfolio
           </Link>
-          <div className="flex items-center gap-3 text-torridon-gold/60 text-xs uppercase tracking-[0.4em] mb-8">
+          <div className="flex items-center gap-3 text-torridon-gold/60 text-sm font-medium tracking-wide mb-8">
             <MapPin size={14} /> Regional Spotlight
           </div>
           <h1 className="text-5xl md:text-8xl font-serif text-white leading-tight mb-8">
@@ -80,18 +80,18 @@ export default function Location() {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
                <div>
                   <ShieldCheck className="text-torridon-gold mb-4" size={32} />
-                  <h4 className="text-xs uppercase tracking-widest text-white font-bold mb-2">Build Quality</h4>
-                  <p className="text-[10px] text-white/40 uppercase tracking-tighter">Beyond NHBC Standards</p>
+                  <h4 className="text-sm font-medium tracking-wide text-white mb-2">Build Quality</h4>
+                  <p className="text-sm font-medium tracking-wide text-white/40">Beyond NHBC Standards</p>
                </div>
                <div>
                   <Trophy className="text-torridon-gold mb-4" size={32} />
-                  <h4 className="text-xs uppercase tracking-widest text-white font-bold mb-2">Artisan Led</h4>
-                  <p className="text-[10px] text-white/40 uppercase tracking-tighter">Local Master Craftsmen</p>
+                  <h4 className="text-sm font-medium tracking-wide text-white mb-2">Artisan Led</h4>
+                  <p className="text-sm font-medium tracking-wide text-white/40">Local Master Craftsmen</p>
                </div>
                <div>
                   <Crown className="text-torridon-gold mb-4" size={32} />
-                  <h4 className="text-xs uppercase tracking-widest text-white font-bold mb-2">Elite Service</h4>
-                  <p className="text-[10px] text-white/40 uppercase tracking-tighter">Bespoke Client Liaison</p>
+                  <h4 className="text-sm font-medium tracking-wide text-white mb-2">Elite Service</h4>
+                  <p className="text-sm font-medium tracking-wide text-white/40">Bespoke Client Liaison</p>
                </div>
             </div>
           </div>
@@ -103,15 +103,15 @@ export default function Location() {
             </p>
             <div className="space-y-6">
                <div className="p-6 bg-white/5 border border-white/5">
-                  <p className="text-[10px] uppercase tracking-widest text-torridon-gold mb-2">Active Interest</p>
+                  <p className="text-sm font-medium tracking-wide text-torridon-gold mb-2">Active Interest</p>
                   <p className="text-white text-sm">Residential plots for 1-12 dwellings.</p>
                </div>
                <div className="p-6 bg-white/5 border border-white/5">
-                  <p className="text-[10px] uppercase tracking-widest text-torridon-gold mb-2">Restoration</p>
+                  <p className="text-sm font-medium tracking-wide text-torridon-gold mb-2">Restoration</p>
                   <p className="text-white text-sm">Listed buildings and heritage conversions.</p>
                </div>
             </div>
-            <Link href="/#contact" className="w-full mt-12 bg-torridon-gold text-torridon-navy text-center py-5 text-xs font-bold uppercase tracking-[0.3em] inline-block hover:bg-white transition-all">
+            <Link href="/#contact" className="w-full mt-12 bg-torridon-gold text-torridon-navy text-center py-5 text-sm font-medium tracking-wide inline-block hover:bg-white transition-all">
                 Discuss a Project
             </Link>
           </div>
@@ -119,7 +119,6 @@ export default function Location() {
 
         {/* Brand Ecosystem Link */}
         <div className="border-t border-white/10 pt-20 text-center">
-           <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 mb-10 font-sans">Ecosystem of Trust</p>
            <div className="flex flex-wrap justify-center gap-16 opacity-30 hover:opacity-100 transition-opacity items-center">
               <span className="font-serif text-2xl text-white">TORRIDON <span className="text-torridon-gold">HOMES</span></span>
               <span className="font-black uppercase tracking-tighter text-2xl italic text-white">Balloon <span className="text-white/60">Creative</span></span>

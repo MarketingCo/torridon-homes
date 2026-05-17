@@ -66,7 +66,7 @@ const Header = () => {
               }`}>
                 TORRIDON
               </span>
-              <span className={`text-[10px] uppercase tracking-[0.4em] font-bold -mt-1 transition-colors duration-500 ${
+              <span className={`text-sm font-medium tracking-wide -mt-1 transition-colors duration-500 ${
                 scrolled || isOpen ? 'text-torridon-gold' : 'text-torridon-gold'
               }`}>
                 HOMES
@@ -80,7 +80,7 @@ const Header = () => {
               <Magnetic key={link.name}>
                 <Link 
                   href={link.href}
-                  className={`text-[10px] uppercase tracking-[0.3em] font-bold hover:text-torridon-gold transition-colors duration-500 ${
+                  className={`text-sm font-medium tracking-wide hover:text-torridon-gold transition-colors duration-500 ${
                     scrolled ? 'text-[#1a1a1a]' : 'text-white'
                   }`}
                 >
@@ -91,7 +91,7 @@ const Header = () => {
             <Magnetic>
               <Link 
                 href="#contact"
-                className={`px-8 py-3 border text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-500 ${
+                className={`px-8 py-3 border text-sm font-medium tracking-wide transition-all duration-500 ${
                   scrolled 
                     ? 'border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white' 
                     : 'border-white/30 text-white hover:bg-white hover:text-[#1a1a1a] backdrop-blur-sm'
@@ -135,7 +135,7 @@ const Header = () => {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#c5a05908_1px,transparent_1px),linear-gradient(to_bottom,#c5a05908_1px,transparent_1px)] bg-[size:60px_60px]" />
 
             <div className="relative z-10 space-y-12">
-              <span className="text-torridon-gold uppercase tracking-[0.6em] text-[10px] font-bold block mb-12">Navigation</span>
+              <div className="w-24 h-[1px] bg-torridon-gold/30 mb-12" />
               <nav className="flex flex-col space-y-8">
                 {navLinks.map((link, i) => (
                   <motion.div key={link.name} custom={i} variants={linkVariants}>
@@ -157,11 +157,9 @@ const Header = () => {
                 className="pt-12 border-t border-torridon-gold/10 flex flex-col md:flex-row gap-12"
               >
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Partner Relations</span>
                   <Link href="/partners" className="text-lg font-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold block mb-4">Location</span>
                   <span className="text-lg font-serif text-[#1a1a1a] italic">Central Belt, Scotland</span>
                 </div>
               </motion.div>

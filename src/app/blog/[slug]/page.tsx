@@ -199,12 +199,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="max-w-7xl mx-auto px-6 md:px-12 pb-12 md:pb-20 w-full">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-torridon-gold uppercase tracking-[0.2em] text-[10px] font-bold mb-6 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-torridon-gold text-sm font-medium tracking-wide mb-6 hover:text-white transition-colors"
             >
               <ArrowLeft size={14} />
               Back to Journal
             </Link>
-            <div className="flex items-center gap-6 mb-4 text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+            <div className="flex items-center gap-6 mb-4 text-sm font-medium tracking-wide text-torridon-gold">
               <span className="bg-white/10 px-3 py-1">{post.category}</span>
               <span className="flex items-center gap-1">
                 <Calendar size={10} />
@@ -238,7 +238,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="text-base font-serif text-torridon-green italic">
                 {post.author}
               </div>
-              <div className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+              <div className="text-sm font-medium tracking-wide text-torridon-gold">
                 {post.authorRole}
               </div>
             </div>
@@ -258,7 +258,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.keywords.map((kw) => (
                 <span
                   key={kw}
-                  className="px-3 py-1 border border-torridon-gold/20 text-torridon-gold text-[10px] uppercase tracking-widest font-bold"
+                  className="px-3 py-1 border border-torridon-gold/20 text-torridon-gold text-sm font-medium tracking-wide"
                 >
                   {kw}
                 </span>
@@ -295,7 +295,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     />
                   </div>
                   <div className="sm:col-span-2">
-                    <div className="flex items-center gap-4 mb-3 text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+                    <div className="flex items-center gap-4 mb-3 text-sm font-medium tracking-wide text-torridon-gold">
                       <span>{rp.category}</span>
                       <span>{rp.readTime}</span>
                     </div>
@@ -322,7 +322,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
           <Link
             href="/#contact"
-            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
+            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
           >
             Start the Conversation
           </Link>

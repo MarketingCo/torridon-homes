@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
-            <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">Concierge</span>
+            <div className="w-24 h-[1px] bg-torridon-gold mb-6" />
             <h2 className="text-5xl md:text-7xl font-serif text-[#1a1a1a] mb-8 leading-tight italic">The Enquiry <br />Engine.</h2>
             <p className="text-[#1a1a1a]/60 text-lg font-sans mb-12 leading-relaxed max-w-md">
               Whether you are proposing a land deal, a joint venture, or a future home purchase, our executive team handles every enquiry with absolute discretion and precision.
@@ -55,22 +55,23 @@ const Contact = () => {
               {!isSubmitted ? (
                 <motion.div 
                   key="form"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 2 }}
                   className="bg-[#f9f9f7] p-10 md:p-16 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)] rounded-sm relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-torridon-gold/5 pointer-events-none" />
                   
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="space-y-2">
-                      <label className="text-[9px] uppercase tracking-[0.3em] font-bold text-[#1a1a1a]/40 ml-1">Nature of Enquiry</label>
+                      <label className="text-sm font-medium tracking-wide text-[#1a1a1a]/40 ml-1">Nature of Enquiry</label>
                       <div className="grid grid-cols-2 gap-4">
                         {['Land Deal', 'Joint Venture', 'Home Sales', 'General'].map((type) => (
                           <button 
                             key={type}
                             type="button"
-                            className="py-4 px-6 border border-[#1a1a1a]/10 text-xs uppercase tracking-widest font-bold text-[#1a1a1a] hover:border-torridon-gold hover:bg-white transition-all"
+                            className="py-4 px-6 border border-[#1a1a1a]/10 text-sm font-medium tracking-wide text-[#1a1a1a] hover:border-torridon-gold hover:bg-white transition-all"
                           >
                             {type}
                           </button>
@@ -101,7 +102,7 @@ const Contact = () => {
                     <Magnetic>
                       <button 
                         type="submit"
-                        className="w-full py-6 bg-[#1a1a1a] text-white font-sans uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
+                        className="w-full py-6 bg-[#1a1a1a] text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
                       >
                         Initialize Dialogue <ArrowRight size={14} />
                       </button>
@@ -129,7 +130,7 @@ const Contact = () => {
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}
-                    className="text-[10px] uppercase tracking-[0.4em] font-bold text-torridon-gold hover:text-white transition-colors"
+                    className="text-sm font-medium tracking-wide text-torridon-gold hover:text-white transition-colors"
                   >
                     Send Another
                   </button>

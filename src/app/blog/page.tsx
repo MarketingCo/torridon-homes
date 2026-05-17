@@ -30,9 +30,7 @@ export default function BlogPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold rounded-full blur-[150px]" />
         </div>
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <span className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">
-            Insights
-          </span>
+          <div className="w-24 h-[1px] bg-torridon-gold mb-6" />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 italic leading-tight">
             The Torridon Journal.
           </h1>
@@ -57,12 +55,12 @@ export default function BlogPage() {
                   alt={posts[0].title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-[9px] uppercase tracking-widest font-bold text-torridon-green">
+                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">
                   {posts[0].category}
                 </div>
               </div>
               <div>
-                <div className="flex items-center gap-6 mb-6 text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+                <div className="flex items-center gap-6 mb-6 text-sm font-medium tracking-wide text-torridon-gold">
                   <span className="flex items-center gap-2">
                     <Calendar size={12} />
                     {new Date(posts[0].date).toLocaleDateString("en-GB", {
@@ -90,12 +88,12 @@ export default function BlogPage() {
                     <div className="text-sm font-serif text-torridon-green italic">
                       {posts[0].author}
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+                    <div className="text-sm font-medium tracking-wide text-torridon-gold">
                       {posts[0].authorRole}
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 flex items-center gap-4 text-torridon-gold uppercase tracking-[0.2em] text-[10px] font-bold group-hover:gap-6 transition-all duration-500">
+                <div className="mt-8 flex items-center gap-4 text-torridon-gold text-sm font-medium tracking-wide group-hover:gap-6 transition-all duration-500">
                   <span>Read Article</span>
                   <ArrowRight size={14} />
                 </div>
@@ -121,11 +119,11 @@ export default function BlogPage() {
                     alt={post.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-[9px] uppercase tracking-widest font-bold text-torridon-green">
+                  <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">
                     {post.category}
                   </div>
                 </div>
-                <div className="flex items-center gap-4 mb-4 text-[10px] uppercase tracking-widest text-torridon-gold font-bold">
+                <div className="flex items-center gap-4 mb-4 text-sm font-medium tracking-wide text-torridon-gold">
                   <span className="flex items-center gap-1">
                     <Calendar size={10} />
                     {new Date(post.date).toLocaleDateString("en-GB", {
@@ -163,7 +161,7 @@ export default function BlogPage() {
           </p>
           <Link
             href="/#contact"
-            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
+            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
           >
             Get in Touch
           </Link>

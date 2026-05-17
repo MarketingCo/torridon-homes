@@ -12,20 +12,20 @@ const BrandHUD = () => {
         className="bg-[#1a1a1a]/5 backdrop-blur-xl border border-torridon-gold/20 p-6 rounded-sm flex flex-col gap-4"
       >
         <div className="flex flex-col">
-          <span className="text-torridon-gold text-[8px] uppercase tracking-[0.4em] font-bold mb-1">Status</span>
+          <span className="text-torridon-gold text-sm font-medium tracking-wide mb-1">Status</span>
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 rounded-full bg-torridon-gold animate-pulse" />
-            <span className="text-[#1a1a1a] text-[10px] uppercase tracking-widest font-bold">Operational</span>
+            <span className="text-[#1a1a1a] text-sm font-medium tracking-wide">Operational</span>
           </div>
         </div>
 
         <div className="flex flex-col">
-          <span className="text-torridon-gold text-[8px] uppercase tracking-[0.4em] font-bold mb-1">Active Portfolio</span>
+          <span className="text-torridon-gold text-sm font-medium tracking-wide mb-1">Active Portfolio</span>
           <span className="text-torridon-green font-serif text-lg italic tracking-tighter">£42.5M GDV</span>
         </div>
 
         <div className="flex flex-col">
-          <span className="text-torridon-gold text-[8px] uppercase tracking-[0.4em] font-bold mb-1">Sites Secured</span>
+          <span className="text-torridon-gold text-sm font-medium tracking-wide mb-1">Sites Secured</span>
           <span className="text-torridon-green font-serif text-lg italic tracking-tighter">04 / 12 Target</span>
         </div>
 

@@ -26,7 +26,7 @@ export default function ContactForm() {
           <CheckCircle2 size={40} />
         </div>
         <h3 className="text-3xl font-serif italic mb-4 text-stone-900">Vision Brief Authenticated</h3>
-        <p className="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em] leading-relaxed max-sm mx-auto">
+        <p className="text-sm font-medium tracking-wide text-stone-400 leading-relaxed max-sm mx-auto">
           Operational data received. Our development lead is reviewing your plot and architectural requirements. Response within 24 hours.
         </p>
       </motion.div>
@@ -52,9 +52,10 @@ export default function ContactForm() {
           {step === 1 && (
             <motion.div
               key="step1"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
               className="space-y-10"
             >
               <h4 className="text-3xl font-serif text-stone-900 leading-tight tracking-tighter">What is the status of your development?</h4>
@@ -76,7 +77,7 @@ export default function ContactForm() {
                     <div className={`${selectedStage === s.name ? 'text-stone-50' : 'text-stone-200 group-hover:text-stone-900'} transition-colors`}>
                       {s.icon}
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-stone-900">{s.name}</span>
+                    <span className="text-sm font-medium tracking-wide text-stone-900">{s.name}</span>
                     <input type="hidden" name="project_stage" value={selectedStage} />
                   </button>
                 ))}
@@ -87,15 +88,16 @@ export default function ContactForm() {
           {step === 2 && (
             <motion.div
               key="step2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
               className="space-y-12"
             >
               <h4 className="text-3xl font-serif text-stone-900 tracking-tighter">Location & Vision</h4>
               <div className="space-y-10">
                 <div>
-                  <label htmlFor="location" className="text-[10px] font-bold text-stone-400 uppercase tracking-[0.4em] mb-4 block">Site Location / Postcode</label>
+                  <label htmlFor="location" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Site Location / Postcode</label>
                   <input
                     id="location"
                     type="text"
@@ -106,7 +108,7 @@ export default function ContactForm() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="budget" className="text-[10px] font-bold text-stone-400 uppercase tracking-[0.4em] mb-4 block">Projected Build Value</label>
+                  <label htmlFor="budget" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Projected Build Value</label>
                   <input
                     id="budget"
                     type="text"
@@ -117,8 +119,8 @@ export default function ContactForm() {
                 </div>
               </div>
               <div className="flex justify-between items-center pt-8">
-                <button type="button" onClick={prevStep} className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-300 hover:text-stone-900 transition-colors">← Return</button>
-                <button type="button" onClick={nextStep} className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-900 hover:text-stone-400 transition-colors">Continue →</button>
+                <button type="button" onClick={prevStep} className="text-sm font-medium tracking-wide text-stone-300 hover:text-stone-900 transition-colors">← Return</button>
+                <button type="button" onClick={nextStep} className="text-sm font-medium tracking-wide text-stone-900 hover:text-stone-400 transition-colors">Continue →</button>
               </div>
             </motion.div>
           )}
@@ -126,15 +128,16 @@ export default function ContactForm() {
           {step === 3 && (
             <motion.div
               key="step3"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
               className="space-y-10"
             >
               <h4 className="text-3xl font-serif text-stone-900 tracking-tighter">Authentication</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                  <label htmlFor="name" className="text-[10px] font-bold text-stone-400 uppercase tracking-[0.4em] mb-4 block">Lead Name</label>
+                  <label htmlFor="name" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Lead Name</label>
                   <input
                     id="name"
                     type="text"
@@ -144,7 +147,7 @@ export default function ContactForm() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="text-[10px] font-bold text-stone-400 uppercase tracking-[0.4em] mb-4 block">Email Address</label>
+                  <label htmlFor="email" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Email Address</label>
                   <input
                     id="email"
                     type="email"
@@ -152,15 +155,15 @@ export default function ContactForm() {
                     required
                     className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all border-b"
                   />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-[10px] font-bold mt-2" />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm font-medium tracking-wide mt-2" />
                 </div>
               </div>
               <div className="flex justify-between items-center pt-12">
-                <button type="button" onClick={prevStep} className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-300 hover:text-stone-900 transition-colors">← Return</button>
+                <button type="button" onClick={prevStep} className="text-sm font-medium tracking-wide text-stone-300 hover:text-stone-900 transition-colors">← Return</button>
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="bg-stone-900 text-stone-50 px-16 py-7 font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-stone-800 transition-all disabled:opacity-50 flex items-center gap-4 shadow-2xl"
+                  className="bg-stone-900 text-stone-50 px-16 py-7 text-sm font-medium tracking-wide hover:bg-stone-800 transition-all disabled:opacity-50 flex items-center gap-4 shadow-2xl"
                 >
                   {state.submitting ? 'Authenticating...' : 'Transmit Vision Brief'}
                   <Send size={14} />

@@ -48,7 +48,7 @@ const SideNav = () => {
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 10 }}
-                className="text-[10px] uppercase tracking-[0.3em] font-bold text-torridon-gold pointer-events-none"
+                className="text-sm font-medium tracking-wide text-torridon-gold pointer-events-none"
               >
                 {s.label}
               </motion.span>

@@ -44,17 +44,7 @@ const LivingBlueprint = () => {
           strokeWidth="1"
           style={{ pathLength }}
         />
-        {/* Annotation Text (Placeholder SVG version) */}
-        <motion.text
-          x="410"
-          y="30"
-          className="text-[10px] font-sans uppercase tracking-[0.4em] fill-current italic font-bold"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          Section detail // T-01
-        </motion.text>
+        {/* Annotation removed */}
       </motion.svg>
     </div>
   );

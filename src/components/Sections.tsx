@@ -27,13 +27,11 @@ export const BlueprintImage = ({ src, alt, className }: { src: string, alt: stri
           <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="0.3" strokeDasharray="4 4" />
           <path d="M40,40 L160,160 M160,40 L40,160" fill="none" stroke="currentColor" strokeWidth="0.2" />
         </svg>
-        <div className="absolute top-12 left-12 border-l border-torridon-gold pl-4 text-left">
-          <div className="text-torridon-gold text-[8px] font-bold uppercase tracking-[0.4em]">Section Detail // AA-01</div>
-          <div className="text-white/40 text-[6px] uppercase tracking-widest mt-1">Scale 1:50 @ A1</div>
+        <div className="absolute top-12 left-12 border-t border-torridon-gold pt-4 text-left">
+          <div className="w-24 h-[1px] bg-torridon-gold/30 mb-2" />
         </div>
         <div className="absolute bottom-12 right-12 text-right">
-          <div className="text-torridon-gold text-[8px] font-bold uppercase tracking-[0.4em]">Torridon Standard</div>
-          <div className="text-white/40 text-[6px] uppercase tracking-widest mt-1">Precision Engineered</div>
+          <div className="w-24 h-[1px] bg-torridon-gold/30 ml-auto mb-2" />
         </div>
       </div>
     </div>
@@ -81,7 +79,7 @@ export const ProjectRoadmap = () => {
                         <h4 className="text-lg font-serif text-torridon-green italic leading-none">{phase.title}</h4>
                         <span className="text-xs text-torridon-gold/70 font-sans italic">{phase.status}</span>
                       </div>
-                      <p className="text-xs text-torridon-green/40 font-sans tracking-widest uppercase pl-6">{phase.date}</p>
+                      <p className="text-sm font-medium tracking-wide text-torridon-green/40 font-sans pl-6">{phase.date}</p>
                     </div>
                   ))}
                 </div>
@@ -105,9 +103,9 @@ const CinematicHeading = ({ title, align = 'center' }: { title: string, align?: 
         {words.map((word, i) => (
           <motion.span
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] as [number, number, number, number] }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 2, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] as [number, number, number, number] }}
             className="inline-block mr-[0.2em]"
           >
             {word}
@@ -448,7 +446,7 @@ export const LandAcquisition = () => {
               <div><h4 className="font-serif text-torridon-green text-lg italic">Boutique Scale</h4><p className="text-xs text-torridon-green/60">Maximum value from &lt;12 dwelling sites.</p></div>
             </div>
           </div>
-          <a href="#contact" className="inline-block px-12 py-6 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
+          <a href="#contact" className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
         </Reveal>
         <div className="relative h-[500px] md:h-[700px] overflow-hidden rounded-sm shadow-2xl">
           <img src="https://images.unsplash.com/photo-1588186879741-889eb26e549f?q=80&w=1932&auto=format&fit=crop" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" alt="Scottish landscape and rural property location" loading="lazy" />
@@ -543,7 +541,7 @@ export const JointVentures = () => {
               </div>
             ))}
           </div>
-          <a href="#contact" className="inline-block px-12 py-6 border border-torridon-gold text-torridon-gold font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold hover:text-torridon-green transition-all duration-500">Inquire About Joint Ventures</a>
+          <a href="#contact" className="inline-block px-12 py-6 border border-torridon-gold text-torridon-gold font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold hover:text-torridon-green transition-all duration-500">Inquire About Joint Ventures</a>
         </Reveal>
       </div>
     </section>
@@ -563,7 +561,7 @@ export const PriorityInvestor = () => {
           <p className="text-torridon-green/60 text-lg font-sans mb-12 max-w-2xl mx-auto">Early access to financial projections and pre-launch opportunities.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <input type="email" aria-label="Professional Email" placeholder="Professional Email" className="w-full sm:w-80 p-6 bg-torridon-cream border-none outline-none font-sans text-sm focus:ring-1 ring-torridon-gold/50" />
-            <button className="w-full sm:w-auto px-12 py-6 bg-torridon-green text-white font-sans uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all shadow-2xl">Request Invitation</button>
+            <button className="w-full sm:w-auto px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Request Invitation</button>
           </div>
           <p className="mt-8 text-xs text-torridon-green/30 font-sans italic">Strictly Confidential &bull; Boutique Opportunities</p>
         </Reveal>
@@ -589,7 +587,7 @@ export const Insights = () => {
       </div>
       <div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {posts.map((post, i) => (
-          <Reveal key={i}><div className="group cursor-pointer"><div className="aspect-[16/11] overflow-hidden mb-6 relative rounded-sm shadow-xl"><img src={post.img} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" alt="Torridon Homes insights and property journal article" loading="lazy" /><div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-[9px] uppercase tracking-widest font-bold text-torridon-green">{post.category}</div></div><div className="text-xs text-torridon-gold/70 font-sans italic mb-2">{post.date}</div><h4 className="text-xl font-serif text-torridon-green group-hover:text-torridon-gold transition-colors duration-300 italic">{post.title}</h4></div></Reveal>
+          <Reveal key={i}><div className="group cursor-pointer"><div className="aspect-[16/11] overflow-hidden mb-6 relative rounded-sm shadow-xl"><img src={post.img} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" alt="Torridon Homes insights and property journal article" loading="lazy" /><div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">{post.category}</div></div><div className="text-xs text-torridon-gold/70 font-sans italic mb-2">{post.date}</div><h4 className="text-xl font-serif text-torridon-green group-hover:text-torridon-gold transition-colors duration-300 italic">{post.title}</h4></div></Reveal>
         ))}
       </div>
     </section>
@@ -729,8 +727,8 @@ export const Developments = () => {
                   </ul>
                 </div>
                 <div className="flex flex-wrap gap-6">
-                  <button className="px-10 py-5 bg-torridon-gold text-torridon-green uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-all">Request Full Brochure</button>
-                  <button className="px-10 py-5 border border-white/20 text-white uppercase tracking-widest text-[10px] font-bold hover:bg-white hover:text-torridon-green transition-all">Investment Data</button>
+                  <button className="px-10 py-5 bg-torridon-gold text-torridon-green text-sm font-medium tracking-wide hover:bg-white transition-all">Request Full Brochure</button>
+                  <button className="px-10 py-5 border border-white/20 text-white text-sm font-medium tracking-wide hover:bg-white hover:text-torridon-green transition-all">Investment Data</button>
                 </div>
               </motion.div>
             </div>
@@ -767,7 +765,7 @@ export const FAQs = () => {
   15. NEWSLETTER 
 */
 export const Newsletter = () => (
-  <section className="py-32 bg-white text-center relative overflow-hidden"><div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" /><Reveal><h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 italic">The Torridon Journal.</h2><p className="text-torridon-green/60 font-sans mb-12 max-w-lg mx-auto text-sm px-6">Receive curated property insights and exclusive partnership opportunities.</p><div className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto"><input type="email" aria-label="Email Address" placeholder="Email Address" className="px-8 py-6 bg-torridon-cream border-none text-torridon-green outline-none focus:ring-1 ring-torridon-gold/30 font-sans text-sm w-full sm:flex-1" /><button className="px-12 py-6 bg-torridon-green text-white uppercase tracking-widest text-xs font-bold hover:bg-torridon-gold transition-all shadow-2xl">Subscribe</button></div></Reveal></section>
+  <section className="py-32 bg-white text-center relative overflow-hidden"><div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" /><Reveal><h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 italic">The Torridon Journal.</h2><p className="text-torridon-green/60 font-sans mb-12 max-w-lg mx-auto text-sm px-6">Receive curated property insights and exclusive partnership opportunities.</p><div className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto"><input type="email" aria-label="Email Address" placeholder="Email Address" className="px-8 py-6 bg-torridon-cream border-none text-torridon-green outline-none focus:ring-1 ring-torridon-gold/30 font-sans text-sm w-full sm:flex-1" /><button className="px-12 py-6 bg-torridon-green text-white text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Subscribe</button></div></Reveal></section>
 );
 
 /* 
@@ -784,7 +782,7 @@ export const Sustainability = () => (
 */
 export const StrategicLocations = () => (
   <section className="py-24 bg-torridon-green text-white"><div className="max-w-7xl mx-auto px-8 md:px-20"><div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8"><Reveal><h2 className="text-3xl md:text-5xl font-serif italic">Strategic Locations.</h2></Reveal><Reveal><p className="text-white/50 max-w-sm font-sans text-sm">Targeting prime sites across the most sought-after pockets of the Central Belt.</p></Reveal></div><div className="grid grid-cols-2 md:grid-cols-4 gap-8">{['Edinburgh', 'Stirling', 'Linlithgow', 'East Lothian', 'Dunbar', 'Falkirk', 'Livingston', 'Perthshire Border'].map((loc, i) => (
-    <Reveal key={i}><div className="group border-b border-white/10 pb-4 hover:border-torridon-gold transition-colors"><div className="text-torridon-gold/20 text-[10px] font-sans mb-2">0{i+1}</div><div className="text-xl font-serif italic">{loc}</div></div></Reveal>
+    <Reveal key={i}><div className="group border-b border-white/10 pb-4 hover:border-torridon-gold transition-colors"><div className="text-torridon-gold/20 text-sm font-medium tracking-wide font-sans mb-2">0{i+1}</div><div className="text-xl font-serif italic">{loc}</div></div></Reveal>
   ))}</div></div></section>
 );
 
@@ -981,7 +979,7 @@ export const VaultPreview = () => {
                 <div className="w-16 h-16 rounded-full bg-torridon-gold flex items-center justify-center mb-6 shadow-2xl shadow-torridon-gold/20"><Shield className="text-torridon-green" size={28} /></div>
                 <h4 className="text-white font-serif text-2xl mb-4 italic">Unlock Financial Data</h4>
                 <p className="text-white/60 text-xs font-sans mb-10 max-w-xs mx-auto italic">Requires authorized partner credentials or verified NDAs.</p>
-                <button className="px-10 py-5 bg-white text-torridon-green uppercase tracking-widest text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Request Access</button>
+                <button className="px-10 py-5 bg-white text-torridon-green text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Request Access</button>
               </div>
             </div>
           </Reveal>

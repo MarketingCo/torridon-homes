@@ -7,20 +7,20 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-2">
           <div className="flex flex-col mb-8">
             <span className="text-3xl font-serif tracking-tighter text-white">TORRIDON</span>
-            <span className="text-xs uppercase tracking-[0.3em] text-torridon-gold -mt-1">HOMES</span>
+            <span className="text-sm font-medium tracking-wide text-torridon-gold -mt-1">HOMES</span>
           </div>
           <p className="text-white/60 max-w-sm leading-relaxed font-sans text-sm">
             A boutique property developer dedicated to creating exclusive, high-specification developments across the Central Belt of Scotland. We focus on projects of fewer than 12 dwellings to ensure unmatched attention to detail.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">NHBC Registered</span>
-            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">LABC Warranty</span>
-            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-[10px] uppercase tracking-widest font-bold">RICS Certified</span>
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-sm font-medium tracking-wide">NHBC Registered</span>
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-sm font-medium tracking-wide">LABC Warranty</span>
+            <span className="px-3 py-1 border border-torridon-gold/30 text-torridon-gold text-sm font-medium tracking-wide">RICS Certified</span>
           </div>
         </div>
 
         <div>
-          <h4 className="text-torridon-gold uppercase tracking-widest text-xs font-sans font-bold mb-8">Navigation</h4>
+          <h4 className="text-torridon-gold text-sm font-medium tracking-wide font-sans mb-8">Navigation</h4>
           <ul className="space-y-4 text-sm font-sans tracking-wide text-white/70">
             <li><Link href="/blog" className="hover:text-white transition-colors duration-300">Journal</Link></li>
             <li><Link href="#land" className="hover:text-white transition-colors duration-300">Land Acquisition</Link></li>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-torridon-gold uppercase tracking-widest text-xs font-sans font-bold mb-8">Contact</h4>
+          <h4 className="text-torridon-gold text-sm font-medium tracking-wide font-sans mb-8">Contact</h4>
           <address className="not-italic text-sm text-white/60 leading-relaxed font-sans space-y-2">
             <span className="block">Central Belt, Scotland</span>
             <a
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-white/30 font-sans">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium tracking-wide text-white/30 font-sans">
         <p>© {new Date().getFullYear()} Torridon Homes Ltd. All rights reserved.</p>
         <div className="flex space-x-8">
           <Link href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>

@@ -18,13 +18,13 @@ const PartnerPortal = () => {
         
         <div className="relative z-10 text-center px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
           >
-            <span className="text-torridon-gold uppercase tracking-[0.6em] text-[10px] font-bold mb-6 block">Secure Environment</span>
+            <div className="w-24 h-[1px] bg-torridon-gold mb-6 mx-auto" />
             <h1 className="text-6xl md:text-8xl font-serif text-white italic leading-tight mb-8">Partner <br />Portal.</h1>
-            <div className="flex items-center justify-center gap-4 text-white/40 uppercase tracking-[0.2em] text-[10px] font-bold">
+            <div className="flex items-center justify-center gap-4 text-white/40 text-sm font-medium tracking-wide">
               <Lock size={12} className="text-torridon-gold" />
               <span>AES-256 Encrypted Protocol</span>
             </div>
@@ -49,7 +49,7 @@ const PartnerPortal = () => {
                   <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-green font-bold">TH</div>
                   <div>
                     <div className="text-white font-serif italic text-sm">Partner Account</div>
-                    <div className="text-[8px] uppercase tracking-widest text-white/40">Secure Access</div>
+                    <div className="text-sm font-medium tracking-wide text-white/40">Secure Access</div>
                   </div>
                 </div>
                 
@@ -62,7 +62,7 @@ const PartnerPortal = () => {
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-white/40 hover:text-torridon-gold transition-colors cursor-pointer group" role="button" tabIndex={0}>
                       <item.icon size={18} />
-                      <span className="text-[10px] uppercase tracking-widest font-bold">{item.label}</span>
+                      <span className="text-sm font-medium tracking-wide">{item.label}</span>
                     </div>
                   ))}
                 </nav>
@@ -71,13 +71,14 @@ const PartnerPortal = () => {
 
             {/* Main Content Area */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 2 }}
               className="lg:col-span-9"
             >
               <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-10 md:p-20 rounded-sm shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6 bg-torridon-gold text-torridon-green text-[10px] font-bold uppercase tracking-widest">
+                <div className="absolute top-0 right-0 p-6 bg-torridon-gold text-torridon-green text-sm font-medium tracking-wide">
                   Authorized Personnel Only
                 </div>
 
@@ -102,7 +103,7 @@ const PartnerPortal = () => {
                       <Lock className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" size={18} />
                     </div>
                     <Magnetic>
-                      <button className="w-full py-6 bg-white text-torridon-green uppercase tracking-[0.3em] text-[10px] font-bold hover:bg-torridon-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-4">
+                      <button className="w-full py-6 bg-white text-torridon-green text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-4">
                         Secure Authentication <ArrowRight size={14} />
                       </button>
                     </Magnetic>
@@ -110,12 +111,10 @@ const PartnerPortal = () => {
 
                   <div className="pt-12 border-t border-white/10 grid grid-cols-2 gap-12">
                     <div>
-                      <span className="text-torridon-gold text-[8px] uppercase tracking-widest font-bold block mb-2">New Partners</span>
-                      <button className="text-white/40 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Request Credentials</button>
+                      <button className="text-white/40 hover:text-white text-sm font-medium tracking-wide transition-colors">Request Credentials</button>
                     </div>
                     <div>
-                      <span className="text-torridon-gold text-[8px] uppercase tracking-widest font-bold block mb-2">Support</span>
-                      <button className="text-white/40 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Vault Assistance</button>
+                      <button className="text-white/40 hover:text-white text-sm font-medium tracking-wide transition-colors">Vault Assistance</button>
                     </div>
                   </div>
                 </div>

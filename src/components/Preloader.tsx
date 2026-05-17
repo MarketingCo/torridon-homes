@@ -53,7 +53,7 @@ const Preloader = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="text-torridon-gold uppercase tracking-[0.4em] text-[10px] mt-4 font-sans"
+            className="text-torridon-gold text-sm font-medium tracking-wide mt-4 font-sans"
           >
             HOMES
           </motion.span>
