@@ -21,12 +21,12 @@ const BrandHUD = () => {
 
         <div className="flex flex-col">
           <span className="text-torridon-gold text-sm font-medium tracking-wide mb-1">Active Portfolio</span>
-          <span className="text-torridon-green font-serif text-lg italic tracking-tighter">£42.5M GDV</span>
+          <span className="text-torridon-forest font-torridon-serif text-lg italic tracking-tighter">£42.5M GDV</span>
         </div>
 
         <div className="flex flex-col">
           <span className="text-torridon-gold text-sm font-medium tracking-wide mb-1">Sites Secured</span>
-          <span className="text-torridon-green font-serif text-lg italic tracking-tighter">04 / 12 Target</span>
+          <span className="text-torridon-forest font-torridon-serif text-lg italic tracking-tighter">04 / 12 Target</span>
         </div>
 
         <div className="w-full h-[1px] bg-torridon-gold/10" />

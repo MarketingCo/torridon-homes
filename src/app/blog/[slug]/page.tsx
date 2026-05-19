@@ -64,7 +64,7 @@ function formatContent(content: string) {
       elements.push(
         <ul
           key={`list-${elements.length}`}
-          className="space-y-3 mb-8 text-torridon-green/70 font-sans leading-relaxed"
+          className="space-y-3 mb-8 text-torridon-forest/70 font-torridon-sans leading-relaxed"
         >
           {listItems}
         </ul>
@@ -83,7 +83,7 @@ function formatContent(content: string) {
       elements.push(
         <h2
           key={idx}
-          className="text-2xl md:text-3xl font-serif text-torridon-green mt-16 mb-6 italic leading-tight"
+          className="text-2xl md:text-3xl font-torridon-serif text-torridon-forest mt-16 mb-6 italic leading-tight"
         >
           {trimmed.replace("## ", "")}
         </h2>
@@ -93,7 +93,7 @@ function formatContent(content: string) {
       elements.push(
         <h3
           key={idx}
-          className="text-xl md:text-2xl font-serif text-torridon-green mt-12 mb-4 italic leading-tight"
+          className="text-xl md:text-2xl font-torridon-serif text-torridon-forest mt-12 mb-4 italic leading-tight"
         >
           {trimmed.replace("### ", "")}
         </h3>
@@ -103,7 +103,7 @@ function formatContent(content: string) {
       elements.push(
         <p
           key={idx}
-          className="text-lg font-sans text-torridon-green font-semibold mb-4"
+          className="text-lg font-torridon-sans text-torridon-forest font-semibold mb-4"
         >
           {trimmed.replace(/\*\*/g, "")}
         </p>
@@ -113,13 +113,13 @@ function formatContent(content: string) {
       const text = trimmed.replace(/^\d+\.\s/, "");
       const parts = text.split("**");
       elements.push(
-        <p key={idx} className="text-torridon-green/70 font-sans leading-relaxed mb-4">
-          <span className="font-semibold text-torridon-green">
+        <p key={idx} className="text-torridon-forest/70 font-torridon-sans leading-relaxed mb-4">
+          <span className="font-semibold text-torridon-forest">
             {trimmed.match(/^\d+/)?.[0]}.
           </span>{" "}
           {parts.map((part, i) =>
             i % 2 === 1 ? (
-              <strong key={i} className="text-torridon-green">
+              <strong key={i} className="text-torridon-forest">
                 {part}
               </strong>
             ) : (
@@ -138,7 +138,7 @@ function formatContent(content: string) {
           <span>
             {parts.map((part, i) =>
               i % 2 === 1 ? (
-                <strong key={i} className="text-torridon-green">
+                <strong key={i} className="text-torridon-forest">
                   {part}
                 </strong>
               ) : (
@@ -154,11 +154,11 @@ function formatContent(content: string) {
       elements.push(
         <p
           key={idx}
-          className="text-torridon-green/70 font-sans leading-relaxed mb-6"
+          className="text-torridon-forest/70 font-torridon-sans leading-relaxed mb-6"
         >
           {parts.map((part, i) =>
             i % 2 === 1 ? (
-              <strong key={i} className="text-torridon-green">
+              <strong key={i} className="text-torridon-forest">
                 {part}
               </strong>
             ) : (
@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           alt={post.title}
           className="w-full h-full object-cover grayscale"
         />
-        <div className="absolute inset-0 bg-torridon-green/60" />
+        <div className="absolute inset-0 bg-torridon-forest/60" />
         <div className="absolute inset-0 flex items-end">
           <div className="max-w-7xl mx-auto px-6 md:px-12 pb-12 md:pb-20 w-full">
             <Link
@@ -219,7 +219,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.readTime}
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white italic leading-tight max-w-4xl">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-torridon-serif text-white italic leading-tight max-w-4xl">
               {post.title}
             </h1>
           </div>
@@ -231,11 +231,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           {/* Author */}
           <div className="flex items-center gap-4 mb-12 pb-12 border-b border-torridon-gold/10">
-            <div className="w-12 h-12 bg-torridon-green text-torridon-gold flex items-center justify-center text-base font-serif italic">
+            <div className="w-12 h-12 bg-torridon-forest text-torridon-gold flex items-center justify-center text-base font-torridon-serif italic">
               IM
             </div>
             <div>
-              <div className="text-base font-serif text-torridon-green italic">
+              <div className="text-base font-torridon-serif text-torridon-forest italic">
                 {post.author}
               </div>
               <div className="text-sm font-medium tracking-wide text-torridon-gold">
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Content */}
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl md:text-2xl text-torridon-green/80 font-serif italic leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-torridon-forest/80 font-torridon-serif italic leading-relaxed mb-12">
               {post.excerpt}
             </p>
             {formatContent(post.content)}
@@ -277,7 +277,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {relatedPosts.length > 0 && (
         <section className="py-16 md:py-24 bg-torridon-cream border-t border-torridon-gold/10">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <h2 className="text-2xl md:text-3xl font-serif text-torridon-green mb-12 italic">
+            <h2 className="text-2xl md:text-3xl font-torridon-serif text-torridon-forest mb-12 italic">
               Related Articles.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -299,7 +299,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <span>{rp.category}</span>
                       <span>{rp.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-serif text-torridon-green italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
+                    <h3 className="text-lg font-torridon-serif text-torridon-forest italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
                       {rp.title}
                     </h3>
                   </div>
@@ -313,16 +313,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* CTA */}
       <section className="py-24 bg-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif text-torridon-green mb-6 italic">
+          <h2 className="text-3xl md:text-4xl font-torridon-serif text-torridon-forest mb-6 italic">
             Ready to Discuss Your Project?
           </h2>
-          <p className="text-torridon-green/60 font-sans mb-10 max-w-lg mx-auto">
+          <p className="text-torridon-forest/60 font-torridon-sans mb-10 max-w-lg mx-auto">
             Whether you are buying, investing, or exploring land development, our
             team is here to help.
           </p>
           <Link
             href="/#contact"
-            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
+            className="inline-block px-12 py-6 bg-torridon-forest text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
           >
             Start the Conversation
           </Link>

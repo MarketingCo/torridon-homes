@@ -61,7 +61,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link href="/" className="group relative z-[1100]">
             <div className="flex flex-col">
-              <span className={`text-2xl md:text-3xl font-serif tracking-tighter transition-colors duration-500 ${
+              <span className={`text-2xl md:text-3xl font-torridon-serif tracking-tighter transition-colors duration-500 ${
                 scrolled || isOpen ? 'text-[#1a1a1a]' : 'text-white'
               }`}>
                 TORRIDON
@@ -141,7 +141,7 @@ const Header = () => {
                   <motion.div key={link.name} custom={i} variants={linkVariants}>
                     <Link 
                       href={link.href}
-                      className="text-5xl md:text-7xl font-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors duration-500 block"
+                      className="text-5xl md:text-7xl font-torridon-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors duration-500 block"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}.
@@ -157,10 +157,10 @@ const Header = () => {
                 className="pt-12 border-t border-torridon-gold/10 flex flex-col md:flex-row gap-12"
               >
                 <div>
-                  <Link href="/partners" className="text-lg font-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
+                  <Link href="/partners" className="text-lg font-torridon-serif text-[#1a1a1a] italic hover:text-torridon-gold transition-colors" onClick={() => setIsOpen(false)}>Secure Partner Portal</Link>
                 </div>
                 <div>
-                  <span className="text-lg font-serif text-[#1a1a1a] italic">Central Belt, Scotland</span>
+                  <span className="text-lg font-torridon-serif text-[#1a1a1a] italic">Central Belt, Scotland</span>
                 </div>
               </motion.div>
             </div>

@@ -23,7 +23,7 @@ const siteUrl = "https://torridon-homes.co.uk";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Torridon Homes | Residential Developments Scotland",
-  description: "Specialist residential developers creating high-value homes across Scotland. Delivering architectural vision and master site management.",
+  description: "Specialist residential developers creating high-value homes across Scotland. Register Your Interest.",
   alternates: {
     canonical: siteUrl,
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Torridon Homes",
     title: "Torridon Homes | Residential Developments Scotland",
-    description: "Specialist residential developers creating high-value homes across Scotland.",
+    description: "Specialist residential developers creating high-value homes across Scotland. Register Your Interest.",
   },
 };
 

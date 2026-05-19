@@ -24,7 +24,7 @@ const Preloader = () => {
             y: '-100%',
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.2 }
           }}
-          className="fixed inset-0 z-[10000] bg-torridon-green flex items-center justify-center flex-col"
+          className="fixed inset-0 z-[10000] bg-torridon-forest flex items-center justify-center flex-col"
         >
           <div className="overflow-hidden flex">
             {words.map((char, i) => (
@@ -37,7 +37,7 @@ const Preloader = () => {
                   ease: [0.33, 1, 0.68, 1] as [number, number, number, number], 
                   delay: i * 0.05 
                 }}
-                className="text-white text-5xl md:text-7xl font-serif tracking-tighter"
+                className="text-white text-5xl md:text-7xl font-torridon-serif tracking-tighter"
               >
                 {char}
               </motion.span>
@@ -53,7 +53,7 @@ const Preloader = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="text-torridon-gold text-sm font-medium tracking-wide mt-4 font-sans"
+            className="text-torridon-gold text-sm font-medium tracking-wide mt-4 font-torridon-sans"
           >
             HOMES
           </motion.span>

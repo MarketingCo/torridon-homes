@@ -54,10 +54,10 @@ export default function Location() {
           <div className="flex items-center gap-3 text-torridon-gold/60 text-sm font-medium tracking-wide mb-8">
             <MapPin size={14} /> Regional Spotlight
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif text-white leading-tight mb-8">
+          <h1 className="text-5xl md:text-8xl font-torridon-serif text-white leading-tight mb-8">
             Luxury Development & <br /> <span className="italic text-torridon-gold">Restoration in Dunblane</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/60 font-sans max-w-3xl leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 font-torridon-sans max-w-3xl leading-relaxed">
             Torridon Homes is proud to bring our signature 'Elite' standard of construction and heritage restoration to the distinguished community of Dunblane.
           </p>
         </div>
@@ -66,10 +66,10 @@ export default function Location() {
       <section className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start mb-32">
           <div className="lg:col-span-7 space-y-12">
-            <h2 className="text-4xl font-serif text-white leading-tight">
+            <h2 className="text-4xl font-torridon-serif text-white leading-tight">
               An Unwavering Commitment <br /> to the Heritage of Dunblane
             </h2>
-            <div className="font-sans text-white/70 text-lg leading-relaxed space-y-8">
+            <div className="font-torridon-sans text-white/70 text-lg leading-relaxed space-y-8">
               <p>
                 In Dunblane, excellence is not merely expected—it is the baseline. Torridon Homes approaches every project in this historic enclave with a deep respect for local architectural vernacular, combined with the most advanced sustainable building practices available today.
               </p>
@@ -97,8 +97,8 @@ export default function Location() {
           </div>
           
           <div className="lg:col-span-5 bg-white/5 p-12 border border-white/10 backdrop-blur-sm">
-            <h3 className="text-2xl font-serif text-torridon-gold mb-8 tracking-tight">Project Enquiries: Dunblane</h3>
-            <p className="text-sm text-white/60 mb-10 leading-relaxed font-sans">
+            <h3 className="text-2xl font-torridon-serif text-torridon-gold mb-8 tracking-tight">Project Enquiries: Dunblane</h3>
+            <p className="text-sm text-white/60 mb-10 leading-relaxed font-torridon-sans">
               Our directors are currently reviewing land acquisition and restoration opportunities within the Dunblane area. 
             </p>
             <div className="space-y-6">
@@ -120,7 +120,7 @@ export default function Location() {
         {/* Brand Ecosystem Link */}
         <div className="border-t border-white/10 pt-20 text-center">
            <div className="flex flex-wrap justify-center gap-16 opacity-30 hover:opacity-100 transition-opacity items-center">
-              <span className="font-serif text-2xl text-white">TORRIDON <span className="text-torridon-gold">HOMES</span></span>
+              <span className="font-torridon-serif text-2xl text-white">TORRIDON <span className="text-torridon-gold">HOMES</span></span>
               <span className="font-black uppercase tracking-tighter text-2xl italic text-white">Balloon <span className="text-white/60">Creative</span></span>
            </div>
         </div>

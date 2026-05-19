@@ -8,7 +8,7 @@ import Magnetic from '@/components/Magnetic';
 
 const PartnerPortal = () => {
   return (
-    <main className="min-h-screen bg-torridon-green">
+    <main className="min-h-screen bg-torridon-forest">
       <Header />
       
       {/* Hero Section */}
@@ -23,7 +23,7 @@ const PartnerPortal = () => {
             transition={{ duration: 2 }}
           >
             <div className="w-24 h-[1px] bg-torridon-gold mb-6 mx-auto" />
-            <h1 className="text-6xl md:text-8xl font-serif text-white italic leading-tight mb-8">Partner <br />Portal.</h1>
+            <h1 className="text-6xl md:text-8xl font-torridon-serif text-white italic leading-tight mb-8">Partner <br />Portal.</h1>
             <div className="flex items-center justify-center gap-4 text-white/40 text-sm font-medium tracking-wide">
               <Lock size={12} className="text-torridon-gold" />
               <span>AES-256 Encrypted Protocol</span>
@@ -46,9 +46,9 @@ const PartnerPortal = () => {
             >
               <div className="p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-sm">
                 <div className="flex items-center gap-4 mb-12">
-                  <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-green font-bold">TH</div>
+                  <div className="w-10 h-10 rounded-full bg-torridon-gold flex items-center justify-center text-torridon-forest font-bold">TH</div>
                   <div>
-                    <div className="text-white font-serif italic text-sm">Partner Account</div>
+                    <div className="text-white font-torridon-serif italic text-sm">Partner Account</div>
                     <div className="text-sm font-medium tracking-wide text-white/40">Secure Access</div>
                   </div>
                 </div>
@@ -78,13 +78,13 @@ const PartnerPortal = () => {
               className="lg:col-span-9"
             >
               <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-10 md:p-20 rounded-sm shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6 bg-torridon-gold text-torridon-green text-sm font-medium tracking-wide">
+                <div className="absolute top-0 right-0 p-6 bg-torridon-gold text-torridon-forest text-sm font-medium tracking-wide">
                   Authorized Personnel Only
                 </div>
 
                 <div className="max-w-md">
-                  <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-8">Access the <br />Future Pipeline.</h2>
-                  <p className="text-white/60 text-lg font-sans mb-12 leading-relaxed italic">
+                  <h2 className="text-4xl md:text-5xl font-torridon-serif text-white italic mb-8">Access the <br />Future Pipeline.</h2>
+                  <p className="text-white/60 text-lg font-torridon-sans mb-12 leading-relaxed italic">
                     Log in to view real-time build progress, financial drawdowns, and upcoming land acquisition appraisals across the Central Belt.
                   </p>
                   
@@ -92,18 +92,18 @@ const PartnerPortal = () => {
                     <input 
                       type="text" 
                       aria-label="Partner ID / Email" placeholder="Partner ID / Email"
-                      className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-sans text-sm"
+                      className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-torridon-sans text-sm"
                     />
                     <div className="relative">
                       <input 
                         type="password" 
                         aria-label="Secure Key" placeholder="Secure Key"
-                        className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-sans text-sm"
+                        className="w-full bg-white/5 border border-white/10 p-6 text-white outline-none focus:border-torridon-gold transition-all font-torridon-sans text-sm"
                       />
                       <Lock className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" size={18} />
                     </div>
                     <Magnetic>
-                      <button className="w-full py-6 bg-white text-torridon-green text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-4">
+                      <button className="w-full py-6 bg-white text-torridon-forest text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-4">
                         Secure Authentication <ArrowRight size={14} />
                       </button>
                     </Magnetic>

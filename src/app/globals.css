@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --torridon-ivory: #ffffff;
+  --torridon-ink: #1a1a1a;
+  --torridon-navy: #0f1f33;
+  --torridon-cream: #ffffff;
+  --torridon-gold: #C9A84C;
+  --torridon-forest: #1B3A2D;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-torridon-navy: #0f1f33;
-  --color-torridon-cream: #ffffff;
-  --color-torridon-gold: #C9A84C;
-  --color-torridon-green: #1B3A2D;
-
-  --font-serif: "Cinzel", serif;
-  --font-sans: "Inter", sans-serif;
+  --color-torridon-ivory: var(--torridon-ivory);
+  --color-torridon-ink: var(--torridon-ink);
+  --color-torridon-navy: var(--torridon-navy);
+  --color-torridon-cream: var(--torridon-cream);
+  --color-torridon-gold: var(--torridon-gold);
+  --color-torridon-forest: var(--torridon-forest);
+  --font-torridon-serif: "Cinzel", serif;
+  --font-torridon-sans: "Inter", sans-serif;
 }
 
 html {
@@ -22,13 +25,13 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background: var(--torridon-ivory);
+  color: var(--torridon-ink);
+  font-family: var(--font-torridon-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-torridon-serif);
 }

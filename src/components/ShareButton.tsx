@@ -29,7 +29,7 @@ export default function ShareButton({ title, text, url }: ShareButtonProps) {
   return (
     <button
       onClick={handleShare}
-      className="flex items-center gap-2 text-torridon-gold text-sm font-medium tracking-wide hover:text-torridon-green transition-colors"
+      className="flex items-center gap-2 text-torridon-gold text-sm font-medium tracking-wide hover:text-torridon-forest transition-colors"
     >
       <Share2 size={14} />
       Share

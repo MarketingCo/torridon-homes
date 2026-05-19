@@ -11,7 +11,7 @@ import { Reveal } from './Reveal';
 */
 export const BlueprintImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
   return (
-    <div className={`relative group overflow-hidden bg-torridon-green ${className}`}>
+    <div className={`relative group overflow-hidden bg-torridon-forest ${className}`}>
       {/* Base Photo */}
       <img src={src} 
         alt={alt} 
@@ -70,16 +70,16 @@ export const ProjectRoadmap = () => {
           {roadmaps.map((road, i) => (
             <Reveal key={i}>
               <div className="bg-white p-10 md:p-16 shadow-2xl rounded-sm">
-                <h3 className="text-3xl md:text-4xl font-serif text-torridon-green mb-12 italic">{road.site}</h3>
+                <h3 className="text-3xl md:text-4xl font-torridon-serif text-torridon-forest mb-12 italic">{road.site}</h3>
                 <div className="space-y-10">
                   {road.phases.map((phase, pi) => (
                     <div key={pi} className="relative pt-6">
-                      <div className={`absolute left-0 top-0 w-[9px] h-[9px] rounded-full ${phase.status === 'Complete' ? 'bg-torridon-gold' : 'bg-torridon-green animate-pulse'}`} />
+                      <div className={`absolute left-0 top-0 w-[9px] h-[9px] rounded-full ${phase.status === 'Complete' ? 'bg-torridon-gold' : 'bg-torridon-forest animate-pulse'}`} />
                       <div className="flex justify-between items-start mb-2 pl-6">
-                        <h4 className="text-lg font-serif text-torridon-green italic leading-none">{phase.title}</h4>
-                        <span className="text-xs text-torridon-gold/70 font-sans italic">{phase.status}</span>
+                        <h4 className="text-lg font-torridon-serif text-torridon-forest italic leading-none">{phase.title}</h4>
+                        <span className="text-xs text-torridon-gold/70 font-torridon-sans italic">{phase.status}</span>
                       </div>
-                      <p className="text-sm font-medium tracking-wide text-torridon-green/40 font-sans pl-6">{phase.date}</p>
+                      <p className="text-sm font-medium tracking-wide text-torridon-forest/40 font-torridon-sans pl-6">{phase.date}</p>
                     </div>
                   ))}
                 </div>
@@ -99,7 +99,7 @@ const CinematicHeading = ({ title, align = 'center' }: { title: string, align?: 
   const words = title.split(" ");
   return (
     <div className={`mb-20 ${align === 'center' ? 'text-center' : align === 'right' ? 'text-right' : 'text-left'}`}>
-      <h2 className="text-5xl md:text-7xl font-serif text-torridon-green leading-[1.1] italic">
+      <h2 className="text-5xl md:text-7xl font-torridon-serif text-torridon-forest leading-[1.1] italic">
         {words.map((word, i) => (
           <motion.span
             key={i}
@@ -141,15 +141,15 @@ export const TactileDNA = () => {
           {materials.map((m, i) => (
             <Reveal key={i}>
               <div className="group cursor-none">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 bg-torridon-green">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 bg-torridon-forest">
                   <img src={m.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 opacity-80 group-hover:opacity-100" alt={m.name} loading="lazy" />
                   <div className="absolute inset-0 border-[20px] border-white/0 group-hover:border-white/5 transition-all duration-700" />
                 </div>
                 <div className="flex justify-between items-end mb-4">
-                  <h4 className="text-2xl font-serif text-torridon-green italic">{m.name}</h4>
-                  <span className="text-xs text-torridon-gold/70 font-sans italic">{m.origin}</span>
+                  <h4 className="text-2xl font-torridon-serif text-torridon-forest italic">{m.name}</h4>
+                  <span className="text-xs text-torridon-gold/70 font-torridon-sans italic">{m.origin}</span>
                 </div>
-                <p className="text-sm text-torridon-green/60 font-sans leading-relaxed italic">{m.desc}</p>
+                <p className="text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed italic">{m.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -174,7 +174,7 @@ export const Philosophy = () => {
     <section id="philosophy" ref={container} className="py-24 md:py-40 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 md:px-12 text-center mb-20">
         <Reveal>
-          <h1 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 max-w-3xl mx-auto leading-tight">
+          <h1 className="text-4xl md:text-6xl font-torridon-serif text-torridon-forest mb-8 max-w-3xl mx-auto leading-tight">
             Building with <span className="italic text-torridon-gold">Purpose</span> <br /> and <span className="italic text-torridon-gold">Precision.</span>
           </h1>
           <div className="w-20 h-[1px] bg-torridon-gold mx-auto" />
@@ -200,7 +200,7 @@ export const Philosophy = () => {
           {[
             { 
               title: "Exclusivity by Design", 
-              desc: "By limiting our developments to under 12 dwellings, we maintain a level of craftsmanship and personal oversight that large-scale developers simply cannot match." 
+              desc: "By limiting our developments to under 12 dwellings, we maintain a level of bespoke craftsmanship and architectural fidelity that large-scale developers simply cannot match. Each residence is a legacy of precision, built for discerning owners who value exclusivity." 
             },
             { 
               title: "The Torridon Standard", 
@@ -213,11 +213,11 @@ export const Philosophy = () => {
           ].map((item, i) => (
             <Reveal key={i}>
               <div className="group">
-                <h4 className="text-2xl font-serif text-torridon-green mb-4 flex items-center gap-4">
-                  <span className="text-torridon-gold/30 font-sans text-sm italic">0{i+1}</span>
+                <h4 className="text-2xl font-torridon-serif text-torridon-forest mb-4 flex items-center gap-4">
+                  <span className="text-torridon-gold/30 font-torridon-sans text-sm italic">0{i+1}</span>
                   {item.title}
                 </h4>
-                <p className="text-torridon-green/60 font-sans leading-relaxed pt-4 border-t border-torridon-gold/10 group-hover:border-torridon-gold transition-colors duration-500">
+                <p className="text-torridon-forest/60 font-torridon-sans leading-relaxed pt-4 border-t border-torridon-gold/10 group-hover:border-torridon-gold transition-colors duration-500">
                   {item.desc}
                 </p>
               </div>
@@ -245,8 +245,8 @@ export const Specification = () => {
       <div className="max-w-6xl mx-auto px-8 md:px-16">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-6 italic">A Curated Specification.</h2>
-            <p className="text-torridon-green/60 max-w-xl font-sans">Excellence is not an option; it is our foundation. We source the finest materials to ensure every Torridon home stands the test of time.</p>
+            <h2 className="text-4xl md:text-5xl font-torridon-serif text-torridon-forest mb-6 italic">A Curated Specification.</h2>
+            <p className="text-torridon-forest/60 max-w-xl font-torridon-sans">Excellence is not an option; it is our foundation. We source the finest materials to ensure every Torridon home stands the test of time.</p>
           </div>
         </Reveal>
 
@@ -254,11 +254,11 @@ export const Specification = () => {
           {specs.map((spec, i) => (
             <Reveal key={i}>
               <div className="group text-center">
-                <div className="w-20 h-20 mx-auto mb-8 border border-torridon-gold/20 flex items-center justify-center text-torridon-gold group-hover:bg-torridon-green group-hover:text-white transition-all duration-700 transform group-hover:rotate-[360deg]">
+                <div className="w-20 h-20 mx-auto mb-8 border border-torridon-gold/20 flex items-center justify-center text-torridon-gold group-hover:bg-torridon-forest group-hover:text-white transition-all duration-700 transform group-hover:rotate-[360deg]">
                   {spec.icon}
                 </div>
-                <h4 className="text-xl font-serif text-torridon-green mb-4">{spec.title}</h4>
-                <p className="text-sm text-torridon-green/60 leading-relaxed font-sans">{spec.desc}</p>
+                <h4 className="text-xl font-torridon-serif text-torridon-forest mb-4">{spec.title}</h4>
+                <p className="text-sm text-torridon-forest/60 leading-relaxed font-torridon-sans">{spec.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -273,14 +273,14 @@ export const Specification = () => {
 */
 export const RegionalExpertise = () => {
   return (
-    <section className="py-32 bg-torridon-green relative overflow-hidden">
+    <section className="py-32 bg-torridon-forest relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 transform translate-x-20" />
       <div className="max-w-7xl mx-auto px-8 md:px-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <Reveal>
-              <h2 className="text-4xl md:text-5xl font-serif text-white mb-8 italic">Central Belt Specialists.</h2>
-              <p className="text-white/60 text-lg font-sans mb-10 leading-relaxed max-w-md">
+              <h2 className="text-4xl md:text-5xl font-torridon-serif text-white mb-8 italic">Central Belt Specialists.</h2>
+              <p className="text-white/60 text-lg font-torridon-sans mb-10 leading-relaxed max-w-md">
                 Our deep understanding of local planning frameworks and environmental dynamics across Central Scotland gives us an unmatched edge.
               </p>
               
@@ -293,8 +293,8 @@ export const RegionalExpertise = () => {
                   <div key={i} className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 hover:border-torridon-gold/30 transition-colors">
                     <div className="text-torridon-gold mt-1"><MapPin size={18} /></div>
                     <div>
-                      <h4 className="text-white font-serif text-lg">{item.region}</h4>
-                      <p className="text-white/40 text-sm font-sans">{item.detail}</p>
+                      <h4 className="text-white font-torridon-serif text-lg">{item.region}</h4>
+                      <p className="text-white/40 text-sm font-torridon-sans">{item.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -347,8 +347,8 @@ export const InteractiveMap = () => {
       <div className="max-w-6xl mx-auto px-8 md:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <Reveal>
-            <h2 className="text-5xl md:text-7xl font-serif text-torridon-green mb-8 leading-[1.1] italic">The Central Belt <br />Heatmap.</h2>
-            <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic">
+            <h2 className="text-5xl md:text-7xl font-torridon-serif text-torridon-forest mb-8 leading-[1.1] italic">The Central Belt <br />Heatmap.</h2>
+            <p className="text-torridon-forest/60 text-lg font-torridon-sans mb-12 leading-relaxed max-w-md italic">
               Our acquisition strategy is focused on high-yield "pockets" where demand for boutique dwellings far outstrips supply.
             </p>
             <div className="space-y-8">
@@ -358,8 +358,8 @@ export const InteractiveMap = () => {
                 { area: 'East Lothian Coastal Fringe', priority: 'High Priority' }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col pt-4 border-t border-torridon-gold/20 group">
-                  <span className="text-xs text-torridon-gold/70 font-sans italic mb-1">{item.priority}</span>
-                  <span className="text-torridon-green font-serif text-2xl italic group-hover:translate-x-2 transition-transform duration-500">{item.area}</span>
+                  <span className="text-xs text-torridon-gold/70 font-torridon-sans italic mb-1">{item.priority}</span>
+                  <span className="text-torridon-forest font-torridon-serif text-2xl italic group-hover:translate-x-2 transition-transform duration-500">{item.area}</span>
                 </div>
               ))}
             </div>
@@ -396,12 +396,12 @@ export const InteractiveMap = () => {
                   style={{ left: loc.x, top: loc.y }}
                 >
                   <div className="relative group">
-                    <div className={`w-3 h-3 rounded-full shadow-2xl transition-all duration-500 ${loc.heat === 'high' ? 'bg-torridon-gold scale-125' : 'bg-torridon-green'}`} />
+                    <div className={`w-3 h-3 rounded-full shadow-2xl transition-all duration-500 ${loc.heat === 'high' ? 'bg-torridon-gold scale-125' : 'bg-torridon-forest'}`} />
                     <div className="absolute inset-0 w-3 h-3 bg-torridon-gold rounded-full animate-ping opacity-40" />
                     
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 bg-torridon-green p-4 shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none min-w-[180px]">
-                      <div className="text-torridon-gold text-xs font-sans italic mb-1">{loc.status} Site</div>
-                      <div className="text-white font-serif text-lg italic mb-2">{loc.name}</div>
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 bg-torridon-forest p-4 shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none min-w-[180px]">
+                      <div className="text-torridon-gold text-xs font-torridon-sans italic mb-1">{loc.status} Site</div>
+                      <div className="text-white font-torridon-serif text-lg italic mb-2">{loc.name}</div>
                       <div className="w-8 h-[1px] bg-torridon-gold/30" />
                     </div>
                   </div>
@@ -412,7 +412,7 @@ export const InteractiveMap = () => {
             {/* Map UI Legend */}
             <div className="absolute bottom-8 right-8 text-right">
               <div className="flex items-center gap-3 justify-end mb-2">
-                <span className="text-xs text-torridon-green/40 font-sans italic">Priority Zones</span>
+                <span className="text-xs text-torridon-forest/40 font-torridon-sans italic">Priority Zones</span>
                 <div className="w-2 h-2 rounded-full bg-torridon-gold shadow-[0_0_10px_#c5a059]" />
               </div>
               <div className="w-24 h-[1px] bg-torridon-gold/20 ml-auto" />
@@ -432,26 +432,26 @@ export const LandAcquisition = () => {
     <section id="land" className="py-32 bg-torridon-cream overflow-hidden">
       <div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <Reveal>
-          <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 leading-tight">Unlock the True <br /><span className="italic text-torridon-gold">Value of Your Land.</span></h2>
-          <p className="text-torridon-green/70 text-lg font-sans mb-10 leading-relaxed max-w-xl">
+          <h2 className="text-4xl md:text-6xl font-torridon-serif text-torridon-forest mb-8 leading-tight">Unlock the True <br /><span className="italic text-torridon-gold">Value of Your Land.</span></h2>
+          <p className="text-torridon-forest/70 text-lg font-torridon-sans mb-10 leading-relaxed max-w-xl">
             We are actively seeking land opportunities. Whether urban infill, garden plots, or brownfield, we offer a transparent appraisal process.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-torridon-green text-torridon-gold flex items-center justify-center"><MapPin size={24} /></div>
-              <div><h4 className="font-serif text-torridon-green text-lg italic">Strategic Bias</h4><p className="text-xs text-torridon-green/60">Focused on high-value Central Belt areas.</p></div>
+              <div className="flex-shrink-0 w-12 h-12 bg-torridon-forest text-torridon-gold flex items-center justify-center"><MapPin size={24} /></div>
+              <div><h4 className="font-torridon-serif text-torridon-forest text-lg italic">Strategic Bias</h4><p className="text-xs text-torridon-forest/60">Focused on high-value Central Belt areas.</p></div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-torridon-green text-torridon-gold flex items-center justify-center"><Home size={24} /></div>
-              <div><h4 className="font-serif text-torridon-green text-lg italic">Boutique Scale</h4><p className="text-xs text-torridon-green/60">Maximum value from &lt;12 dwelling sites.</p></div>
+              <div className="flex-shrink-0 w-12 h-12 bg-torridon-forest text-torridon-gold flex items-center justify-center"><Home size={24} /></div>
+              <div><h4 className="font-torridon-serif text-torridon-forest text-lg italic">Boutique Scale</h4><p className="text-xs text-torridon-forest/60">Maximum value from &lt;12 dwelling sites.</p></div>
             </div>
           </div>
-          <a href="#contact" className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
+          <a href="#contact" className="inline-block px-12 py-6 bg-torridon-forest text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
         </Reveal>
         <div className="relative h-[500px] md:h-[700px] overflow-hidden rounded-sm shadow-2xl">
           <img src="https://images.unsplash.com/photo-1588186879741-889eb26e549f?q=80&w=1932&auto=format&fit=crop" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" alt="Scottish landscape and rural property location" loading="lazy" />
-          <div className="absolute bottom-8 left-8 bg-torridon-green p-10 text-white max-w-xs shadow-2xl">
-            <p className="text-sm italic font-serif leading-relaxed">"Our mission is to respect the heritage of the land while building for the future."</p>
+          <div className="absolute bottom-8 left-8 bg-torridon-forest p-10 text-white max-w-xs shadow-2xl">
+            <p className="text-sm italic font-torridon-serif leading-relaxed">"Our mission is to respect the heritage of the land while building for the future."</p>
           </div>
         </div>
       </div>
@@ -473,14 +473,14 @@ export const LandJourney = () => {
       <div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-3 gap-24">
         <div>
           <Reveal>
-            <h2 className="text-4xl font-serif text-torridon-green mb-8 italic leading-tight">Your Land&rsquo;s <br />Next Chapter.</h2>
-            <p className="text-torridon-green/60 font-sans mb-10 text-sm">Partnerships built on transparency. Protecting your interests while unlocking value.</p>
-            <a href="#contact" className="text-torridon-gold text-sm font-sans flex items-center gap-4 group">Download Landowner Guide <div className="w-8 h-[1px] bg-torridon-gold group-hover:w-16 transition-all duration-500" /></a>
+            <h2 className="text-4xl font-torridon-serif text-torridon-forest mb-8 italic leading-tight">Your Land&rsquo;s <br />Next Chapter.</h2>
+            <p className="text-torridon-forest/60 font-torridon-sans mb-10 text-sm">Partnerships built on transparency. Protecting your interests while unlocking value.</p>
+            <a href="#contact" className="text-torridon-gold text-sm font-torridon-sans flex items-center gap-4 group">Download Landowner Guide <div className="w-8 h-[1px] bg-torridon-gold group-hover:w-16 transition-all duration-500" /></a>
           </Reveal>
         </div>
         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 lg:pt-0">
           {steps.map((item, i) => (
-            <Reveal key={i}><div className="relative pt-12 border-t border-torridon-gold/10"><span className="absolute top-4 left-0 text-4xl font-serif text-torridon-gold/20">{item.step}</span><h4 className="text-xl font-serif text-torridon-green mb-4">{item.title}</h4><p className="text-xs text-torridon-green/60 leading-relaxed font-sans">{item.desc}</p></div></Reveal>
+            <Reveal key={i}><div className="relative pt-12 border-t border-torridon-gold/10"><span className="absolute top-4 left-0 text-4xl font-torridon-serif text-torridon-gold/20">{item.step}</span><h4 className="text-xl font-torridon-serif text-torridon-forest mb-4">{item.title}</h4><p className="text-xs text-torridon-forest/60 leading-relaxed font-torridon-sans">{item.desc}</p></div></Reveal>
           ))}
         </div>
       </div>
@@ -500,20 +500,20 @@ export const Director = () => {
           <div className="relative z-10 aspect-[4/5] overflow-hidden shadow-2xl">
             <img src="https://images.unsplash.com/photo-1584940121730-93ffb8aa88b0?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale transition-all duration-1000 scale-105 group-hover:scale-100" alt="Iain Martin, Managing Director of Torridon Homes" loading="lazy" />
           </div>
-          <div className="absolute -bottom-8 -right-8 bg-torridon-green p-10 text-white hidden md:block max-w-xs shadow-2xl">
-            <span className="text-torridon-gold text-xs font-sans italic mb-2 block">Leadership</span>
-            <p className="font-serif text-lg italic">"We don't just build houses; we curate the backdrop for Scottish life."</p>
+          <div className="absolute -bottom-8 -right-8 bg-torridon-forest p-10 text-white hidden md:block max-w-xs shadow-2xl">
+            <span className="text-torridon-gold text-xs font-torridon-sans italic mb-2 block">Leadership</span>
+            <p className="font-torridon-serif text-lg italic">"We don't just build houses; we curate the backdrop for Scottish life."</p>
           </div>
         </div>
         <div className="order-1 lg:order-2">
           <Reveal>
-            <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 italic leading-tight">Architectural Ambition.</h2>
-            <div className="space-y-6 text-torridon-green/70 font-sans leading-relaxed text-lg">
+            <h2 className="text-4xl md:text-6xl font-torridon-serif text-torridon-forest mb-8 italic leading-tight">Architectural Ambition.</h2>
+            <div className="space-y-6 text-torridon-forest/70 font-torridon-sans leading-relaxed text-lg">
               <p>Torridon Homes was founded on a simple principle: that small-scale developments deserve large-scale architectural ambition.</p>
               <p>Having spent decades in the Scottish Central Belt, I recognized a gap for a developer who prioritizes quality over volume.</p>
             </div>
             <div className="mt-12 pt-8 border-t border-torridon-gold/20 flex items-center gap-6">
-              <div><div className="text-xl font-serif text-torridon-green italic">Iain Martin</div><div className="text-xs text-torridon-gold/70 font-sans italic">Managing Director</div></div>
+              <div><div className="text-xl font-torridon-serif text-torridon-forest italic">Iain Martin</div><div className="text-xs text-torridon-gold/70 font-torridon-sans italic">Managing Director</div></div>
               <div className="h-10 w-[1px] bg-torridon-gold/30" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Signature_of_John_Hancock.svg" className="h-12 opacity-40 grayscale" alt="Signature" loading="lazy" />
             </div>
@@ -529,19 +529,19 @@ export const Director = () => {
 */
 export const JointVentures = () => {
   return (
-    <section id="jv" className="py-32 bg-torridon-green text-torridon-cream relative overflow-hidden">
+    <section id="jv" className="py-32 bg-torridon-forest text-torridon-cream relative overflow-hidden">
       <div className="px-8 md:px-24 text-center relative z-10">
         <Reveal>
-          <h2 className="text-4xl md:text-6xl font-serif text-white mb-10 leading-tight italic">Strategic Investment.</h2>
-          <p className="text-white/60 text-lg font-sans mb-16 max-w-2xl mx-auto leading-relaxed">Partnering with professional investors to deliver boutique housing. Agile, high-quality, and high-return.</p>
+          <h2 className="text-4xl md:text-6xl font-torridon-serif text-white mb-10 leading-tight italic">Strategic Investment.</h2>
+          <p className="text-white/60 text-lg font-torridon-sans mb-16 max-w-2xl mx-auto leading-relaxed">Partnering with professional investors to deliver boutique housing. Agile, high-quality, and high-return.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mb-20">
             {[ { icon: TrendingUp, title: 'Market Expertise', desc: 'Deep Central Scotland dynamics.' }, { icon: Shield, title: 'Risk Management', desc: 'Conservative, effective strategies.' }, { icon: Users, title: 'Collaborative Vision', desc: 'Aligned goals in every project.' } ].map((item, i) => (
               <div key={i} className="p-10 border border-white/10 bg-white/5 backdrop-blur-sm group hover:border-torridon-gold transition-colors">
-                <item.icon className="text-torridon-gold mb-6" size={32} /><h4 className="text-xl font-serif text-white italic mb-4">{item.title}</h4><p className="text-sm text-white/40 leading-relaxed font-sans">{item.desc}</p>
+                <item.icon className="text-torridon-gold mb-6" size={32} /><h4 className="text-xl font-torridon-serif text-white italic mb-4">{item.title}</h4><p className="text-sm text-white/40 leading-relaxed font-torridon-sans">{item.desc}</p>
               </div>
             ))}
           </div>
-          <a href="#contact" className="inline-block px-12 py-6 border border-torridon-gold text-torridon-gold font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold hover:text-torridon-green transition-all duration-500">Inquire About Joint Ventures</a>
+          <a href="#contact" className="inline-block px-12 py-6 border border-torridon-gold text-torridon-gold font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold hover:text-torridon-forest transition-all duration-500">Inquire About Joint Ventures</a>
         </Reveal>
       </div>
     </section>
@@ -557,13 +557,13 @@ export const PriorityInvestor = () => {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <Reveal>
           <div className="inline-block p-4 rounded-full border border-torridon-gold/20 mb-8"><Users className="text-torridon-gold" size={24} /></div>
-          <h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 italic">Priority Investor Circle.</h2>
-          <p className="text-torridon-green/60 text-lg font-sans mb-12 max-w-2xl mx-auto">Early access to financial projections and pre-launch opportunities.</p>
+          <h2 className="text-4xl md:text-6xl font-torridon-serif text-torridon-forest mb-8 italic">Priority Investor Circle.</h2>
+          <p className="text-torridon-forest/60 text-lg font-torridon-sans mb-12 max-w-2xl mx-auto">Early access to financial projections and pre-launch opportunities.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <input type="email" aria-label="Professional Email" placeholder="Professional Email" className="w-full sm:w-80 p-6 bg-torridon-cream border-none outline-none font-sans text-sm focus:ring-1 ring-torridon-gold/50" />
-            <button className="w-full sm:w-auto px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Request Invitation</button>
+            <input type="email" aria-label="Professional Email" placeholder="Professional Email" className="w-full sm:w-80 p-6 bg-torridon-cream border-none outline-none font-torridon-sans text-sm focus:ring-1 ring-torridon-gold/50" />
+            <button className="w-full sm:w-auto px-12 py-6 bg-torridon-forest text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Request Invitation</button>
           </div>
-          <p className="mt-8 text-xs text-torridon-green/30 font-sans italic">Strictly Confidential &bull; Boutique Opportunities</p>
+          <p className="mt-8 text-xs text-torridon-forest/30 font-torridon-sans italic">Strictly Confidential &bull; Boutique Opportunities</p>
         </Reveal>
       </div>
     </section>
@@ -582,12 +582,12 @@ export const Insights = () => {
   return (
     <section className="py-32 bg-torridon-cream">
       <div className="max-w-6xl mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-        <Reveal><h2 className="text-4xl md:text-5xl font-serif text-torridon-green italic leading-tight">Torridon Insights.</h2></Reveal>
-        <Reveal><button className="text-torridon-gold text-sm font-sans pb-2 border-b border-torridon-gold/30">View All Articles</button></Reveal>
+        <Reveal><h2 className="text-4xl md:text-5xl font-torridon-serif text-torridon-forest italic leading-tight">Torridon Insights.</h2></Reveal>
+        <Reveal><button className="text-torridon-gold text-sm font-torridon-sans pb-2 border-b border-torridon-gold/30">View All Articles</button></Reveal>
       </div>
       <div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {posts.map((post, i) => (
-          <Reveal key={i}><div className="group cursor-pointer"><div className="aspect-[16/11] overflow-hidden mb-6 relative rounded-sm shadow-xl"><img src={post.img} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" alt="Torridon Homes insights and property journal article" loading="lazy" /><div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">{post.category}</div></div><div className="text-xs text-torridon-gold/70 font-sans italic mb-2">{post.date}</div><h4 className="text-xl font-serif text-torridon-green group-hover:text-torridon-gold transition-colors duration-300 italic">{post.title}</h4></div></Reveal>
+          <Reveal key={i}><div className="group cursor-pointer"><div className="aspect-[16/11] overflow-hidden mb-6 relative rounded-sm shadow-xl"><img src={post.img} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" alt="Torridon Homes insights and property journal article" loading="lazy" /><div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-forest">{post.category}</div></div><div className="text-xs text-torridon-gold/70 font-torridon-sans italic mb-2">{post.date}</div><h4 className="text-xl font-torridon-serif text-torridon-forest group-hover:text-torridon-gold transition-colors duration-300 italic">{post.title}</h4></div></Reveal>
         ))}
       </div>
     </section>
@@ -601,7 +601,7 @@ export const ImmersiveGallery = () => {
   const images = [ { url: "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?q=80&w=1974&auto=format&fit=crop", size: "col-span-2 row-span-2", title: "Light & Space" }, { url: "https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "Material Detail" }, { url: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-2", title: "Modern Heritage" }, { url: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "Scottish Edge" } ];
   return (
     <section className="py-32 bg-white"><div className="px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px] md:h-[800px]">{images.map((img, i) => (
-      <Reveal key={i} className={img.size}><div className="group relative w-full h-full overflow-hidden rounded-sm shadow-2xl"><img src={img.url} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Luxury home gallery showcasing Torridon Homes design" loading="lazy" /><div className="absolute inset-0 bg-torridon-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" /><div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0"><span className="text-xs text-white/80 font-sans tracking-wide border-b border-white/30 pb-1">{img.title}</span></div></div></Reveal>
+      <Reveal key={i} className={img.size}><div className="group relative w-full h-full overflow-hidden rounded-sm shadow-2xl"><img src={img.url} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Luxury home gallery showcasing Torridon Homes design" loading="lazy" /><div className="absolute inset-0 bg-torridon-forest/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" /><div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0"><span className="text-xs text-white/80 font-torridon-sans tracking-wide border-b border-white/30 pb-1">{img.title}</span></div></div></Reveal>
     ))}</div></section>
   );
 };
@@ -659,10 +659,10 @@ export const Developments = () => {
   ];
 
   return (
-    <section id="developments" ref={targetRef} className="relative h-[300vh] bg-torridon-green">
+    <section id="developments" ref={targetRef} className="relative h-[300vh] bg-torridon-forest">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="absolute top-20 left-6 md:left-12 z-20">
-          <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">Future <br />Developments.</h2>
+          <h2 className="text-5xl md:text-7xl font-torridon-serif text-white italic leading-tight">Future <br />Developments.</h2>
         </div>
         
         <motion.div style={{ x }} className="flex gap-12 pl-[30vw] md:pl-[40vw]">
@@ -672,23 +672,23 @@ export const Developments = () => {
               className="group relative flex-shrink-0 w-[80vw] md:w-[45vw] aspect-[16/10] bg-torridon-cream overflow-hidden shadow-2xl rounded-sm"
             >
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-80" style={{ backgroundImage: `url('${item.img}')` }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-torridon-green/80 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-torridon-forest/80 via-transparent to-transparent opacity-60" />
               
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
-                <span className="text-sm text-torridon-gold/70 font-sans italic mb-3 block">{item.location}</span>
-                <h3 className="text-3xl md:text-5xl font-serif mb-6 italic">{item.name}</h3>
+                <span className="text-sm text-torridon-gold/70 font-torridon-sans italic mb-3 block">{item.location}</span>
+                <h3 className="text-3xl md:text-5xl font-torridon-serif mb-6 italic">{item.name}</h3>
                 
                 <div className="flex items-center gap-8">
                   <button 
                     onClick={() => setSelectedProject(item)}
-                    className="flex items-center gap-4 text-sm font-sans tracking-wide text-torridon-gold hover:text-white transition-all duration-500"
+                    className="flex items-center gap-4 text-sm font-torridon-sans tracking-wide text-torridon-gold hover:text-white transition-all duration-500"
                   >
                     <span>Quick View</span>
                     <div className="w-12 h-[1px] bg-torridon-gold" />
                   </button>
                   <Link 
                     href={`/developments/${item.slug}`}
-                    className="flex items-center gap-4 text-sm font-sans tracking-wide text-white hover:text-torridon-gold transition-all duration-500"
+                    className="flex items-center gap-4 text-sm font-torridon-sans tracking-wide text-white hover:text-torridon-gold transition-all duration-500"
                   >
                     <span>Full Narrative</span>
                     <ChevronRight size={14} />
@@ -696,7 +696,7 @@ export const Developments = () => {
                 </div>
               </div>
               
-              <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-xs font-sans tracking-wide">
+              <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 text-xs font-torridon-sans tracking-wide">
                 {item.tag}
               </div>
             </div>
@@ -708,7 +708,7 @@ export const Developments = () => {
         {selectedProject && (
           <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1000] bg-torridon-green/95 backdrop-blur-xl p-6 md:p-20 flex items-center justify-center"
+            className="fixed inset-0 z-[1000] bg-torridon-forest/95 backdrop-blur-xl p-6 md:p-20 flex items-center justify-center"
           >
             <button onClick={() => setSelectedProject(null)} className="absolute top-10 right-10 text-white hover:text-torridon-gold transition-colors"><X size={40} /></button>
             <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -716,10 +716,10 @@ export const Developments = () => {
                 <img src={selectedProject.img} className="w-full h-full object-cover" alt="Boutique property development project by Torridon Homes" loading="lazy" />
               </motion.div>
               <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="flex flex-col justify-center">
-                <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 italic">{selectedProject.name}</h2>
-                <p className="text-white/60 text-lg font-sans mb-12 leading-relaxed italic">{selectedProject.overview}</p>
+                <h2 className="text-5xl md:text-7xl font-torridon-serif text-white mb-8 italic">{selectedProject.name}</h2>
+                <p className="text-white/60 text-lg font-torridon-sans mb-12 leading-relaxed italic">{selectedProject.overview}</p>
                 <div className="space-y-6 mb-12">
-                  <h4 className="text-xs text-white/50 font-sans italic pb-4 border-b border-white/10">Project Highlights</h4>
+                  <h4 className="text-xs text-white/50 font-torridon-sans italic pb-4 border-b border-white/10">Project Highlights</h4>
                   <ul className="space-y-4">
                     {selectedProject.specs.map((s: any, i: number) => (
                       <li key={i} className="flex items-center gap-4 text-white/80 text-sm italic"><div className="w-1 h-1 bg-torridon-gold rounded-full" />{s}</li>
@@ -727,8 +727,8 @@ export const Developments = () => {
                   </ul>
                 </div>
                 <div className="flex flex-wrap gap-6">
-                  <button className="px-10 py-5 bg-torridon-gold text-torridon-green text-sm font-medium tracking-wide hover:bg-white transition-all">Request Full Brochure</button>
-                  <button className="px-10 py-5 border border-white/20 text-white text-sm font-medium tracking-wide hover:bg-white hover:text-torridon-green transition-all">Investment Data</button>
+                  <button className="px-10 py-5 bg-torridon-gold text-torridon-forest text-sm font-medium tracking-wide hover:bg-white transition-all">Request Full Brochure</button>
+                  <button className="px-10 py-5 border border-white/20 text-white text-sm font-medium tracking-wide hover:bg-white hover:text-torridon-forest transition-all">Investment Data</button>
                 </div>
               </motion.div>
             </div>
@@ -744,8 +744,8 @@ export const Developments = () => {
 */
 export const Collaborations = () => (
   <section className="py-24 bg-white border-y border-torridon-gold/10">
-    <div className="max-w-5xl mx-auto px-8 text-center mb-16"><Reveal><h3 className="text-2xl font-serif text-torridon-green italic">Working with Scotland&rsquo;s Finest.</h3></Reveal></div>
-    <div className="max-w-5xl mx-auto px-8 flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">{['Architects', 'Planners', 'Artisans', 'Engineers', 'Landscapers'].map((p, i) => <Reveal key={i}><span className="text-xl md:text-2xl font-serif text-torridon-green tracking-tighter hover:text-torridon-gold transition-colors italic">[ {p} ]</span></Reveal>)}</div>
+    <div className="max-w-5xl mx-auto px-8 text-center mb-16"><Reveal><h3 className="text-2xl font-torridon-serif text-torridon-forest italic">Working with Scotland&rsquo;s Finest.</h3></Reveal></div>
+    <div className="max-w-5xl mx-auto px-8 flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">{['Architects', 'Planners', 'Artisans', 'Engineers', 'Landscapers'].map((p, i) => <Reveal key={i}><span className="text-xl md:text-2xl font-torridon-serif text-torridon-forest tracking-tighter hover:text-torridon-gold transition-colors italic">[ {p} ]</span></Reveal>)}</div>
   </section>
 );
 
@@ -755,8 +755,8 @@ export const Collaborations = () => (
 export const FAQs = () => {
   const faqs = [ { q: "Development timeframe?", a: "Typically 18-24 months for our boutique projects." }, { q: "Evaluation process?", a: "Feasibility studies including market demand and planning constraints." }, { q: "Investment models?", a: "Bespoke Joint Ventures and fixed-return funding." }, { q: "Why <12 dwellings?", a: "To maintain the 'Torridon Standard' of bespoke architectural finish." } ];
   return (
-    <section className="py-32 bg-white"><div className="max-w-3xl mx-auto px-8"><Reveal><div className="text-center mb-20"><h2 className="text-4xl font-serif text-torridon-green mb-6 italic">Common Enquiries.</h2><div className="w-12 h-[1px] bg-torridon-gold mx-auto" /></div></Reveal><div className="space-y-12">{faqs.map((f, i) => (
-      <Reveal key={i}><div className="group"><h4 className="text-xl font-serif text-torridon-green mb-4 flex items-start gap-6"><span className="text-torridon-gold font-sans text-xs pt-1">0{i+1}</span>{f.q}</h4><p className="text-sm text-torridon-green/60 font-sans leading-relaxed pt-4 border-t border-torridon-gold/5 group-hover:border-torridon-gold transition-colors">{f.a}</p></div></Reveal>
+    <section className="py-32 bg-white"><div className="max-w-3xl mx-auto px-8"><Reveal><div className="text-center mb-20"><h2 className="text-4xl font-torridon-serif text-torridon-forest mb-6 italic">Common Enquiries.</h2><div className="w-12 h-[1px] bg-torridon-gold mx-auto" /></div></Reveal><div className="space-y-12">{faqs.map((f, i) => (
+      <Reveal key={i}><div className="group"><h4 className="text-xl font-torridon-serif text-torridon-forest mb-4 flex items-start gap-6"><span className="text-torridon-gold font-torridon-sans text-xs pt-1">0{i+1}</span>{f.q}</h4><p className="text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed pt-4 border-t border-torridon-gold/5 group-hover:border-torridon-gold transition-colors">{f.a}</p></div></Reveal>
     ))}</div></div></section>
   );
 };
@@ -765,15 +765,15 @@ export const FAQs = () => {
   15. NEWSLETTER 
 */
 export const Newsletter = () => (
-  <section className="py-32 bg-white text-center relative overflow-hidden"><div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" /><Reveal><h2 className="text-4xl md:text-5xl font-serif text-torridon-green mb-8 italic">The Torridon Journal.</h2><p className="text-torridon-green/60 font-sans mb-12 max-w-lg mx-auto text-sm px-6">Receive curated property insights and exclusive partnership opportunities.</p><div className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto"><input type="email" aria-label="Email Address" placeholder="Email Address" className="px-8 py-6 bg-torridon-cream border-none text-torridon-green outline-none focus:ring-1 ring-torridon-gold/30 font-sans text-sm w-full sm:flex-1" /><button className="px-12 py-6 bg-torridon-green text-white text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Subscribe</button></div></Reveal></section>
+  <section className="py-32 bg-white text-center relative overflow-hidden"><div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-torridon-gold/20 to-transparent" /><Reveal><h2 className="text-4xl md:text-5xl font-torridon-serif text-torridon-forest mb-8 italic">The Torridon Journal.</h2><p className="text-torridon-forest/60 font-torridon-sans mb-12 max-w-lg mx-auto text-sm px-6">Receive curated property insights and exclusive partnership opportunities.</p><div className="flex flex-col sm:flex-row gap-4 justify-center px-6 max-w-2xl mx-auto"><input type="email" aria-label="Email Address" placeholder="Email Address" className="px-8 py-6 bg-torridon-cream border-none text-torridon-forest outline-none focus:ring-1 ring-torridon-gold/30 font-torridon-sans text-sm w-full sm:flex-1" /><button className="px-12 py-6 bg-torridon-forest text-white text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all shadow-2xl">Subscribe</button></div></Reveal></section>
 );
 
 /* 
   16. SUSTAINABILITY 
 */
 export const Sustainability = () => (
-  <section className="py-32 bg-torridon-cream relative overflow-hidden"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold/5 rounded-full blur-3xl pointer-events-none" /><div className="max-w-6xl mx-auto px-8 md:px-16 relative z-10 text-center"><Reveal><h2 className="text-4xl md:text-6xl font-serif text-torridon-green mb-8 italic text-torridon-gold">The Green Standard.</h2><p className="text-torridon-green/60 max-w-2xl mx-auto font-sans text-lg mb-20 leading-relaxed">Luxury and sustainability are not mutually exclusive.</p></Reveal><div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">{[ { title: "Passive Design", desc: "Optimizing light and thermal mass.", icon: <Trees className="text-torridon-gold mb-6" size={32} /> }, { title: "Renewables", desc: "Heat pumps and solar as standard.", icon: <TrendingUp className="text-torridon-gold mb-6" size={32} /> }, { title: "Local Sourcing", desc: "Prioritizing Scottish materials.", icon: <MapPin className="text-torridon-gold mb-6" size={32} /> } ].map((item, i) => (
-    <Reveal key={i}><div className="p-10 bg-white border-t-2 border-transparent hover:border-torridon-gold transition-all shadow-xl shadow-torridon-green/5">{item.icon}<h4 className="text-xl font-serif text-torridon-green mb-4 italic">{item.title}</h4><p className="text-sm text-torridon-green/60 font-sans">{item.desc}</p></div></Reveal>
+  <section className="py-32 bg-torridon-cream relative overflow-hidden"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold/5 rounded-full blur-3xl pointer-events-none" /><div className="max-w-6xl mx-auto px-8 md:px-16 relative z-10 text-center"><Reveal><h2 className="text-4xl md:text-6xl font-torridon-serif text-torridon-forest mb-8 italic text-torridon-gold">The Green Standard.</h2><p className="text-torridon-forest/60 max-w-2xl mx-auto font-torridon-sans text-lg mb-20 leading-relaxed">Luxury and sustainability are not mutually exclusive.</p></Reveal><div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">{[ { title: "Passive Design", desc: "Optimizing light and thermal mass.", icon: <Trees className="text-torridon-gold mb-6" size={32} /> }, { title: "Renewables", desc: "Heat pumps and solar as standard.", icon: <TrendingUp className="text-torridon-gold mb-6" size={32} /> }, { title: "Local Sourcing", desc: "Prioritizing Scottish materials.", icon: <MapPin className="text-torridon-gold mb-6" size={32} /> } ].map((item, i) => (
+    <Reveal key={i}><div className="p-10 bg-white border-t-2 border-transparent hover:border-torridon-gold transition-all shadow-xl shadow-torridon-forest/5">{item.icon}<h4 className="text-xl font-torridon-serif text-torridon-forest mb-4 italic">{item.title}</h4><p className="text-sm text-torridon-forest/60 font-torridon-sans">{item.desc}</p></div></Reveal>
   ))}</div></div></section>
 );
 
@@ -781,8 +781,8 @@ export const Sustainability = () => (
   17. STRATEGIC LOCATIONS 
 */
 export const StrategicLocations = () => (
-  <section className="py-24 bg-torridon-green text-white"><div className="max-w-7xl mx-auto px-8 md:px-20"><div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8"><Reveal><h2 className="text-3xl md:text-5xl font-serif italic">Strategic Locations.</h2></Reveal><Reveal><p className="text-white/50 max-w-sm font-sans text-sm">Targeting prime sites across the most sought-after pockets of the Central Belt.</p></Reveal></div><div className="grid grid-cols-2 md:grid-cols-4 gap-8">{['Edinburgh', 'Stirling', 'Linlithgow', 'East Lothian', 'Dunbar', 'Falkirk', 'Livingston', 'Perthshire Border'].map((loc, i) => (
-    <Reveal key={i}><div className="group border-b border-white/10 pb-4 hover:border-torridon-gold transition-colors"><div className="text-torridon-gold/20 text-sm font-medium tracking-wide font-sans mb-2">0{i+1}</div><div className="text-xl font-serif italic">{loc}</div></div></Reveal>
+  <section className="py-24 bg-torridon-forest text-white"><div className="max-w-7xl mx-auto px-8 md:px-20"><div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8"><Reveal><h2 className="text-3xl md:text-5xl font-torridon-serif italic">Strategic Locations.</h2></Reveal><Reveal><p className="text-white/50 max-w-sm font-torridon-sans text-sm">Targeting prime sites across the most sought-after pockets of the Central Belt.</p></Reveal></div><div className="grid grid-cols-2 md:grid-cols-4 gap-8">{['Edinburgh', 'Stirling', 'Linlithgow', 'East Lothian', 'Dunbar', 'Falkirk', 'Livingston', 'Perthshire Border'].map((loc, i) => (
+    <Reveal key={i}><div className="group border-b border-white/10 pb-4 hover:border-torridon-gold transition-colors"><div className="text-torridon-gold/20 text-sm font-medium tracking-wide font-torridon-sans mb-2">0{i+1}</div><div className="text-xl font-torridon-serif italic">{loc}</div></div></Reveal>
   ))}</div></div></section>
 );
 
@@ -793,7 +793,7 @@ export const CraftsmanDetail = () => {
   const textures = [ { title: "Honest Stone", desc: "Sourced from Scottish quarries.", img: "https://images.unsplash.com/photo-1618651310442-9a6d054a9607?q=80&w=2068&auto=format&fit=crop" }, { title: "Oak & Grain", desc: "Hand-finished timber elements.", img: "https://images.unsplash.com/photo-1628946329352-4b4e9fcbfa6a?q=80&w=2070&auto=format&fit=crop" }, { title: "Brushed Metal", desc: "Discrete luxury accents.", img: "https://images.unsplash.com/photo-1583329550487-0fa300a4cd1a?q=80&w=2013&auto=format&fit=crop" } ];
   return (
     <section className="py-32 bg-white"><div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12">{textures.map((t, i) => (
-      <Reveal key={i}><div className="group"><div className="aspect-square overflow-hidden mb-8 rounded-full border border-torridon-gold/10 p-2 group-hover:border-torridon-gold transition-all duration-700"><img src={t.img} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" alt={t.title} loading="lazy" /></div><h4 className="text-2xl font-serif text-torridon-green text-center mb-4 italic">{t.title}</h4><p className="text-center text-sm text-torridon-green/60 font-sans leading-relaxed max-w-xs mx-auto">{t.desc}</p></div></Reveal>
+      <Reveal key={i}><div className="group"><div className="aspect-square overflow-hidden mb-8 rounded-full border border-torridon-gold/10 p-2 group-hover:border-torridon-gold transition-all duration-700"><img src={t.img} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" alt={t.title} loading="lazy" /></div><h4 className="text-2xl font-torridon-serif text-torridon-forest text-center mb-4 italic">{t.title}</h4><p className="text-center text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed max-w-xs mx-auto">{t.desc}</p></div></Reveal>
     ))}</div></section>
   );
 };
@@ -810,18 +810,18 @@ export const SubtleStats = () => {
   ];
 
   return (
-    <section className="py-32 bg-torridon-green text-white relative overflow-hidden">
+    <section className="py-32 bg-torridon-forest text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-8 md:px-16 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-16">
           {stats.map((s, i) => (
             <Reveal key={i}>
               <div className="text-center md:text-left group">
-                <div className="text-xs text-torridon-gold/70 font-sans italic mb-6 opacity-80 group-hover:opacity-100 transition-opacity">{s.label}</div>
-                <div className="text-5xl md:text-7xl font-serif mb-4 italic flex items-baseline justify-center md:justify-start">
+                <div className="text-xs text-torridon-gold/70 font-torridon-sans italic mb-6 opacity-80 group-hover:opacity-100 transition-opacity">{s.label}</div>
+                <div className="text-5xl md:text-7xl font-torridon-serif mb-4 italic flex items-baseline justify-center md:justify-start">
                   <Counter value={s.value} />
                   <span className="text-3xl text-torridon-gold ml-1">{s.suffix}</span>
                 </div>
-                <div className="text-white/30 text-xs font-sans italic">{s.detail}</div>
+                <div className="text-white/30 text-xs font-torridon-sans italic">{s.detail}</div>
               </div>
             </Reveal>
           ))}
@@ -883,7 +883,7 @@ const Counter = ({ value }: { value: number }) => {
       <div className="max-w-5xl mx-auto px-8 md:px-16">
         <div className="text-center mb-32">
           <Reveal>
-            <h2 className="text-5xl md:text-7xl font-serif text-torridon-green italic">Trajectory of <br />Excellence.</h2>
+            <h2 className="text-5xl md:text-7xl font-torridon-serif text-torridon-forest italic">Trajectory of <br />Excellence.</h2>
           </Reveal>
         </div>
 
@@ -903,9 +903,9 @@ const Counter = ({ value }: { value: number }) => {
                 
                 <div className="w-full md:w-1/2 px-0 md:px-20 text-left md:text-right">
                   <div className={`md:text-right ${i % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                    <span className="text-4xl md:text-6xl font-serif text-torridon-gold/20 mb-4 block italic">{e.year}</span>
-                    <h4 className="text-2xl font-serif text-torridon-green mb-4 italic">{e.title}</h4>
-                    <p className="text-sm text-torridon-green/60 font-sans leading-relaxed max-w-sm ml-0 md:ml-auto mr-0 md:mr-auto">
+                    <span className="text-4xl md:text-6xl font-torridon-serif text-torridon-gold/20 mb-4 block italic">{e.year}</span>
+                    <h4 className="text-2xl font-torridon-serif text-torridon-forest mb-4 italic">{e.title}</h4>
+                    <p className="text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed max-w-sm ml-0 md:ml-auto mr-0 md:mr-auto">
                       {e.desc}
                     </p>
                   </div>
@@ -925,7 +925,7 @@ const Counter = ({ value }: { value: number }) => {
 */
 export const AtmosphericSeparator = () => {
   return (
-    <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-torridon-green">
+    <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-torridon-forest">
       <div className="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1696380709225-6c5dd6f03f2a?q=80&w=2070&auto=format&fit=crop" 
           className="w-full h-full object-cover grayscale opacity-40 scale-110" 
@@ -937,7 +937,7 @@ export const AtmosphericSeparator = () => {
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <Reveal>
           <div className="text-center px-6">
-            <h2 className="text-white text-4xl md:text-6xl font-serif italic mb-8 drop-shadow-2xl">
+            <h2 className="text-white text-4xl md:text-6xl font-torridon-serif italic mb-8 drop-shadow-2xl">
               Rooted in the <span className="text-torridon-gold">landscape.</span>
             </h2>
             <div className="w-24 h-[1px] bg-torridon-gold mx-auto" />
@@ -953,7 +953,7 @@ export const AtmosphericSeparator = () => {
 */
 export const VaultPreview = () => {
   return (
-    <section className="py-40 bg-torridon-green relative overflow-hidden">
+    <section className="py-40 bg-torridon-forest relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-full h-[1px] bg-torridon-gold" />
         <div className="absolute top-3/4 left-0 w-full h-[1px] bg-torridon-gold" />
@@ -961,25 +961,25 @@ export const VaultPreview = () => {
       <div className="max-w-6xl mx-auto px-8 md:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <Reveal>
-            <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 italic">The Private <br />Investor Vault.</h2>
-            <p className="text-white/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic">Gain access to our comprehensive development pipeline and project-specific modelling.</p>
+            <h2 className="text-5xl md:text-7xl font-torridon-serif text-white mb-8 italic">The Private <br />Investor Vault.</h2>
+            <p className="text-white/60 text-lg font-torridon-sans mb-12 leading-relaxed max-w-md italic">Gain access to our comprehensive development pipeline and project-specific modelling.</p>
             <div className="flex gap-8 items-center">
-              <div className="flex flex-col"><span className="text-white text-3xl font-serif">£42M+</span><span className="text-xs text-torridon-gold/70 font-sans italic">Active GDV</span></div>
+              <div className="flex flex-col"><span className="text-white text-3xl font-torridon-serif">£42M+</span><span className="text-xs text-torridon-gold/70 font-torridon-sans italic">Active GDV</span></div>
               <div className="w-[1px] h-12 bg-white/10" />
-              <div className="flex flex-col"><span className="text-white text-3xl font-serif">18.4%</span><span className="text-xs text-torridon-gold/70 font-sans italic">Avg. Project Yield</span></div>
+              <div className="flex flex-col"><span className="text-white text-3xl font-torridon-serif">18.4%</span><span className="text-xs text-torridon-gold/70 font-torridon-sans italic">Avg. Project Yield</span></div>
             </div>
           </Reveal>
           <Reveal className="relative group cursor-none">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-sm shadow-2xl overflow-hidden relative">
-              <div className="absolute top-0 right-0 p-4 bg-torridon-gold text-torridon-green text-xs font-sans italic">Secure Environment</div>
+              <div className="absolute top-0 right-0 p-4 bg-torridon-gold text-torridon-forest text-xs font-torridon-sans italic">Secure Environment</div>
               <div className="space-y-8 blur-[6px] opacity-40 select-none pointer-events-none">
                 <div className="h-4 w-1/3 bg-white/20 rounded-full" /><div className="grid grid-cols-3 gap-4"><div className="h-20 bg-white/10" /><div className="h-20 bg-white/10" /><div className="h-20 bg-white/10" /></div><div className="h-32 bg-white/10" />
               </div>
               <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
-                <div className="w-16 h-16 rounded-full bg-torridon-gold flex items-center justify-center mb-6 shadow-2xl shadow-torridon-gold/20"><Shield className="text-torridon-green" size={28} /></div>
-                <h4 className="text-white font-serif text-2xl mb-4 italic">Unlock Financial Data</h4>
-                <p className="text-white/60 text-xs font-sans mb-10 max-w-xs mx-auto italic">Requires authorized partner credentials or verified NDAs.</p>
-                <button className="px-10 py-5 bg-white text-torridon-green text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Request Access</button>
+                <div className="w-16 h-16 rounded-full bg-torridon-gold flex items-center justify-center mb-6 shadow-2xl shadow-torridon-gold/20"><Shield className="text-torridon-forest" size={28} /></div>
+                <h4 className="text-white font-torridon-serif text-2xl mb-4 italic">Unlock Financial Data</h4>
+                <p className="text-white/60 text-xs font-torridon-sans mb-10 max-w-xs mx-auto italic">Requires authorized partner credentials or verified NDAs.</p>
+                <button className="px-10 py-5 bg-white text-torridon-forest text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Request Access</button>
               </div>
             </div>
           </Reveal>
@@ -1003,7 +1003,7 @@ export const LandMandate = () => {
   return (
     <section className="py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <svg viewBox="0 0 1000 1000" className="w-full h-full text-torridon-green">
+        <svg viewBox="0 0 1000 1000" className="w-full h-full text-torridon-forest">
           <path d="M0,500 Q250,400 500,500 T1000,500" fill="none" stroke="currentColor" strokeWidth="1" />
           <path d="M0,600 Q250,500 500,600 T1000,600" fill="none" stroke="currentColor" strokeWidth="1" />
           <path d="M0,700 Q250,600 500,700 T1000,700" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -1013,12 +1013,12 @@ export const LandMandate = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
             <Reveal>
-              <h2 className="text-5xl md:text-7xl font-serif text-torridon-green mb-10 italic">The Land <br />Mandate.</h2>
-              <p className="text-torridon-green/60 text-lg font-sans mb-12 leading-relaxed max-w-md italic">We move rapidly on sites that meet our boutique criteria. Immediate decisions and flexible deal structures.</p>
+              <h2 className="text-5xl md:text-7xl font-torridon-serif text-torridon-forest mb-10 italic">The Land <br />Mandate.</h2>
+              <p className="text-torridon-forest/60 text-lg font-torridon-sans mb-12 leading-relaxed max-w-md italic">We move rapidly on sites that meet our boutique criteria. Immediate decisions and flexible deal structures.</p>
               <div className="flex gap-10">
-                <div className="group"><div className="text-2xl font-serif text-torridon-green italic mb-1">Immediate</div><div className="text-xs text-torridon-gold/70 font-sans italic">Decision Turnaround</div></div>
+                <div className="group"><div className="text-2xl font-torridon-serif text-torridon-forest italic mb-1">Immediate</div><div className="text-xs text-torridon-gold/70 font-torridon-sans italic">Decision Turnaround</div></div>
                 <div className="w-[1px] h-12 bg-torridon-gold/20" />
-                <div className="group"><div className="text-2xl font-serif text-torridon-green italic mb-1">Uncapped</div><div className="text-xs text-torridon-gold/70 font-sans italic">Funding Availability</div></div>
+                <div className="group"><div className="text-2xl font-torridon-serif text-torridon-forest italic mb-1">Uncapped</div><div className="text-xs text-torridon-gold/70 font-torridon-sans italic">Funding Availability</div></div>
               </div>
             </Reveal>
           </div>
@@ -1026,8 +1026,8 @@ export const LandMandate = () => {
             {requirements.map((req, i) => (
               <Reveal key={i}>
                 <div className="p-8 border border-torridon-gold/10 hover:border-torridon-gold transition-all duration-500 bg-torridon-cream/20 group">
-                  <div className="text-xs text-torridon-gold/70 font-sans italic mb-4">0{i+1} // {req.title}</div>
-                  <p className="text-torridon-green text-sm leading-relaxed font-sans group-hover:text-torridon-green/80 transition-colors">{req.detail}</p>
+                  <div className="text-xs text-torridon-gold/70 font-torridon-sans italic mb-4">0{i+1} // {req.title}</div>
+                  <p className="text-torridon-forest text-sm leading-relaxed font-torridon-sans group-hover:text-torridon-forest/80 transition-colors">{req.detail}</p>
                 </div>
               </Reveal>
             ))}

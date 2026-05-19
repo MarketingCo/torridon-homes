@@ -25,16 +25,16 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-torridon-green relative overflow-hidden">
+      <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-torridon-forest relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-torridon-gold rounded-full blur-[150px]" />
         </div>
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <div className="w-24 h-[1px] bg-torridon-gold mb-6" />
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 italic leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-torridon-serif text-white mb-8 italic leading-tight">
             The Torridon Journal.
           </h1>
-          <p className="text-white/60 text-lg md:text-xl font-sans max-w-2xl leading-relaxed">
+          <p className="text-white/60 text-lg md:text-xl font-torridon-sans max-w-2xl leading-relaxed">
             Market analysis, development guidance, and practical advice for buyers,
             investors, and landowners across Scotland&apos;s Central Belt.
           </p>
@@ -55,7 +55,7 @@ export default function BlogPage() {
                   alt={posts[0].title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">
+                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-forest">
                   {posts[0].category}
                 </div>
               </div>
@@ -74,18 +74,18 @@ export default function BlogPage() {
                     {posts[0].readTime}
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif text-torridon-green mb-6 italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-torridon-serif text-torridon-forest mb-6 italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
                   {posts[0].title}
                 </h2>
-                <p className="text-torridon-green/60 font-sans leading-relaxed mb-8">
+                <p className="text-torridon-forest/60 font-torridon-sans leading-relaxed mb-8">
                   {posts[0].excerpt}
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-torridon-green text-torridon-gold flex items-center justify-center text-sm font-serif italic">
+                  <div className="w-10 h-10 bg-torridon-forest text-torridon-gold flex items-center justify-center text-sm font-torridon-serif italic">
                     IM
                   </div>
                   <div>
-                    <div className="text-sm font-serif text-torridon-green italic">
+                    <div className="text-sm font-torridon-serif text-torridon-forest italic">
                       {posts[0].author}
                     </div>
                     <div className="text-sm font-medium tracking-wide text-torridon-gold">
@@ -119,7 +119,7 @@ export default function BlogPage() {
                     alt={post.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-green">
+                  <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 text-sm font-medium tracking-wide text-torridon-forest">
                     {post.category}
                   </div>
                 </div>
@@ -137,10 +137,10 @@ export default function BlogPage() {
                     {post.readTime}
                   </span>
                 </div>
-                <h3 className="text-xl font-serif text-torridon-green mb-3 italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
+                <h3 className="text-xl font-torridon-serif text-torridon-forest mb-3 italic group-hover:text-torridon-gold transition-colors duration-500 leading-tight">
                   {post.title}
                 </h3>
-                <p className="text-sm text-torridon-green/60 font-sans leading-relaxed line-clamp-3">
+                <p className="text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
               </Link>
@@ -152,16 +152,16 @@ export default function BlogPage() {
       {/* CTA */}
       <section className="py-24 bg-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif text-torridon-green mb-6 italic">
+          <h2 className="text-3xl md:text-4xl font-torridon-serif text-torridon-forest mb-6 italic">
             Have a Question?
           </h2>
-          <p className="text-torridon-green/60 font-sans mb-10 max-w-lg mx-auto">
+          <p className="text-torridon-forest/60 font-torridon-sans mb-10 max-w-lg mx-auto">
             Our team is available to discuss development opportunities, investment
             access, or land appraisals across the Central Belt.
           </p>
           <Link
             href="/#contact"
-            className="inline-block px-12 py-6 bg-torridon-green text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
+            className="inline-block px-12 py-6 bg-torridon-forest text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl"
           >
             Get in Touch
           </Link>

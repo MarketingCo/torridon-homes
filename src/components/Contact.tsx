@@ -22,8 +22,8 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
             <div className="w-24 h-[1px] bg-torridon-gold mb-6" />
-            <h2 className="text-5xl md:text-7xl font-serif text-[#1a1a1a] mb-8 leading-tight italic">The Enquiry <br />Engine.</h2>
-            <p className="text-[#1a1a1a]/60 text-lg font-sans mb-12 leading-relaxed max-w-md">
+            <h2 className="text-5xl md:text-7xl font-torridon-serif text-[#1a1a1a] mb-8 leading-tight italic">The Enquiry <br />Engine.</h2>
+            <p className="text-[#1a1a1a]/60 text-lg font-torridon-sans mb-12 leading-relaxed max-w-md">
               Whether you are proposing a land deal, a joint venture, or a future home purchase, our executive team handles every enquiry with absolute discretion and precision.
             </p>
             
@@ -33,8 +33,8 @@ const Contact = () => {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-[#1a1a1a] text-xl italic">Executive Email</h4>
-                  <a href="mailto:hello@torridon-homes.co.uk" className="text-[#1a1a1a]/40 text-sm font-sans tracking-widest hover:text-torridon-gold transition-colors">hello@torridon-homes.co.uk</a>
+                  <h4 className="font-torridon-serif text-[#1a1a1a] text-xl italic">Executive Email</h4>
+                  <a href="mailto:hello@torridon-homes.co.uk" className="text-[#1a1a1a]/40 text-sm font-torridon-sans tracking-widest hover:text-torridon-gold transition-colors">hello@torridon-homes.co.uk</a>
                 </div>
               </div>
               
@@ -43,8 +43,8 @@ const Contact = () => {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-[#1a1a1a] text-xl italic">Direct Line</h4>
-                  <a href="tel:+441315550123" className="text-[#1a1a1a]/40 text-sm font-sans tracking-widest hover:text-torridon-gold transition-colors">0131 555 0123</a>
+                  <h4 className="font-torridon-serif text-[#1a1a1a] text-xl italic">Direct Line</h4>
+                  <a href="tel:+441315550123" className="text-[#1a1a1a]/40 text-sm font-torridon-sans tracking-widest hover:text-torridon-gold transition-colors">0131 555 0123</a>
                 </div>
               </div>
             </div>
@@ -83,26 +83,26 @@ const Contact = () => {
                       <input 
                         type="text" 
                         aria-label="Full Name" placeholder="Full Name"
-                        className="w-full bg-transparent border-b border-[#1a1a1a]/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-[#1a1a1a]/20"
+                        className="w-full bg-transparent border-b border-[#1a1a1a]/10 py-4 focus:border-torridon-gold outline-none transition-colors font-torridon-serif text-xl placeholder:text-[#1a1a1a]/20"
                         required
                       />
                       <input 
                         type="email" 
                         aria-label="Professional Email" placeholder="Professional Email"
-                        className="w-full bg-transparent border-b border-[#1a1a1a]/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-[#1a1a1a]/20"
+                        className="w-full bg-transparent border-b border-[#1a1a1a]/10 py-4 focus:border-torridon-gold outline-none transition-colors font-torridon-serif text-xl placeholder:text-[#1a1a1a]/20"
                         required
                       />
                       <textarea 
                         rows={3} 
                         aria-label="Brief Project Overview" placeholder="Brief Project Overview"
-                        className="w-full bg-transparent border-b border-torridon-green/10 py-4 focus:border-torridon-gold outline-none transition-colors font-serif text-xl placeholder:text-torridon-green/20 resize-none"
+                        className="w-full bg-transparent border-b border-torridon-forest/10 py-4 focus:border-torridon-gold outline-none transition-colors font-torridon-serif text-xl placeholder:text-torridon-forest/20 resize-none"
                       />
                     </div>
                     
                     <Magnetic>
                       <button 
                         type="submit"
-                        className="w-full py-6 bg-[#1a1a1a] text-white font-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
+                        className="w-full py-6 bg-[#1a1a1a] text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 flex items-center justify-center gap-4 shadow-xl"
                       >
                         Initialize Dialogue <ArrowRight size={14} />
                       </button>
@@ -124,8 +124,8 @@ const Contact = () => {
                   >
                     <CheckCircle2 size={40} className="text-[#1a1a1a]" />
                   </motion.div>
-                  <h3 className="text-3xl font-serif italic mb-6">Dialogue Initialized.</h3>
-                  <p className="text-white/60 font-sans text-sm leading-relaxed max-w-xs mx-auto mb-10">
+                  <h3 className="text-3xl font-torridon-serif italic mb-6">Dialogue Initialized.</h3>
+                  <p className="text-white/60 font-torridon-sans text-sm leading-relaxed max-w-xs mx-auto mb-10">
                     Your enquiry has been routed to our executive team. Expect a response within 24 hours.
                   </p>
                   <button 

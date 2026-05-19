@@ -25,7 +25,7 @@ export default function ContactForm() {
         <div className="w-20 h-20 bg-stone-900 text-stone-50 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <CheckCircle2 size={40} />
         </div>
-        <h3 className="text-3xl font-serif italic mb-4 text-stone-900">Vision Brief Authenticated</h3>
+        <h3 className="text-3xl font-torridon-serif italic mb-4 text-stone-900">Vision Brief Authenticated</h3>
         <p className="text-sm font-medium tracking-wide text-stone-400 leading-relaxed max-sm mx-auto">
           Operational data received. Our development lead is reviewing your plot and architectural requirements. Response within 24 hours.
         </p>
@@ -44,7 +44,7 @@ export default function ContactForm() {
             />
           ))}
         </div>
-        <span className="font-serif italic text-xs text-stone-300">Phase 0{step}</span>
+        <span className="font-torridon-serif italic text-xs text-stone-300">Phase 0{step}</span>
       </div>
 
       <form onSubmit={handleSubmit} className="min-h-[480px] flex flex-col justify-between">
@@ -58,7 +58,7 @@ export default function ContactForm() {
               transition={{ duration: 2 }}
               className="space-y-10"
             >
-              <h4 className="text-3xl font-serif text-stone-900 leading-tight tracking-tighter">What is the status of your development?</h4>
+              <h4 className="text-3xl font-torridon-serif text-stone-900 leading-tight tracking-tighter">What is the status of your development?</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { id: 'plot', name: 'Plot Secured', icon: <MapPin size={20} /> },
@@ -94,7 +94,7 @@ export default function ContactForm() {
               transition={{ duration: 2 }}
               className="space-y-12"
             >
-              <h4 className="text-3xl font-serif text-stone-900 tracking-tighter">Location & Vision</h4>
+              <h4 className="text-3xl font-torridon-serif text-stone-900 tracking-tighter">Location & Vision</h4>
               <div className="space-y-10">
                 <div>
                   <label htmlFor="location" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Site Location / Postcode</label>
@@ -103,7 +103,7 @@ export default function ContactForm() {
                     type="text"
                     name="location"
                     required
-                    className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
+                    className="w-full bg-stone-50 border-stone-200 p-6 font-torridon-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
                     aria-label="e.g. Perthshire, East Lothian, etc." placeholder="e.g. Perthshire, East Lothian, etc."
                   />
                 </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
                     id="budget"
                     type="text"
                     name="budget"
-                    className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
+                    className="w-full bg-stone-50 border-stone-200 p-6 font-torridon-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all placeholder:text-stone-200 border-b"
                     aria-label="e.g. £500k - £1.5M..." placeholder="e.g. £500k - £1.5M..."
                   />
                 </div>
@@ -134,7 +134,7 @@ export default function ContactForm() {
               transition={{ duration: 2 }}
               className="space-y-10"
             >
-              <h4 className="text-3xl font-serif text-stone-900 tracking-tighter">Authentication</h4>
+              <h4 className="text-3xl font-torridon-serif text-stone-900 tracking-tighter">Authentication</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                   <label htmlFor="name" className="text-sm font-medium tracking-wide text-stone-400 mb-4 block">Lead Name</label>
@@ -143,7 +143,7 @@ export default function ContactForm() {
                     type="text"
                     name="name"
                     required
-                    className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all border-b"
+                    className="w-full bg-stone-50 border-stone-200 p-6 font-torridon-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all border-b"
                   />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ export default function ContactForm() {
                     type="email"
                     name="email"
                     required
-                    className="w-full bg-stone-50 border-stone-200 p-6 font-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all border-b"
+                    className="w-full bg-stone-50 border-stone-200 p-6 font-torridon-serif italic text-xl text-stone-900 focus:border-stone-900 outline-none transition-all border-b"
                   />
                   <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm font-medium tracking-wide mt-2" />
                 </div>
