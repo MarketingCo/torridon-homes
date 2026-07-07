@@ -127,9 +127,9 @@ const CinematicHeading = ({ title, align = 'center' }: { title: string, align?: 
 */
 export const TactileDNA = () => {
   const materials = [
-    { name: "Highland Whinstone", origin: "Aberdeenshire", desc: "Hand-cut volcanic rock, chosen for its weather-resilience and deep, earthy tones.", img: "https://images.unsplash.com/photo-1618651310442-9a6d054a9607?q=80&w=2068&auto=format&fit=crop" },
-    { name: "Reclaimed Slate", origin: "Ballachulish", desc: "Traditional Scottish roofing slate, providing a lifetime of character and protection.", img: "https://images.unsplash.com/photo-1628946329352-4b4e9fcbfa6a?q=80&w=2070&auto=format&fit=crop" },
-    { name: "Brushed Brass", origin: "Artisan Finished", desc: "High-specification internal hardware that develops a unique patina over time.", img: "https://images.unsplash.com/photo-1583329550487-0fa300a4cd1a?q=80&w=2013&auto=format&fit=crop" }
+    { name: "Highland Whinstone", origin: "Aberdeenshire", desc: "Hand-cut volcanic rock, chosen for its weather-resilience and deep, earthy tones.", img: "/images/unsplash_1618651310442-9a6d054a9607_q80_w2068.jpg" },
+    { name: "Reclaimed Slate", origin: "Ballachulish", desc: "Traditional Scottish roofing slate, providing a lifetime of character and protection.", img: "/images/unsplash_1628946329352-4b4e9fcbfa6a_q80_w2070.jpg" },
+    { name: "Brushed Brass", origin: "Artisan Finished", desc: "High-specification internal hardware that develops a unique patina over time.", img: "/images/unsplash_1583329550487-0fa300a4cd1a_q80_w2013.jpg" }
   ];
 
   return (
@@ -188,7 +188,7 @@ export const Philosophy = () => {
             <div className="relative z-10 w-full aspect-[4/5] overflow-hidden shadow-2xl">
               <motion.img 
                 style={{ y }}
-                src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=2070&auto=format&fit=crop" 
+                src="/images/unsplash_1564078516393-cf04bd966897_q80_w2070.jpg" 
                 alt="Boutique luxury interior detail in a Torridon Home" 
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-125"
               />
@@ -305,18 +305,18 @@ export const RegionalExpertise = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <div className="h-64 overflow-hidden rounded-sm">
-                <img src="https://images.unsplash.com/photo-1639156361086-8eb94e481eeb?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
+                <img src="/images/unsplash_1639156361086-8eb94e481eeb_q80_w1974.jpg" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
               </div>
               <div className="h-48 overflow-hidden rounded-sm">
-                <img src="https://images.unsplash.com/photo-1696380709225-6c5dd6f03f2a?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
+                <img src="/images/unsplash_1696380709225-6c5dd6f03f2a_q80_w2070.jpg" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
               </div>
             </div>
             <div className="space-y-4 pt-12">
               <div className="h-48 overflow-hidden rounded-sm">
-                <img src="https://images.unsplash.com/photo-1618651310924-11b578473b3a?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
+                <img src="/images/unsplash_1618651310924-11b578473b3a_q80_w2070.jpg" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
               </div>
               <div className="h-64 overflow-hidden rounded-sm">
-                <img src="https://images.unsplash.com/photo-1618651310777-acc5fe06493a?q=80&w=1932&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
+                <img src="/images/unsplash_1618651310777-acc5fe06493a_q80_w1932.jpg" className="w-full h-full object-cover grayscale opacity-60 hover:scale-110 transition-transform duration-1000" alt="Scottish landscape and rural property location" loading="lazy" />
               </div>
             </div>
           </div>
@@ -449,7 +449,7 @@ export const LandAcquisition = () => {
           <a href="#contact" className="inline-block px-12 py-6 bg-torridon-forest text-white font-torridon-sans text-sm font-medium tracking-wide hover:bg-torridon-gold transition-all duration-500 shadow-2xl">Submit Land Appraisal</a>
         </Reveal>
         <div className="relative h-[500px] md:h-[700px] overflow-hidden rounded-sm shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1588186879741-889eb26e549f?q=80&w=1932&auto=format&fit=crop" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" alt="Scottish landscape and rural property location" loading="lazy" />
+          <img src="/images/unsplash_1588186879741-889eb26e549f_q80_w1932.jpg" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" alt="Scottish landscape and rural property location" loading="lazy" />
           <div className="absolute bottom-8 left-8 bg-torridon-forest p-10 text-white max-w-xs shadow-2xl">
             <p className="text-sm italic font-torridon-serif leading-relaxed">"Our mission is to respect the heritage of the land while building for the future."</p>
           </div>
@@ -498,7 +498,7 @@ export const Director = () => {
         <div className="relative group order-2 lg:order-1">
           <div className="absolute -inset-6 border border-torridon-gold/10 translate-x-4 translate-y-4 group-hover:translate-x-2 transition-transform duration-700" />
           <div className="relative z-10 aspect-[4/5] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1584940121730-93ffb8aa88b0?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale transition-all duration-1000 scale-105 group-hover:scale-100" alt="Iain Martin, Managing Director of Torridon Homes" loading="lazy" />
+            <img src="/images/unsplash_1584940121730-93ffb8aa88b0_q80_w1974.jpg" className="w-full h-full object-cover grayscale transition-all duration-1000 scale-105 group-hover:scale-100" alt="Iain Martin, Managing Director of Torridon Homes" loading="lazy" />
           </div>
           <div className="absolute -bottom-8 -right-8 bg-torridon-forest p-10 text-white hidden md:block max-w-xs shadow-2xl">
             <span className="text-torridon-gold text-xs font-torridon-sans italic mb-2 block">Leadership</span>
@@ -515,7 +515,7 @@ export const Director = () => {
             <div className="mt-12 pt-8 border-t border-torridon-gold/20 flex items-center gap-6">
               <div><div className="text-xl font-torridon-serif text-torridon-forest italic">Iain Martin</div><div className="text-xs text-torridon-gold/70 font-torridon-sans italic">Managing Director</div></div>
               <div className="h-10 w-[1px] bg-torridon-gold/30" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Signature_of_John_Hancock.svg" className="h-12 opacity-40 grayscale" alt="Signature" loading="lazy" />
+              <img src="/images/signature-hancock.svg" className="h-12 opacity-40 grayscale" alt="Signature" loading="lazy" />
             </div>
           </Reveal>
         </div>
@@ -575,9 +575,9 @@ export const PriorityInvestor = () => {
 */
 export const Insights = () => {
   const posts = [
-    { date: "2026", title: "Boutique Living Trends", category: "Market", img: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=2074&auto=format&fit=crop" },
-    { date: "2025", title: "Sustainable Architecture", category: "Innovation", img: "https://images.unsplash.com/photo-1649518811431-48cb38252f79?q=80&w=2070&auto=format&fit=crop" },
-    { date: "2025", title: "Unlocking Land Value", category: "Strategy", img: "https://images.unsplash.com/photo-1588186879741-889eb26e549f?q=80&w=1932&auto=format&fit=crop" }
+    { date: "2026", title: "Boutique Living Trends", category: "Market", img: "/images/unsplash_1590381105924-c72589b9ef3f_q80_w2074.jpg" },
+    { date: "2025", title: "Sustainable Architecture", category: "Innovation", img: "/images/unsplash_1649518811431-48cb38252f79_q80_w2070.jpg" },
+    { date: "2025", title: "Unlocking Land Value", category: "Strategy", img: "/images/unsplash_1588186879741-889eb26e549f_q80_w1932.jpg" }
   ];
   return (
     <section className="py-32 bg-torridon-cream">
@@ -598,7 +598,7 @@ export const Insights = () => {
   11. IMMERSIVE GALLERY 
 */
 export const ImmersiveGallery = () => {
-  const images = [ { url: "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?q=80&w=1974&auto=format&fit=crop", size: "col-span-2 row-span-2", title: "Light & Space" }, { url: "https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "Material Detail" }, { url: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-2", title: "Modern Heritage" }, { url: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2070&auto=format&fit=crop", size: "col-span-1 row-span-1", title: "Scottish Edge" } ];
+  const images = [ { url: "/images/unsplash_1606744837616-56c9a5c6a6eb_q80_w1974.jpg", size: "col-span-2 row-span-2", title: "Light & Space" }, { url: "/images/unsplash_1599696848652-f0ff23bc911f_q80_w2070.jpg", size: "col-span-1 row-span-1", title: "Material Detail" }, { url: "/images/unsplash_1507652313519-d4e9174996dd_q80_w2070.jpg", size: "col-span-1 row-span-2", title: "Modern Heritage" }, { url: "/images/unsplash_1567016376408-0226e4d0c1ea_q80_w2070.jpg", size: "col-span-1 row-span-1", title: "Scottish Edge" } ];
   return (
     <section className="py-32 bg-white"><div className="px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px] md:h-[800px]">{images.map((img, i) => (
       <Reveal key={i} className={img.size}><div className="group relative w-full h-full overflow-hidden rounded-sm shadow-2xl"><img src={img.url} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt="Luxury home gallery showcasing Torridon Homes design" loading="lazy" /><div className="absolute inset-0 bg-torridon-forest/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" /><div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0"><span className="text-xs text-white/80 font-torridon-sans tracking-wide border-b border-white/30 pb-1">{img.title}</span></div></div></Reveal>
@@ -621,7 +621,7 @@ export const Developments = () => {
       slug: 'overton-edinburgh',
       location: 'Overton, Edinburgh', 
       name: 'The Capital View', 
-      img: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=2070&auto=format&fit=crop', 
+      img: '/images/unsplash_1515263487990-61b07816b324_q80_w2070.jpg', 
       tag: 'Coming Soon',
       overview: 'Overlooking the Edinburgh skyline, this development focuses on oversized glazing and expansive terraces.',
       specs: ['Penthouse Level Available', 'Underground Secure Parking', 'Private Landscaped Gardens']
@@ -631,7 +631,7 @@ export const Developments = () => {
       slug: 'spott-dunbar',
       location: 'Spott, Dunbar', 
       name: 'Coastal Collection', 
-      img: 'https://images.unsplash.com/photo-1769411395480-f86aea53a2d1?q=80&w=2070&auto=format&fit=crop', 
+      img: '/images/unsplash_1769411395480-f86aea53a2d1_q80_w2070.jpg', 
       tag: 'Coming Soon',
       overview: 'Six detached villas designed with passive heating principles, overlooking the North Sea.',
       specs: ['A-Rated Efficiency', 'Native Stone Cladding', 'EV Charging Standard']
@@ -641,7 +641,7 @@ export const Developments = () => {
       slug: 'stirling-district',
       location: 'Stirling District', 
       name: 'Ochil Collection', 
-      img: 'https://images.unsplash.com/photo-1664813953897-ada06817c48c?q=80&w=2070&auto=format&fit=crop', 
+      img: '/images/unsplash_1664813953897-ada06817c48c_q80_w2070.jpg', 
       tag: 'In Planning',
       overview: 'Exclusive gated community in the shadow of the Ochil Hills.',
       specs: ['Gated Entrance', 'Bespoke Designer Kitchens', 'Rural Scenic Views']
@@ -651,7 +651,7 @@ export const Developments = () => {
       slug: 'linlithgow-mews',
       location: 'West Lothian', 
       name: 'Linlithgow Mews', 
-      img: 'https://images.unsplash.com/photo-1664813953310-ea2953c0ec99?q=80&w=2070&auto=format&fit=crop', 
+      img: '/images/unsplash_1664813953310-ea2953c0ec99_q80_w2070.jpg', 
       tag: 'Upcoming',
       overview: 'Urban refinement meets historic Linlithgow. Four contemporary townhouses around a private courtyard.',
       specs: ['Central Historic Location', 'Timber-Frame Precision', 'Discrete Mews Setting']
@@ -790,7 +790,7 @@ export const StrategicLocations = () => (
   19. CRAFTSMAN DETAIL 
 */
 export const CraftsmanDetail = () => {
-  const textures = [ { title: "Honest Stone", desc: "Sourced from Scottish quarries.", img: "https://images.unsplash.com/photo-1618651310442-9a6d054a9607?q=80&w=2068&auto=format&fit=crop" }, { title: "Oak & Grain", desc: "Hand-finished timber elements.", img: "https://images.unsplash.com/photo-1628946329352-4b4e9fcbfa6a?q=80&w=2070&auto=format&fit=crop" }, { title: "Brushed Metal", desc: "Discrete luxury accents.", img: "https://images.unsplash.com/photo-1583329550487-0fa300a4cd1a?q=80&w=2013&auto=format&fit=crop" } ];
+  const textures = [ { title: "Honest Stone", desc: "Sourced from Scottish quarries.", img: "/images/unsplash_1618651310442-9a6d054a9607_q80_w2068.jpg" }, { title: "Oak & Grain", desc: "Hand-finished timber elements.", img: "/images/unsplash_1628946329352-4b4e9fcbfa6a_q80_w2070.jpg" }, { title: "Brushed Metal", desc: "Discrete luxury accents.", img: "/images/unsplash_1583329550487-0fa300a4cd1a_q80_w2013.jpg" } ];
   return (
     <section className="py-32 bg-white"><div className="max-w-6xl mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12">{textures.map((t, i) => (
       <Reveal key={i}><div className="group"><div className="aspect-square overflow-hidden mb-8 rounded-full border border-torridon-gold/10 p-2 group-hover:border-torridon-gold transition-all duration-700"><img src={t.img} className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100" alt={t.title} loading="lazy" /></div><h4 className="text-2xl font-torridon-serif text-torridon-forest text-center mb-4 italic">{t.title}</h4><p className="text-center text-sm text-torridon-forest/60 font-torridon-sans leading-relaxed max-w-xs mx-auto">{t.desc}</p></div></Reveal>
@@ -927,7 +927,7 @@ export const AtmosphericSeparator = () => {
   return (
     <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-torridon-forest">
       <div className="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1696380709225-6c5dd6f03f2a?q=80&w=2070&auto=format&fit=crop" 
+        <img src="/images/unsplash_1696380709225-6c5dd6f03f2a_q80_w2070.jpg" 
           className="w-full h-full object-cover grayscale opacity-40 scale-110" 
           alt="Atmospheric Scottish landscape behind Torridon Homes vision"
         loading="lazy" />

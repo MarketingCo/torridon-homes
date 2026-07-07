@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     category: "Market Insight",
     readTime: "6 min read",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+      "/images/unsplash_1600596542815-ffad4c1539a9_q80_w1200.jpg",
     author: "Iain Martin",
     authorRole: "Managing Director, Torridon Homes",
     keywords: [
@@ -84,7 +84,7 @@ Torridon Homes is actively delivering in Edinburgh and the Lothians. If you want
     category: "Development",
     readTime: "8 min read",
     image:
-      "https://images.unsplash.com/photo-1588186879741-889eb26e549f?q=80&w=1200&auto=format&fit=crop",
+      "/images/unsplash_1588186879741-889eb26e549f_q80_w1200.jpg",
     author: "Iain Martin",
     authorRole: "Managing Director, Torridon Homes",
     keywords: [
@@ -159,7 +159,7 @@ Torridon Homes provides free land appraisals for sites meeting our criteria: 1â€
     category: "Investment",
     readTime: "7 min read",
     image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+      "/images/unsplash_1560518883-ce09059eeffa_q80_w1200.jpg",
     author: "Iain Martin",
     authorRole: "Managing Director, Torridon Homes",
     keywords: [
@@ -229,7 +229,7 @@ If you are considering expanding your portfolio into Scotland, we welcome the co
     category: "Land",
     readTime: "7 min read",
     image:
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=1200&auto=format&fit=crop",
+      "/images/unsplash_1605276374104-dee2a0ed3cd6_q80_w1200.jpg",
     author: "Iain Martin",
     authorRole: "Managing Director, Torridon Homes",
     keywords: [
@@ -334,7 +334,7 @@ If you are searching for a self-build plot in the Central Belt, register your re
     category: "Buyer's Guide",
     readTime: "6 min read",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
+      "/images/unsplash_1600607687939-ce8a6c25118c_q80_w1200.jpg",
     author: "Iain Martin",
     authorRole: "Managing Director, Torridon Homes",
     keywords: [

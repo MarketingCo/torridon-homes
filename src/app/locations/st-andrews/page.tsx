@@ -14,7 +14,7 @@ export default function Location() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Torridon Homes - St Andrews",
-    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+    "image": "/images/unsplash_1600596542815-ffad4c1539a9_q80_wauto.jpg",
     "@id": "https://torridon-homes.co.uk/locations/st-andrews",
     "url": "https://torridon-homes.co.uk/locations/st-andrews",
     "telephone": "",
@@ -42,7 +42,7 @@ export default function Location() {
       
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden mb-24 border-b border-torridon-gold/20">
-        <Image src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2070&auto=format&fit=crop"
+        <Image src="/images/unsplash_1567016376408-0226e4d0c1ea_q80_w2070.jpg"
           alt="Luxury Development in St Andrews"
           fill
           className="object-cover opacity-40" sizes="100vw" unoptimized />
